@@ -1,37 +1,33 @@
-.row {
-  margin-left: 250px;
-  padding: 0px 10px;
-}
-
-.toggle-row {
-  margin-left: 75px;
-  transition: margin-left 0.3s ease-in-out, margin-right 0.3s ease-in-out;
-}
-
-.row h1 {
-  text-align: left;
-  font-size: 1.8rem;
-  font-weight: 400;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
 }
 
 .admin {
-  margin-top: 100px;
-  padding: 0px 10px;
+  display: flex;
+  justify-content: center;
+  margin-top: 120px;
+}
+
+.row {
+  max-width: 1200px;
+  margin: auto;
 }
 
 .row-box {
   display: flex;
-  justify-content: center;
-  margin: 15px 0px;
+  margin: 40px 0px;
 }
 
 .small-box {
-  display: block;
-  position: relative;
   border-radius: 0.25rem;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2);
-  width: 25%;
-  height: 150px;
+  display: block;
+  margin-bottom: 20px;
+  position: relative;
+  width: 300px;
   margin: 0px 10px;
 }
 
@@ -72,9 +68,7 @@
   color: rgba(255, 255, 255, 0.8);
   display: block;
   padding: 3px 0;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  position: relative;
   text-align: center;
   text-decoration: none;
 }
@@ -94,24 +88,11 @@
   margin: 35px 0px;
 }
 
-.view-all {
-  padding: 0px 15px;
-}
-
-.table {
-  padding: 0px 15px;
-}
-
 table {
   margin: 20px 0px;
-  width: 100%;
+  width: 800px;
+  height: 10%;
   border-collapse: collapse;
-}
-
-table img {
-  width: 180px;
-  height: 150px;
-  object-fit: cover;
 }
 
 table tr {
@@ -129,8 +110,11 @@ table tr td a {
 }
 
 .edit-delete {
-  max-width: 150px;
-  margin-left: auto;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-bottom: 1px solid #000;
 }
 
 .edit {
@@ -138,7 +122,7 @@ table tr td a {
   align-items: center;
   justify-content: center;
   background-color: rgb(231, 231, 0);
-  margin: 10px 0px;
+  width: 120px;
   height: 30px;
   border-radius: 4px;
   transition: 0.3s;
@@ -155,7 +139,7 @@ table tr td a {
   justify-content: center;
   background-color: rgb(255, 72, 0);
   color: #fff;
-  margin: 10px 0px;
+  width: 120px;
   height: 30px;
   border-radius: 4px;
   transition: 0.3s;
@@ -167,20 +151,15 @@ table tr td a {
   border: 1px solid rgb(255, 72, 0);
 }
 
-@media screen and (max-width: 1050px) {
-  .table {
-    overflow-x: scroll;
-    width: 100%;
-  }
-
-  table {
-    width: 900px;
-  }
+.chart {
+  width: 400px;
+  /* height: 200px; */
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1210px) {
   .row {
-    margin-left: 0;
+    max-width: 800px;
+    margin: auto;
   }
 
   .row-box {
@@ -190,6 +169,27 @@ table tr td a {
   .small-box {
     display: block;
     margin-bottom: 20px;
-    width: 47.5%;
+
+    width: 375px;
+  }
+}
+
+@media screen and (max-width: 792px) {
+  .row {
+    max-width: 600px;
+    margin: auto;
+  }
+
+  .small-box {
+    margin-bottom: 20px;
+    width: 275px;
+  }
+
+  .view-all {
+    text-align: center;
+  }
+
+  table {
+    width: 750px;
   }
 }

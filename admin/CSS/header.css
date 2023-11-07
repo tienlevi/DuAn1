@@ -1,28 +1,15 @@
-body {
-  background-color: #f4f6f9;
-}
-
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: #fff;
   position: fixed;
   z-index: 1;
-  width: 100%;
-  margin-left: 250px;
+  width: 80%;
   top: 0;
   padding: 20px;
   transition: 0.5s;
-  border-bottom: 1px solid rgb(222, 226, 230);
-}
-
-.toggle-header {
-  margin-left: 75px;
-  transition: margin-left 0.3s ease-in-out, margin-right 0.3s ease-in-out;
-}
-
-.toggle-header .user-search {
-  margin-right: 100px;
+  border-bottom: 1px solid black;
 }
 
 .header img {
@@ -34,8 +21,7 @@ body {
 .menu {
   display: flex;
   align-items: center;
-  width: 50%;
-  margin-right: auto;
+  justify-content: center;
 }
 
 .menu li {
@@ -44,7 +30,7 @@ body {
 
 .menu li a {
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.5);
+  color: #000;
   font-size: 20px;
   padding: 0px 15px;
 }
@@ -58,11 +44,13 @@ body {
   cursor: pointer;
 }
 
+form {
+  position: relative;
+}
+
 .user-search {
   display: flex;
   align-items: center;
-  margin-left: auto;
-  margin-right: 250px;
 }
 
 .user-search i {
@@ -93,21 +81,4 @@ body {
 
 .user-search input:focus {
   outline: none;
-}
-
-@media screen and (max-width: 950px) {
-  .header {
-    margin-left: 0;
-  }
-
-  .user-search {
-    display: flex;
-    align-items: center;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .toggle-header .user-search {
-    margin-right: 0;
-  }
 }

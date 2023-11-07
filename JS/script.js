@@ -1,23 +1,48 @@
 const menuBar = document.querySelector(".menu-bar");
-const closeAside = document.querySelector(".sidebar-close");
 const aside = document.querySelector("aside");
-const navItem = document.querySelectorAll(".nav-item-main .nav-name");
-const navTreeView = document.querySelectorAll(".nav-treeview");
-const body = document.querySelector(".sidebar-overlay");
+const row = document.querySelector(".row");
+const header = document.querySelector(".header");
+const footer = document.querySelector("footer");
+const sidebarBg = document.querySelector(".sidebar-overlay");
 
 menuBar.addEventListener("click", () => {
-  aside.classList.add("open-aside");
-  body.classList.add("body-overflow");
+  aside.classList.toggle("toggle-aside");
+  row.classList.toggle("toggle-row");
+  header.classList.toggle("toggle-header");
+  sidebarBg.classList.toggle("sidebar-bg");
+  footer.classList.toggle("toggle-footer");
+  if (innerWidth < 950) {
+    aside.classList.remove("toggle-aside");
+    aside.classList.add("toggle-aside-res");
+  }
 });
 
-closeAside.addEventListener("click", () => {
-  aside.classList.remove("open-aside");
-  body.classList.remove("body-overflow");
+window.addEventListener("resize", () => {
+  if (innerWidth < 950) {
+    aside.classList.remove("toggle-aside");
+  }
+  if (innerWidth < 1125) {
+    aside.classList.add("toggle-aside");
+    row.classList.add("toggle-row");
+    header.classList.add("toggle-header");
+    footer.classList.add("toggle-footer");
+  }
+  if (innerWidth > 950) {
+    aside.classList.remove("toggle-aside-res");
+    sidebarBg.classList.remove("sidebar-bg");
+  }
+  if (
+    !aside.classList.contains("toggle-aside-res") &&
+    !sidebarBg.classList.remove("sidebar-bg") &&
+    innerWidth < 950
+  ) {
+    row.classList.remove("toggle-row");
+    header.classList.remove("toggle-header");
+    footer.classList.remove("toggle-footer");
+  }
 });
 
-for (let i = 0; i < navItem.length; i++) {
-  navItem[i].addEventListener("click", () => {
-    navItem[i].classList.toggle("active-nav-item");
-    navTreeView[i].classList.toggle("active-nav-treeview");
-  });
-}
+sidebarBg.addEventListener("click", () => {
+  aside.classList.remove("toggle-aside-res");
+  sidebarBg.classList.remove("sidebar-bg");
+});
