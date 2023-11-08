@@ -2,18 +2,6 @@
 $url = $_SERVER['REQUEST_URI'];
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <title>Document</title>
-</head>
-<style>
-
-</style>
 
 <body>
     <aside>
@@ -44,14 +32,14 @@ $url = $_SERVER['REQUEST_URI'];
                     </li>
                     <li class="nav-item">
                         <a href="index.php?act=listdm"
-                            class="nav-link <?php echo $url == '/WD18331_DuAn1/admin/index.php?act=listdm' ? 'active-nav-link' : '' ?>">
+                            class="nav-link <?php echo $url == '/WD18331_DuAn1/admin/index.php?act=listdm' || $url == '/WD18331_DuAn1/admin/index.php?act=editdm' || $url == '/WD18331_DuAn1/admin/index.php?act=adddm' ? 'active-nav-link' : '' ?>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Danh mục</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="index.php?act=listsp"
-                            class="nav-link <?php echo $url == '/WD18331_DuAn1/admin/index.php?act=listsp' ? 'active-nav-link' : '' ?>">
+                            class="nav-link <?php echo $url == '/WD18331_DuAn1/admin/index.php?act=listsp' || $url == '/WD18331_DuAn1/admin/index.php?act=editsp' || $url == '/WD18331_DuAn1/admin/index.php?act=addsp' ? 'active-nav-link' : '' ?>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Sản phẩm</p>
                         </a>
@@ -112,5 +100,3 @@ $url = $_SERVER['REQUEST_URI'];
         </form>
     </div>
 </body>
-
-</html>

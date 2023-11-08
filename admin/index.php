@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="../CSS/aside.css">
 <link rel="stylesheet" href="../CSS/edit.css">
 <link rel="stylesheet" href="../CSS/list.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 <style>
 * {
@@ -28,6 +29,12 @@ include "header.php";
 if(isset($_GET['act']) && $_GET['act'] != ""){
     $act = $_GET['act'];
     switch ($act) {
+        case "editsp":
+            include "sanpham/edit.php";
+            break;
+        case "addsp":
+            include "sanpham/add.php";
+            break;
         case "deletesp":
             include "sanpham/list.php";
             break;
