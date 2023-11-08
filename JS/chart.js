@@ -1,7 +1,4 @@
 google.charts.load("current", { packages: ["corechart"] });
-google.charts.setOnLoadCallback(ColumnChart);
-google.charts.setOnLoadCallback(PieChart);
-google.charts.setOnLoadCallback(drawChart);
 
 function ColumnChart() {
   // Set Data
@@ -68,3 +65,7 @@ function drawChart() {
   );
   chart.draw(data, options);
 }
+
+google.charts.setOnLoadCallback(ColumnChart);
+google.charts.setOnLoadCallback(PieChart);
+google.charts.setOnLoadCallback(drawChart);

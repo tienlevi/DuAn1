@@ -3,15 +3,10 @@
         <div class="admin">
             <h1>Danh sách khách hàng</h1>
         </div>
-        <!-- <form class="filter" action="index.php?act=listsp" method="post">
-            <input type="text" name="kym" />
-            <select name="iddm" id="">
-                <option value="0" selected>Tất cả</option>
-
-                <option value="'.$id.'"></option>
-            </select>
-            <input class="filter-search" type="submit" name="listok" value="Lọc danh mục" />
-        </form> -->
+        <form class="filter" action="index.php?act=listsp" method="post">
+            <input type="text" name="kym" placeholder="Tìm khách hàng" />
+            <input class="filter-search" type="submit" name="listok" value="Lọc khách hàng" />
+        </form>
         <div class="table">
             <table border="1">
                 <tr>

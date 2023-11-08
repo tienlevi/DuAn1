@@ -52,7 +52,7 @@ $url = $_SERVER['REQUEST_URI'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="thongke.html"
+                        <a href="index.php?act=thongke"
                             class="nav-link <?php echo $url == '/WD18331_DuAn1/admin/index.php?act=thongke' ? 'active-nav-link' : '' ?>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Thống kê</p>
@@ -60,10 +60,17 @@ $url = $_SERVER['REQUEST_URI'];
                     </li>
 
                     <li class="nav-item">
-                        <a href="bieudohinhtron.html"
+                        <a href="index.php?act=bieudo"
                             class="nav-link <?php echo $url == '/WD18331_DuAn1/admin/index.php?act=bieudo' ? 'active-nav-link' : '' ?>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Biểu đồ</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.php?act=binhluan"
+                            class="nav-link <?php echo $url == '/WD18331_DuAn1/admin/index.php?act=binhluan' ? 'active-nav-link' : '' ?>">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Bình luận</p>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -83,7 +90,9 @@ $url = $_SERVER['REQUEST_URI'];
             <div class="menu-bar">
                 <i class="fa-solid fa-bars"></i>
             </div>
-            <li><a href="../index.php">Trang chủ</a></li>
+            <li><a href="index.php">Trang chủ</a></li>
+            <li><a href="">Liên hệ</a></li>
+
         </div>
         <form class="user-search" action="index.php?act=sanpham" method="POST">
             <input type="text" class="input" name="kyw" placeholder="Tìm sản phẩm" />

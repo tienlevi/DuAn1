@@ -1,39 +1,8 @@
-<div class="row">
-    <div id="piechart"></div>
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-    <script type="text/javascript">
-    google.charts.load('current', {
-        'packages': ['corechart']
-    });
-    google.charts.setOnLoadCallback(drawChart);
-
-    function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Danh mục', 'Số lượng sản phẩm'],
-            <?php 
-        $tongdm = count($listthongke);
-        $i = 1;
-        foreach($listthongke as $thongke) {
-            extract($thongke);
-            if($i == $tongdm) {
-                $dauphay = "";
-            } else {
-                $dauphay = ",";
-            }
-            echo "['".$thongke['tendm']."', ".$thongke['countsp']."]".$dauphay;
-            $i += 1;
-        } ?>
-        ])
-
-        var option = {
-            'title': 'Thống kê sản phẩm theo danh mục',
-            'width': 1100,
-            'height': 800
-        };
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-        chart.draw(data, option)
-    }
-    </script>
-</div>
+<body>
+    <div class="row">
+        <div class="chart">
+            <div id="donutchart" style="width: 600px; height: 500px; background: transparent"></div>
+            <div id="pieChart" style="width: 100%; max-width: 600px; height: 500px"></div>
+        </div>
+    </div>
+</body>

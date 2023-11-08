@@ -23,7 +23,7 @@
                     <td style="width: 100px">1</td>
                     <td style="width: 600px">Áo</td>
                     <td style="height: 100px" class="edit-delete">
-                        <a href="'.$sua.'" class="edit"> Sửa </a>
+                        <a href="index.php?act=editdm" class="edit"> Sửa </a>
                         <a href="'.$xoa.'" class="delete"> Xoá </a>
                     </td>
                 </tr>

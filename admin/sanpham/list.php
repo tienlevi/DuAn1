@@ -36,7 +36,7 @@
                     </td>
                     <td style="width: 50px;">1</td>
                     <td style="width: 50px;">1</td>
-                    <td class="edit-delete"><a href="'.$sua.'" class="edit">
+                    <td class="edit-delete"><a href="index.php?act=editsp" class="edit">
                             Sửa
                         </a>
                         <a href="'.$xoa.'" class="delete">

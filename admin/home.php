@@ -13,19 +13,16 @@
                 <div class="icon">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </div>
-                <p class="small-box-footer">
-                    Xem thêm <i class="fas fa-arrow-circle-right"></i>
-                </p>
             </div>
             <div class="small-box">
                 <div class="inner">
-                    <h3>50%</h3>
-                    <p>Đánh giá</p>
+                    <h3>30</h3>
+                    <p>Danh mục</p>
                 </div>
                 <div class="icon">
                     <i class="fa-solid fa-signal"></i>
                 </div>
-                <a href="#" class="small-box-footer">Xem thêm <i class="fas fa-arrow-circle-right"></i></a>
+
             </div>
             <div class="small-box">
                 <div class="inner">
@@ -35,7 +32,7 @@
                 <div class="icon">
                     <i class="fa-solid fa-user-plus"></i>
                 </div>
-                <a href="#" class="small-box-footer">Xem thêm <i class="fas fa-arrow-circle-right"></i></a>
+
             </div>
             <div class="small-box">
                 <div class="inner">
@@ -45,7 +42,7 @@
                 <div class="icon">
                     <i class="fas fa-comments"></i>
                 </div>
-                <a href="#" class="small-box-footer">Xem thêm <i class="fas fa-arrow-circle-right"></i></a>
+
             </div>
         </div>
         <div class="view-all">
@@ -77,8 +74,24 @@
                     <td style="width: 50px">1</td>
                     <td style="width: 50px">1</td>
                     <td style="width: 150px" class="edit-delete">
-                        <a href="'.$sua.'" class="edit"> Sửa </a>
-                        <a href="'.$xoa.'" class="delete"> Xoá </a>
+                        <a href="index.php?act=editdm" class="edit"> Sửa </a>
+                        <a href="" class="delete"> Xoá </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50px"><input type="checkbox" /></td>
+                    <td style="width: 100px">2</td>
+                    <td style="width: 200px">Áo adidas xanh</td>
+                    <td style="width: 100px">250.000đ</td>
+                    <td style="width: 200px"><img src="../Img/2.jpg" alt="" /></td>
+                    <td style="width: 400px">
+                        Reference site about Lorem Ipsum, giving information on its
+                    </td>
+                    <td style="width: 50px">1</td>
+                    <td style="width: 50px">1</td>
+                    <td style="width: 150px" class="edit-delete">
+                        <a href="index.php?act=editdm" class="edit"> Sửa </a>
+                        <a href="" class="delete"> Xoá </a>
                     </td>
                 </tr>
             </table>

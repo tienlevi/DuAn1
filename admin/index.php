@@ -65,6 +65,9 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
         case "bieudo":
             include "thongke/bieudo.php";
             break;
+        case "binhluan":
+            include "binhluan/list.php";
+            break;
         default:
             include "home.php";
             break;
