@@ -25,10 +25,5 @@
                 </tr>
             </table>
         </div>
-        <div class="function">
-            <a href="index.php">Quay lại trang chủ</a>
-            <a href="index.php?act=">Xóa tất cả</a>
-            <a href="index.php?act=addsp">Thêm sản phẩm</a>
-        </div>
     </div>
 </body>

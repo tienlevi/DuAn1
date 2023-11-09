@@ -10,7 +10,7 @@
 
                 <option value="'.$id.'"></option>
             </select>
-            <input class="filter-search" type="submit" name="listok" value="Lọc danh mục" />
+            <input class="filter-search" type="submit" name="listok" value="Lọc sản phẩm" />
         </form>
         <div class="table">
             <table border="1">
@@ -44,12 +44,28 @@
                         </a>
                     </td>
                 </tr>
+                <tr>
+                    <td style="width: 50px"><input type="checkbox" /></td>
+                    <td style="width: 100px">2</td>
+                    <td style="width: 200px">Áo adidas xanh</td>
+                    <td style="width: 100px">250.000đ</td>
+                    <td style="width: 200px"><img src="../Img/2.jpg" alt="" /></td>
+                    <td style="width: 400px">
+                        Reference site about Lorem Ipsum, giving information on its
+                    </td>
+                    <td style="width: 50px">1</td>
+                    <td style="width: 50px">1</td>
+                    <td style="width: 150px" class="edit-delete">
+                        <a href="index.php?act=editdm" class="edit"> Sửa </a>
+                        <a href="" class="delete"> Xoá </a>
+                    </td>
+                </tr>
             </table>
         </div>
         <div class="function">
             <a href="index.php">Quay lại trang chủ</a>
             <a href="index.php?act=">Xóa tất cả</a>
-            <a href="index.php?act=addsp">Thêm danh mục</a>
+            <a href="index.php?act=addsp">Thêm sản phẩm</a>
         </div>
     </div>
 </body>

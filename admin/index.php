@@ -25,6 +25,10 @@ body {
 }
 </style>
 <?php
+//Sản phẩm và bình luận là 1 trang 
+//Thống kê và biểu đồ là 1 trang
+//Sửa lại trang đơn hàng và thêm thông tin
+//Thêm trang giỏ hàng
 include "header.php";
 if(isset($_GET['act']) && $_GET['act'] != ""){
     $act = $_GET['act'];
@@ -67,6 +71,9 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             break;
         case "binhluan":
             include "binhluan/list.php";
+            break;
+        case "donhang":
+            include "donhang/list.php";
             break;
         default:
             include "home.php";

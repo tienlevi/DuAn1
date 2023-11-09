@@ -74,6 +74,13 @@ $url = $_SERVER['REQUEST_URI'];
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="index.php?act=donhang"
+                            class="nav-link <?php echo $url == '/WD18331_DuAn1/admin/index.php?act=donhang' ? 'active-nav-link' : '' ?>">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Đơn hàng</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <div class="function">
                             <form action="" method="post">
                                 <input type="submit" name="dangxuat" value="Đăng xuất" />
