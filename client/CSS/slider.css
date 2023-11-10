@@ -1,0 +1,93 @@
+.swiper {
+  width: 100%;
+  height: 800px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 800px;
+  object-fit: cover;
+}
+
+.swiper-button-next {
+  opacity: 0;
+  transform: translateX(25%);
+  transition: all 0.3s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.swiper-button-prev {
+  opacity: 0;
+  transform: translateX(-25%);
+  transition: all 0.3s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.swiper:hover .swiper-button-next {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.swiper:hover .swiper-button-prev {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.banner-text {
+  position: absolute;
+  top: 35%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  animation: fade 1s ease-in-out forwards;
+}
+
+.banner-text h3 {
+  font-size: 45px;
+  text-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px;
+  font-weight: 400;
+}
+
+.banner-text p {
+  font-size: 16px;
+  color: rgb(102, 102, 102);
+  font-weight: 400;
+  margin-top: 25px;
+}
+
+.banner-text a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 50px;
+  font-size: 13px;
+  margin: auto;
+  margin-top: 35px;
+  border: 1px solid #000;
+  text-decoration: none;
+  color: #000;
+}
+
+.banner-text a:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}

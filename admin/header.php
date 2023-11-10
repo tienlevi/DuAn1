@@ -2,7 +2,6 @@
 $url = $_SERVER['REQUEST_URI'];
 ?>
 
-
 <body>
     <aside>
         <div class="brand">
@@ -25,59 +24,55 @@ $url = $_SERVER['REQUEST_URI'];
                 <ul class="nav-parent">
                     <li class="nav-item">
                         <a href="index.php"
-                            class="nav-link <?php echo $url == '/WD18331_DuAn1/admin/index.php' || $url == '/WD18331_DuAn1/admin/' ? 'active-nav-link' : ''  ?>">
+                            class="nav-link<?php echo $url == '/WD18331_DuAn1/admin/index.php' || $url == '/WD18331_DuAn1/admin/' ? ' active-nav-link' : ''  ?>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Trang chủ Admin</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="index.php?act=listdm"
-                            class="nav-link <?php echo $url == '/WD18331_DuAn1/admin/index.php?act=listdm' || $url == '/WD18331_DuAn1/admin/index.php?act=editdm' || $url == '/WD18331_DuAn1/admin/index.php?act=adddm' ? 'active-nav-link' : '' ?>">
+                            class="nav-link<?php echo $url == '/WD18331_DuAn1/admin/index.php?act=listdm' || $url == '/WD18331_DuAn1/admin/index.php?act=editdm' || $url == '/WD18331_DuAn1/admin/index.php?act=adddm' ? ' active-nav-link' : '' ?>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Danh mục</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.php?act=listsp"
-                            class="nav-link <?php echo $url == '/WD18331_DuAn1/admin/index.php?act=listsp' || $url == '/WD18331_DuAn1/admin/index.php?act=editsp' || $url == '/WD18331_DuAn1/admin/index.php?act=addsp' ? 'active-nav-link' : '' ?>">
+                        <a href="index.php?act=listsp" class="nav-link<?php echo
+                             $url == '/WD18331_DuAn1/admin/index.php?act=listsp' || 
+                             $url == '/WD18331_DuAn1/admin/index.php?act=editsp' || 
+                             $url == '/WD18331_DuAn1/admin/index.php?act=addsp' || 
+                             $url == '/WD18331_DuAn1/admin/index.php?act=sp' ||
+                             $url == '/WD18331_DuAn1/admin/index.php?act=binhluan' ? ' active-nav-link' : '' ?>">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Sản phẩm</p>
+                            <p>Quản lý sản phẩm</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="index.php?act=listtk"
-                            class="nav-link <?php echo $url == '/WD18331_DuAn1/admin/index.php?act=listtk' ? 'active-nav-link' : '' ?>">
+                            class="nav-link<?php echo $url == '/WD18331_DuAn1/admin/index.php?act=listtk' ? ' active-nav-link' : '' ?>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Khách hàng</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="index.php?act=thongke"
-                            class="nav-link <?php echo $url == '/WD18331_DuAn1/admin/index.php?act=thongke' ? 'active-nav-link' : '' ?>">
+                            class="nav-link<?php echo $url == '/WD18331_DuAn1/admin/index.php?act=thongke' ? ' active-nav-link' : '' ?>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Thống kê</p>
                         </a>
                     </li>
-
-                    <li class="nav-item">
-                        <a href="index.php?act=bieudo"
-                            class="nav-link <?php echo $url == '/WD18331_DuAn1/admin/index.php?act=bieudo' ? 'active-nav-link' : '' ?>">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Biểu đồ</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="index.php?act=binhluan"
-                            class="nav-link <?php echo $url == '/WD18331_DuAn1/admin/index.php?act=binhluan' ? 'active-nav-link' : '' ?>">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Bình luận</p>
-                        </a>
-                    </li>
                     <li class="nav-item">
                         <a href="index.php?act=donhang"
-                            class="nav-link <?php echo $url == '/WD18331_DuAn1/admin/index.php?act=donhang' ? 'active-nav-link' : '' ?>">
+                            class="nav-link<?php echo $url == '/WD18331_DuAn1/admin/index.php?act=donhang' ? ' active-nav-link' : '' ?>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Đơn hàng</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.php?act=giohang"
+                            class="nav-link<?php echo $url == '/WD18331_DuAn1/admin/index.php?act=giohang' ? ' active-nav-link' : '' ?>">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Giỏ hàng</p>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -98,7 +93,6 @@ $url = $_SERVER['REQUEST_URI'];
                 <i class="fa-solid fa-bars"></i>
             </div>
             <li><a href="index.php">Trang chủ</a></li>
-            <li><a href="">Liên hệ</a></li>
 
         </div>
         <form class="user-search" action="index.php?act=sanpham" method="POST">

@@ -28,6 +28,39 @@
   margin-top: 100px;
 }
 
+.page {
+  display: block;
+  margin-top: 15px;
+  padding: 0px 10px;
+}
+
+.inner-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 40px;
+  margin: 17px 0px;
+  border-radius: 5px;
+  background-color: #000;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.inner-page:hover {
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
+.inner-page:hover > a {
+  color: #000;
+}
+
+.page a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .table {
   padding: 0px 10px;
 }
@@ -92,6 +125,7 @@ table tr td a {
 .edit-delete {
   max-width: 150px;
   margin-left: auto;
+  text-align: center;
 }
 
 .edit {
@@ -100,7 +134,7 @@ table tr td a {
   justify-content: center;
   background-color: rgb(231, 231, 0);
   margin: 10px 0px;
-  height: 30px;
+  height: 40px;
   border-radius: 4px;
   transition: 0.3s;
 }
@@ -117,7 +151,7 @@ table tr td a {
   background-color: rgb(255, 72, 0);
   color: #fff;
   margin: 10px 0px;
-  height: 30px;
+  height: 40px;
   border-radius: 4px;
   transition: 0.3s;
 }

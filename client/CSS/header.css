@@ -1,0 +1,134 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 25px;
+}
+
+header .img img {
+  height: 90px;
+}
+
+header .menu {
+  display: flex;
+  align-items: center;
+}
+
+header .menu li {
+  list-style: none;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+header .menu li a {
+  font-size: 13px;
+  text-decoration: none;
+  color: #000;
+  padding: 0px 30px;
+}
+
+header .menu li a:hover {
+  text-decoration: underline;
+}
+
+header form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+header form i {
+  cursor: pointer;
+}
+
+header form .header-icon {
+  font-size: 18px;
+  margin: 0px 15px;
+}
+
+.form-search {
+  display: block;
+  position: absolute;
+  right: 95px;
+  top: 65px;
+  opacity: 0;
+  transform: translateY(10%);
+  transition: 0.3s;
+  z-index: 100;
+}
+
+.form-search::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  right: 5%;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent #000 transparent;
+}
+
+.form-search input {
+  width: 300px;
+  height: 50px;
+  padding-left: 8px;
+  border-radius: 5px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  font-size: 13px;
+}
+
+.form-search input:focus {
+  outline: none;
+}
+
+.form-search button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: none;
+  border: none;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+
+.form-search-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.user-dropdown {
+  display: block;
+  position: absolute;
+  transform: scaleY(0);
+  transform-origin: top;
+  right: 55px;
+  top: 65px;
+  padding: 20px;
+  min-width: 180px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: 0.3s;
+  z-index: 100;
+}
+
+.user-dropdown li {
+  list-style: none;
+  margin: 5px 0px;
+}
+
+.user-dropdown li a {
+  color: #777;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.user-dropdown span {
+  padding-left: 8px;
+}
+
+.user-dropdown-active {
+  transform: scaleY(1);
+}

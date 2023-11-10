@@ -1,0 +1,145 @@
+.row {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.content {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.content-main {
+  margin: 10px 0px;
+  padding: 0px 15px;
+  text-align: center;
+}
+
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 10px;
+}
+
+.product-item {
+  text-align: center;
+  background: #fff;
+  margin: 15px 10px;
+  cursor: pointer;
+}
+
+.product-img {
+  position: relative;
+}
+
+.product-img img {
+  width: 295px;
+}
+
+.product-click {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.product-item:hover > .product-img .product-click {
+  opacity: 1;
+}
+
+.product-click-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 40px;
+  margin: 13px 0px;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.product-click-view a {
+  text-decoration: none;
+  color: #000;
+}
+
+.product-click-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 40px;
+  margin: 13px 0px;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.product-text {
+  margin-top: 12px;
+  color: rgb(119, 119, 119);
+}
+
+.product-text:hover {
+  color: #000;
+}
+
+.product-price {
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.mkt-customer {
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 75px;
+}
+
+.mkt-customer p {
+  width: 450px;
+  margin: auto;
+  margin-top: 29px;
+  text-align: center;
+  color: rgb(119, 119, 119);
+}
+
+.mkt-customer img {
+  margin-top: 29px;
+}
+
+.intro {
+  text-align: center;
+  padding: 50px 0px;
+}
+
+.intro-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.intro-item {
+  width: 350px;
+}
+
+.intro-item i {
+  font-size: 40px;
+}
+
+.intro-item h2 {
+  font-size: 18px;
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+.intro-item p {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 1250px) {
+  .row {
+    max-width: 975px;
+    margin: auto;
+  }
+}
