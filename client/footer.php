@@ -1,7 +1,6 @@
 <footer>
     <div class="footer-content">
         <div class="footer-inner">
-
             <div class="footer-section">
                 <h3>Keep In Touch</h3>
                 <p>Claritas est etiam processus dynamicus, qui sequitur mutatio nem consuetudium lectorum. Mirum est

@@ -1,6 +1,6 @@
 <?php
 function loadAllDm(){
-    $sql = "SELECT * FROM danhmuc ORDER by id desc";
+    $sql = "SELECT * FROM danhmuc";
     $listdanhmuc = pdo_query($sql);
     return $listdanhmuc;
 }
@@ -13,7 +13,7 @@ function loadAllSp($kym,$iddm){
     if($iddm > 0){
         $sql.= " and iddm ='".$iddm."'"; 
     }
-    $sql.= " order by id desc";
+    // $sql.= " order by id desc";
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }

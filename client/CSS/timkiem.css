@@ -1,0 +1,15 @@
+.result-search {
+  width: 1300px;
+  margin: auto;
+}
+
+.result-search-main {
+  padding: 0px 15px;
+}
+
+@media screen and (max-width: 1300px) {
+  .result-search {
+    max-width: 975px;
+    margin: auto;
+  }
+}

@@ -16,23 +16,31 @@
             <table border="1">
                 <tr>
                     <td style="width: 100px">Id</td>
-                    <td style="width: 600px">Tên danh mục</td>
+                    <td style="width: 500px">Tên danh mục</td>
                     <td style="width: 100px">Chức năng</td>
                 </tr>
-                <tr>
-                    <td style="width: 100px">1</td>
-                    <td style="width: 600px">Áo</td>
-                    <td style="height: 100px" class="edit-delete">
-                        <a href="index.php?act=editdm" class="edit"> Sửa </a>
-                        <a href="'.$xoa.'" class="delete"> Xoá </a>
-                    </td>
-                </tr>
+                <?php foreach ($listdanhmuc as $danhmuc) { 
+                    extract($danhmuc);
+                    $sua = "index.php?act=editdm&id=".$id;
+                    $xoa = "index.php?act=deletedm&id=".$id;
+                echo '<tr>
+                <td style="width: 100px;">'.$id.'</td>
+                <td style="width: 500px;">'.$name.'</td>
+                <td style="height: 100px;" class="edit-delete"><a href="'.$sua.'" class="edit">
+                        Sửa
+                    </a>
+                    <a href="'.$xoa.'"
+                        class="delete">
+                        Xoá
+                    </a>
+                </td>
+            </tr>';
+             } ?>
             </table>
         </div>
         <div class="function">
             <a href="index.php">Quay lại trang chủ</a>
-            <a href="index.php?act=">Xóa tất cả</a>
-            <a href="index.php?act=addsp">Thêm danh mục</a>
+            <a href="index.php?act=adddm">Thêm danh mục</a>
         </div>
     </div>
 </body>

@@ -25,6 +25,7 @@ header .menu li a {
   text-decoration: none;
   color: #000;
   padding: 0px 30px;
+  font-weight: 900;
 }
 
 header .menu li a:hover {
@@ -47,8 +48,13 @@ header form .header-icon {
   margin: 0px 15px;
 }
 
+header form .header-icon a {
+  color: #000;
+}
+
 .form-search {
-  display: block;
+  display: flex;
+  align-items: center;
   position: absolute;
   right: 95px;
   top: 65px;
@@ -86,7 +92,6 @@ header form .header-icon {
 .form-search button {
   position: absolute;
   right: 10px;
-  top: 10px;
   background: none;
   border: none;
   color: rgb(255, 255, 255);

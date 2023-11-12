@@ -1,6 +1,6 @@
 <header class="header">
     <div class="img">
-        <img src="./Img/Img/z4509521763007_86ba43887da4a7064e7fb678f9df5244.jpg" alt="" />
+        <img src="./Img/z4509521763007_86ba43887da4a7064e7fb678f9df5244.jpg" alt="" />
     </div>
     <div class="menu">
         <li><a href="index.php">Trang chủ</a></li>
@@ -9,12 +9,12 @@
         <li><a href="">Liên hệ</a></li>
         <li><a href="">Về website</a></li>
     </div>
-    <form class="form">
+    <form action="index.php?act=timkiem" method="post" class="form">
         <div class="header-icon">
             <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
             <div class="form-search">
-                <input type="text" placeholder="Tìm kiếm sản phẩm" />
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input type="text" placeholder="Tìm kiếm sản phẩm" name="kyw" />
+                <button type="submit" name="timkiem"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
         </div>
         <div class="header-icon">
@@ -26,9 +26,9 @@
             </div>
         </div>
         <div class="header-icon">
-            <div class="bag-icon">
+            <a href="index.php?act=giohang" class="bag-icon">
                 <i class="fa-solid fa-bag-shopping"></i>
-            </div>
+            </a>
         </div>
     </form>
     </div>

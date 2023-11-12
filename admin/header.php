@@ -5,7 +5,7 @@ $url = $_SERVER['REQUEST_URI'];
 <body>
     <aside>
         <div class="brand">
-            <img src="../Img/user2-160x160.jpg" alt="" />
+            <img src="./Img/user2-160x160.jpg" alt="" />
             <p>Admin</p>
         </div>
         <div class="sidebar">
@@ -39,7 +39,7 @@ $url = $_SERVER['REQUEST_URI'];
                     <li class="nav-item">
                         <a href="index.php?act=listsp" class="nav-link<?php echo
                              $url == '/WD18331_DuAn1/admin/index.php?act=listsp' || 
-                             $url == '/WD18331_DuAn1/admin/index.php?act=editsp' || 
+                             $url == '/WD18331_DuAn1/admin/index.php?act=editsp&id=1' || 
                              $url == '/WD18331_DuAn1/admin/index.php?act=addsp' || 
                              $url == '/WD18331_DuAn1/admin/index.php?act=sp' ||
                              $url == '/WD18331_DuAn1/admin/index.php?act=binhluan' ? ' active-nav-link' : '' ?>">

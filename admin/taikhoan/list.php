@@ -11,26 +11,34 @@
             <table border="1">
                 <tr>
                     <td style="width: 100px">Id</td>
-                    <td style="width: 300px">Tên tài khoản</td>
+                    <td style="width: 250px">Tên tài khoản</td>
                     <td style="width: 200px">Mật khẩu</td>
                     <td style="width: 200px">Email</td>
                     <td style="width: 200px">Địa chỉ</td>
-                    <td style="width: 200px">SĐT</td>
+                    <td style="width: 100px">SĐT</td>
                     <td style="width: 100px">Role</td>
+                    <td style="width: 200px">Trạng thái</td>
                     <td style="width: 400px">Chức năng</td>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>tienlienha123</td>
-                    <td>tien2004</td>
-                    <td>tien@gmail.com</td>
-                    <td>Hà Nội</td>
-                    <td>0987273123</td>
-                    <td>2</td>
-                    <td style="height: 100px;" class="edit-delete">
-                        <a href="'.$xoa.'" class="delete"> Khóa tài khoản </a>
-                    </td>
-                </tr>
+                <?php foreach ($listtk as $tk) {
+                extract($tk);
+                $xoa = "index.php?act=deletetk&id=".$id;
+           echo ' <tr>
+                <td>'.$id.'</td>
+                <td>'.$username.'</td>
+                <td>'.$password.'</td>
+                <td>'.$email.'</td>
+                <td>'.$address.'</td>
+                <td>'.$phone.'</td>
+                <td>'.$idrole.'</td>
+                <td>'.$trangthai.'</td>
+                <td class="edit-delete">
+                    <a href="'.$xoa.'" class="delete">
+                        Khóa tài khoản
+                    </a>
+                </td>
+            </tr>';
+           } ?>
             </table>
         </div>
     </div>

@@ -42,7 +42,6 @@
                 <div class="icon">
                     <i class="fas fa-comments"></i>
                 </div>
-
             </div>
         </div>
         <div class="view-all">
@@ -51,49 +50,35 @@
         <div class="table">
             <table border="1">
                 <tr>
-                    <td style="width: 50px">Chọn</td>
-                    <td style="width: 100px">Id</td>
+                    <td style="width: 50px">Id</td>
                     <td style="width: 200px">Tên sản phẩm</td>
                     <td style="width: 100px">Giá</td>
                     <td style="width: 200px">Ảnh</td>
                     <td style="width: 400px">Mô tả</td>
-                    <td style="width: 50px">Lượt xem</td>
                     <td style="width: 50px">Id Danh mục</td>
                     <td style="width: 150px">Chức năng</td>
                 </tr>
-                <tr>
-                    <td style="width: 50px"><input type="checkbox" /></td>
-                    <td style="width: 100px">1</td>
-                    <td style="width: 200px">Áo adidas</td>
-                    <td style="width: 100px">100.000đ</td>
-                    <td style="width: 200px"><img src="../Img/1.jpg" alt="" /></td>
-                    <td style="width: 400px">
-                        Reference site about Lorem Ipsum, giving information on its
-                        origins, as well as a random Lipsum generator.
-                    </td>
-                    <td style="width: 50px">1</td>
-                    <td style="width: 50px">1</td>
-                    <td style="width: 150px" class="edit-delete">
-                        <a href="index.php?act=editdm" class="edit"> Sửa </a>
-                        <a href="" class="delete"> Xoá </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width: 50px"><input type="checkbox" /></td>
-                    <td style="width: 100px">2</td>
-                    <td style="width: 200px">Áo adidas xanh</td>
-                    <td style="width: 100px">250.000đ</td>
-                    <td style="width: 200px"><img src="../Img/2.jpg" alt="" /></td>
-                    <td style="width: 400px">
-                        Reference site about Lorem Ipsum, giving information on its
-                    </td>
-                    <td style="width: 50px">1</td>
-                    <td style="width: 50px">1</td>
-                    <td style="width: 150px" class="edit-delete">
-                        <a href="index.php?act=editdm" class="edit"> Sửa </a>
-                        <a href="" class="delete"> Xoá </a>
-                    </td>
-                </tr>
+                <?php foreach ($listsanpham as $sanpham) { 
+                    extract($sanpham);
+                    $sua = "index.php?act=editsp&id=".$id;
+                    $xoa = "index.php?act=deletesp&id=".$id;
+                echo '<tr>
+                <td style="width: 50px;">'.$id.'</td>
+                <td style="width: 200px;">'.$name.'</td>
+                <td style="width: 100px;">'.$price.'</td>
+                <td style="width: 200px;"><img src="./Img/'.$img.'" alt=""></td>
+                <td style="width: 400px;">'.$mota.'</td>
+                <td style="width: 50px;">'.$iddm.'</td>
+                <td class="edit-delete"><a href="'.$sua.'" class="edit">
+                        Sửa
+                    </a>
+                    <a href="'.$xoa.'"
+                        class="delete">
+                        Xoá
+                    </a>
+                </td>
+            </tr>';
+             } ?>
             </table>
         </div>
     </div>

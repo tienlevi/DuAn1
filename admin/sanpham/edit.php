@@ -1,13 +1,13 @@
 <?php
-// if(is_array($sanpham)){
-//     extract($sanpham);
-// }
-// $image = ".././Ảnh/$img";
-// if(is_file($image)){
-//     $img = "<img src='".$image."' alt=''>";
-// } else {
-//     echo "";
-// }
+if(is_array($sanpham)){
+    extract($sanpham);
+}
+$image = ".././Ảnh/$img";
+if(is_file($image)){
+    $img = "<img src='".$image."' alt=''>";
+} else {
+    echo "";
+}
 ?>
 
 <!DOCTYPE html>
