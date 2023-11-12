@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../admin/CSS/header.css" />
+    <link rel="stylesheet" href="../admin/CSS/home.css" />
+    <link rel="stylesheet" href="../admin/CSS/footer.css" />
+    <link rel="stylesheet" href="../admin/CSS/aside.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <aside>
+      <div class="brand">
+        <img src="../Img/user2-160x160.jpg" alt="" />
+        <p>Admin</p>
+      </div>
+      <div class="sidebar">
+        <div class="form-inline">
+          <div class="input-group" data-widget="sidebar-search">
+            <input
+              class="form-control form-control-sidebar"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </div>
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+        <nav>
+          <ul class="nav-parent">
+            <li class="nav-item">
+              <a href="danhmuc.html" class="nav-link active-nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Trang chủ Admin</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="danhmuc.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Danh mục</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="sanpham.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Sản phẩm</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="khachhang.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Khách hàng</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="thongke.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Thống kê</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="bieudohinhtron.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Biểu đồ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <div class="function">
+                <form action="" method="post">
+                  <input type="submit" name="dangxuat" value="Đăng xuất" />
+                </form>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    <div class="sidebar-overlay"></div>
+    <div class="header">
+      <div class="menu">
+        <div class="menu-bar">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <li><a href="../index.php">Trang chủ</a></li>
+      </div>
+      <form class="user-search" action="index.php?act=sanpham" method="POST">
+        <input
+          type="text"
+          class="input"
+          name="kyw"
+          placeholder="Tìm sản phẩm"
+        />
+        <!-- <input
+            type="submit"
+            class="searchs"
+            name="timkiem"
+            value="Tìm kiếm"
+          /> -->
+
+        <button type="submit" name="timkiem">
+          <i class="fas fa-search fa-fw"></i>
+        </button>
+      </form>
+    </div>
+    <div class="row">
+      <div class="admin">
+        <h1>Trang quản lý Admin</h1>
+      </div>
+      <div class="row-box">
+        <div class="small-box">
+          <div class="inner">
+            <h3>150</h3>
+            <p>Sản phẩm</p>
+          </div>
+          <div class="icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <p class="small-box-footer">
+            Xem thêm <i class="fas fa-arrow-circle-right"></i>
+          </p>
+        </div>
+        <div class="small-box">
+          <div class="inner">
+            <h3>50%</h3>
+            <p>Đánh giá</p>
+          </div>
+          <div class="icon">
+            <i class="fa-solid fa-signal"></i>
+          </div>
+          <a href="#" class="small-box-footer"
+            >Xem thêm <i class="fas fa-arrow-circle-right"></i
+          ></a>
+        </div>
+        <div class="small-box">
+          <div class="inner">
+            <h3>44</h3>
+            <p>Người dùng đã đăng ký</p>
+          </div>
+          <div class="icon">
+            <i class="fa-solid fa-user-plus"></i>
+          </div>
+          <a href="#" class="small-box-footer"
+            >Xem thêm <i class="fas fa-arrow-circle-right"></i
+          ></a>
+        </div>
+        <div class="small-box">
+          <div class="inner">
+            <h3>65</h3>
+            <p>Lượt bình luận</p>
+          </div>
+          <div class="icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <a href="#" class="small-box-footer"
+            >Xem thêm <i class="fas fa-arrow-circle-right"></i
+          ></a>
+        </div>
+      </div>
+      <div class="view-all">
+        <h1>Tổng quan</h1>
+      </div>
+      <div class="table">
+        <table border="1">
+          <tr>
+            <td style="width: 50px">Chọn</td>
+            <td style="width: 100px">Id</td>
+            <td style="width: 200px">Tên sản phẩm</td>
+            <td style="width: 100px">Giá</td>
+            <td style="width: 200px">Ảnh</td>
+            <td style="width: 400px">Mô tả</td>
+            <td style="width: 50px">Lượt xem</td>
+            <td style="width: 50px">Id Danh mục</td>
+            <td style="width: 150px">Chức năng</td>
+          </tr>
+          <tr>
+            <td style="width: 50px"><input type="checkbox" /></td>
+            <td style="width: 100px">1</td>
+            <td style="width: 200px">Áo adidas</td>
+            <td style="width: 100px">100.000đ</td>
+            <td style="width: 200px"><img src="../Img/1.jpg" alt="" /></td>
+            <td style="width: 400px">
+              Reference site about Lorem Ipsum, giving information on its
+              origins, as well as a random Lipsum generator.
+            </td>
+            <td style="width: 50px">1</td>
+            <td style="width: 50px">1</td>
+            <td style="width: 150px" class="edit-delete">
+              <a href="'.$sua.'" class="edit"> Sửa </a>
+              <a href="'.$xoa.'" class="delete"> Xoá </a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <footer>
+      <div class="copyright">
+        <b>Copyright © 2014-2021 AdminLTE.io.</b> All rights reserved.
+      </div>
+    </footer>
+  </body>
+  <script src="../JS/script.js"></script>
+</html>
