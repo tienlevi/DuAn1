@@ -22,7 +22,7 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
     $act = $_GET['act'];
     switch ($act) {
         case "dangnhap":
-            include "view/dangnhap.php";
+            include "dangnhap.php";
             break;
         case "dangky":
             include "view/dangky.php";

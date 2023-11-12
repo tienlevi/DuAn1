@@ -6,14 +6,17 @@ if(is_array($sanpham)){
 <link rel="stylesheet" href="./CSS/sanpham.css" />
 
 <div class="row">
+    <h1 style="text-align: center;">Chi tiết sản phẩm</h1>
     <div class="container">
         <div class="product-detail-img">
-            <img src="./Img/2.jpg" alt="1">
+            <img src="./Img/<?=$img?>" alt="1">
         </div>
         <div class="product-details">
             <h1><?=$name?></h1>
             <h2><?=$price?>đ</h2>
-            <p><?=$mota?></p>
+            <p>Mô tả: <?=$mota?></p>
+            <h3>Số lượng: <input class="number" type="number"></h3>
+
             <div class="product-details-click">
                 <p>Thêm vào giỏ hàng</p>
             </div>
@@ -22,6 +25,12 @@ if(is_array($sanpham)){
             </div>
         </div>
     </div>
+    <div class="comment">
+        <h1 style="margin: 10px 15px;">Bình luận</h1>
+        <textarea style="resize: none; margin: 20px 20px;" name="" id="" cols="167" rows="10"></textarea>
+    </div>
+    <input style="width: 150px; height: 35px; background-color: #000; color: #fff; font-size: 17px;"
+        class="submit-comment" type="submit" value="gửi bình luận">
     <div class="other">
         <h1>Sản phẩm khác</h1>
     </div>

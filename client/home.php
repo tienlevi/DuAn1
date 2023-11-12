@@ -6,8 +6,8 @@
             <div class="banner-img">
                 <img src="./Img/leoslideshow/slide-1-1920x800.jpg" alt="">
                 <div class="banner-text">
-                    <h3>Artifort Collectie</h3>
-                    <p>Weatherized essentials to help keep<br>them dry, whatever the weather.</p>
+                    <h3>Bộ sưu tập Artifort</h3>
+                    <p>Quần áo giá rẻ Tham khảo ngay</p>
                     <a href="">Xem thêm</a>
                 </div>
             </div>
@@ -42,21 +42,6 @@
         <h1>Sản phẩm</h1>
     </div>
     <div class="product">
-        <div class="product-item">
-            <div class="product-img">
-                <img src="./Img/1.jpg" alt="">
-                <div class="product-click">
-                    <div class="product-click-view">
-                        <a href="index.php?act=sanpham">Xem chi tiết</a>
-                    </div>
-                    <div class="product-click-add">
-                        <p>Thêm vào giỏ hàng</p>
-                    </div>
-                </div>
-            </div>
-            <div class="product-text">Áo adidas đen</div>
-            <div class="product-price">200.000đ</div>
-        </div>
         <?php foreach($listsanpham as $sanpham) {
         extract($sanpham);
         $detail = "index.php?act=sanphamct&id=".$id;
@@ -79,12 +64,9 @@
     </div>
 </div>
 <div class="mkt-customer">
-    <h1>What Customer Say</h1>
-    <p>consectetur adipiscing elit. Ut elit tellus,
-        luctus nec ullamcorper mattis, pulvinar dapibus leo.
-        I am text block. Click edit button to change this text.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
-        luctus nec ullamcorper</p>
+    <h1>Khách hàng nói gì</h1>
+    <p>Đánh giá của khách hàng, chính là các phản hồi từ khách hàng sau một thời gian sử dụng sản phẩm, dịch vụ mà doanh
+        nghiệp của bạn cung cấp. Các</p>
     <img src="https://movic.b-cdn.net/at_gucci_demo/themes/at_gucci/assets/img/modules/appagebuilder/images/avata-man.jpg"
         alt="">
 </div>

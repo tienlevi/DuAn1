@@ -18,7 +18,7 @@ if(!isset($_SESSION["admin"])){
 echo $_SESSION["admin"];
 if(isset($_POST["dangxuat"])){
     unset($_SESSION["admin"]);
-    header("Location: ../index.php");
+    header("Location: ../client/index.php");
 }
 include "../model/pdo.php";
 include "../model/thongke.php";

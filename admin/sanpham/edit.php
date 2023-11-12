@@ -52,10 +52,6 @@ if(is_file($image)){
                     <input type="text" name="mota" value="<?=$mota?>">
                 </div>
                 <div class="row-input">
-                    <label>Lượt xem </label> <br>
-                    <input type="text" name="luotxem" value="<?=$luotxem?>">
-                </div>
-                <div class="row-input">
                     <label>Danh mục </label> <br>
                     <select name="iddm" id="">
                         <?php foreach ($listdanhmuc as $danhmuc) { 

@@ -16,6 +16,10 @@
   text-align: center;
 }
 
+.content-main h1 {
+  font-weight: bold;
+}
+
 .product {
   display: flex;
   flex-wrap: wrap;

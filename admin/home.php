@@ -7,7 +7,7 @@
         <div class="row-box">
             <div class="small-box">
                 <div class="inner">
-                    <h3>150</h3>
+                    <h3>4</h3>
                     <p>Sản phẩm</p>
                 </div>
                 <div class="icon">
@@ -16,7 +16,7 @@
             </div>
             <div class="small-box">
                 <div class="inner">
-                    <h3>30</h3>
+                    <h3>6</h3>
                     <p>Danh mục</p>
                 </div>
                 <div class="icon">
@@ -26,7 +26,7 @@
             </div>
             <div class="small-box">
                 <div class="inner">
-                    <h3>44</h3>
+                    <h3>1</h3>
                     <p>Người dùng đã đăng ký</p>
                 </div>
                 <div class="icon">
@@ -36,7 +36,7 @@
             </div>
             <div class="small-box">
                 <div class="inner">
-                    <h3>65</h3>
+                    <h3>0</h3>
                     <p>Lượt bình luận</p>
                 </div>
                 <div class="icon">
