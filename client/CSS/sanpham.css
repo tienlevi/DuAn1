@@ -34,6 +34,45 @@
   font-weight: 900;
 }
 
+.quantity {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.quantity input {
+  width: 50px;
+  height: 35px;
+  text-align: center;
+  border: 1px solid #000;
+}
+
+.quantity input::-webkit-inner-spin-button,
+.quantity input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.quantity input:focus {
+  outline: none;
+}
+
+.quantity button {
+  width: 30px;
+  height: 35px;
+  font-size: 16px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+.count {
+  width: 50px;
+  text-align: center;
+}
+
 .product-details .number input {
   width: 40px;
   height: 30px;

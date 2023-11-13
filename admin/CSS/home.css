@@ -117,10 +117,10 @@ table tr td a {
   margin: 0px 10px;
 }
 
-.edit-delete {
+/* .edit-delete {
   max-width: 150px;
   margin-left: auto;
-}
+} */
 
 .edit {
   display: flex;

@@ -84,7 +84,6 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
 include "footer.php";
 
 ?>
-<script type="text/javascript" src="./JS/swiper.js"></script>
 <div class="back-to-top"><i class="fa-solid fa-arrow-up"></i></div>
-
+<script type="text/javascript" src="./JS/swiper.js"></script>
 <script src="./JS/script.js"></script>

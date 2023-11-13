@@ -44,7 +44,7 @@ $url = $_SERVER['REQUEST_URI'];
                              $url == '/WD18331_DuAn1/admin/index.php?act=sp' ||
                              $url == '/WD18331_DuAn1/admin/index.php?act=binhluan' ? ' active-nav-link' : '' ?>">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Quản lý sản phẩm</p>
+                            <p>Sản phẩm</p>
                         </a>
                     </li>
                     <li class="nav-item">

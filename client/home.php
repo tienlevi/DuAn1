@@ -49,9 +49,9 @@
          <div class="product-img">
                  <img src="./Img/'.$img.'" alt="">
                  <div class="product-click">
-                     <div class="product-click-view">
-                         <a href="'.$detail.'">Xem chi tiết</a>
-                     </div>
+                     <a href="'.$detail.'" class="product-click-view">
+                         <p>Xem chi tiết</p>
+                     </a>
                      <div class="product-click-add">
                          <p>Thêm vào giỏ hàng</p>
                      </div>

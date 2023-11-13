@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="./CSS/list.css">
 <link rel="stylesheet" href="./CSS/thongke.css">
 <link rel="stylesheet" href="./CSS/index.css">
+<link rel="stylesheet" href="./CSS/chitietsp.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 <?php
@@ -76,9 +77,6 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             include "sanpham/list.php";
             break;
         case "listsp":
-            include "sanpham/list.php";
-            break;
-        case "sp":
             if(isset($_POST['listok']) && ($_POST['listok'])){
                 $kym = $_POST['kym'];
                 $iddm = $_POST['iddm'];
@@ -88,7 +86,13 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             };
             $listdanhmuc = loadAllDm();
             $listsanpham = loadAllSp($kym,$iddm);
-            include "sanpham/sp.php";
+            include "sanpham/list.php";
+            break;
+        case "chitietsp":
+            if(isset($_GET['id'])&&$_GET['id']>0){
+                $sanpham = loadOneSp($_GET['id']);
+            }
+            include "sanpham/chitiet.php";
             break;
         case "binhluan":
             $listbinhluan = loadAllBl();
@@ -141,6 +145,9 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             break;
         case "donhang":
             include "donhang/list.php";
+            break;
+        case "chitietdonhang":
+                include "donhang/chitiet.php";
             break;
         case "giohang":
             include "giohang/list.php";

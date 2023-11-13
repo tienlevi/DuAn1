@@ -15,8 +15,13 @@ if(is_array($sanpham)){
             <h1><?=$name?></h1>
             <h2><?=$price?>đ</h2>
             <p>Mô tả: <?=$mota?></p>
-            <h3>Số lượng: <input class="number" type="number"></h3>
-
+            <h3>Số lượng:
+                <div class="quantity">
+                    <button class="decrease">-</button>
+                    <input type="number" class="count" value="1">
+                    <button class="increase">+</button>
+                </div>
+            </h3>
             <div class="product-details-click">
                 <p>Thêm vào giỏ hàng</p>
             </div>
@@ -27,7 +32,7 @@ if(is_array($sanpham)){
     </div>
     <div class="comment">
         <h1 style="margin: 10px 15px;">Bình luận</h1>
-        <textarea style="resize: none; margin: 20px 20px;" name="" id="" cols="167" rows="10"></textarea>
+        <textarea style="resize: none; margin: 20px 20px;" name="" id="" cols="167" rows="5"></textarea>
     </div>
     <input style="width: 150px; height: 35px; background-color: #000; color: #fff; font-size: 17px;"
         class="submit-comment" type="submit" value="gửi bình luận">

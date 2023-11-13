@@ -123,9 +123,25 @@ table tr td a {
 }
 
 .edit-delete {
-  max-width: 150px;
-  margin-left: auto;
   text-align: center;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(29, 140, 231);
+  color: #fff;
+  margin: 10px 0px;
+  height: 40px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.detail:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid rgb(29, 140, 231);
 }
 
 .edit {

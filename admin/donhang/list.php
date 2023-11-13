@@ -48,8 +48,8 @@
                     <td style="width: 200px;">Hàng ok</td>
 
                     <td style="height: 100px;" class="edit-delete">
+                        <a href="index.php?act=chitietdonhang" class="detail"> Xem chi tiết </a>
                         <a href="'.$xoa.'" class="delete"> Hủy đơn hàng </a>
-                        <a href="'.$xoa.'" class="edit"> Sửa đơn hàng </a>
                     </td>
                 </tr>
 
