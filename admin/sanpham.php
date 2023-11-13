@@ -43,8 +43,8 @@ function editSp($id,$name,$price,$img,$mota,$luotxem,$iddm){
     header("location: index.php?act=listsp");
 }
 
-function addSp($name,$price,$img,$mota,$luotxem,$iddm){
-    $sql = "INSERT INTO sanpham VALUES(null,'$name','$price','$img','$mota','$luotxem','$iddm')";
+function addSp($name,$price,$img,$mota,$iddm){
+    $sql = "INSERT INTO sanpham VALUES(null,'$name','$price','$img','$mota','$iddm')";
     pdo_execute($sql);
     header("location: index.php?act=listsp");
 }

@@ -20,9 +20,11 @@
             <p>Id sản phẩm: 1</p>
             <p>Tên sản phẩm: Áo Adidas</p>
             <p>Giá: 200000đ</p>
+            <p>Phí vận chuyển: 0đ</p>
+            <p>Phương thức thanh toán: chuyển khoản</p>
             <p>Địa chỉ giao hàng: Đan Phượng - Hà Nội</p>
             <p>Thời gian mua: 6-11-2023</p>
-            <!-- <p>Lượt xem: 16</p> -->
+            <p>Số lượng: 1</p>
             <p>Trạng thái: <span>Thành công</span></p>
             <p>Ghi chú: hàng ok</p>
         </div>

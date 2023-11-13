@@ -63,7 +63,7 @@ $url = $_SERVER['REQUEST_URI'];
                     </li>
                     <li class="nav-item">
                         <a href="index.php?act=donhang"
-                            class="nav-link<?php echo $url == '/WD18331_DuAn1/admin/index.php?act=donhang' ? ' active-nav-link' : '' ?>">
+                            class="nav-link<?php echo $url == '/WD18331_DuAn1/admin/index.php?act=donhang' || $url == '/WD18331_DuAn1/admin/index.php?act=chitietdonhang' ? ' active-nav-link' : '' ?>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Đơn hàng</p>
                         </a>

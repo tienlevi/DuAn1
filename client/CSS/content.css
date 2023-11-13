@@ -52,6 +52,11 @@
   transition: 0.3s ease-in-out;
 }
 
+.product-click a {
+  color: #000;
+  text-decoration: none;
+}
+
 .product-item:hover > .product-img .product-click {
   opacity: 1;
 }

@@ -43,4 +43,11 @@
             <a href="index.php?act=adddm">Thêm danh mục</a>
         </div>
     </div>
+    <script>
+    function confirmDelete(id) {
+        if (confirm("Are you sure you want to delete this record?")) {
+            window.location.href = "delete.php?id=" + id;
+        }
+    }
+    </script>
 </body>

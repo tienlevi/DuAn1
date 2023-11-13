@@ -58,13 +58,13 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
                 $name = $_POST['name'];
                 $price = $_POST['price'];
                 $mota = $_POST['mota'];
-                $luotxem = $_POST['luotxem'];
                 $iddm = $_POST['iddm'];
                 $target = "./Img/";
                 $img = $_FILES["img"]["name"];
                 $target_file = $target.basename($_FILES["img"]["name"]);
                 move_uploaded_file($_FILES["img"]["tmp_name"],$target_file);
-                addSp($name,$price,$img,$mota,$luotxem,$iddm);
+                addSp($name,$price,$img,$mota,$iddm);
+                header("location: index.php?act=listsp");
             }
             $listdanhmuc = loadAllDm();
             include "sanpham/add.php";

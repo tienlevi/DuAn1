@@ -22,7 +22,8 @@ if(is_file($image)){
             <p>Tên sản phẩm: <?=$name?></p>
             <p>Giá: <?=$price?>đ</p>
             <p>Mô tả: <?=$mota?></p>
-            <p>Lượt xem: 16</p>
+            <p>Tên danh mục: Áo</p>
+            <p>Lượt xem: <?=$luotxem?></p>
         </div>
     </div>
     <div class="function-back">

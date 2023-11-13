@@ -32,6 +32,7 @@
                     <td style="width: 150px;">Giá tiền hàng</td>
                     <td style="width: 200px;">Địa chỉ giao hàng</td>
                     <td style="width: 200px;">Thời gian mua</td>
+                    <td style="width: 100px;">Số lượng</td>
                     <td style="width: 200px;">Trạng thái</td>
                     <td style="width: 200px;">Ghi chú</td>
                     <td style="width: 200px;">Chức năng</td>
@@ -44,6 +45,7 @@
                     <td style="width: 150px;">100.000đ</td>
                     <td style="width: 200px;">Đan Phượng - Hà Nội</td>
                     <td style="width: 200px;">6-11-2023</td>
+                    <td style="width: 100px;">1</td>
                     <td style="width: 200px;"><span style="color: green;">Đã thành công</span></td>
                     <td style="width: 200px;">Hàng ok</td>
 
