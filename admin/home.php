@@ -65,8 +65,8 @@
                 echo '<tr>
                 <td style="width: 50px;">'.$id.'</td>
                 <td style="width: 200px;">'.$name.'</td>
-                <td style="width: 100px;">'.$price.'</td>
-                <td style="width: 200px;"><img src="./Img/'.$img.'" alt=""></td>
+                <td style="width: 100px;">'.$giatien.'đ</td>
+                <td style="width: 200px;"><img src="../Img/'.$img.'" alt=""></td>
                 <td style="width: 400px;">'.$mota.'</td>
                 <td style="width: 50px;">'.$iddm.'</td>
                 <td class="edit-delete"><a href="'.$sua.'" class="edit">

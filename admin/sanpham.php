@@ -6,7 +6,7 @@ function loadAllDm(){
 }
 
 function loadAllSp($kym,$iddm){
-    $sql = "SELECT * FROM sanpham WHERE 1";
+    $sql = "SELECT * FROM sanpham";
     if($kym != ""){
        $sql.= " and name like '%".$kym."%'"; 
     }
@@ -37,16 +37,16 @@ function loadOneSp($id){
 //     return $listsanpham;
 // }
 
-function editSp($id,$name,$price,$img,$mota,$luotxem,$iddm){
-    $sql = "UPDATE sanpham set name='$name',price='$price',img='$img',mota='$mota',luotxem='$luotxem',iddm='$iddm' WHERE id = $id";
+function editSp($id,$name,$giatien,$img,$mota,$iddm,$soluong,$luotxem,$trangthai,$thuonghieu,$mucgiamgia){
+    $sql = "UPDATE sanpham set name='$name',giatien='$giatien',img='$img',mota='$mota',iddm='$iddm',soluong='$soluong',luotxem='$luotxem',trangthai='$trangthai',thuonghieu='$thuonghieu',mucgiamgia='$mucgiamgia' WHERE id = $id";
     pdo_execute($sql);
     header("location: index.php?act=listsp");
 }
 
-function addSp($name,$price,$img,$mota,$iddm){
-    $sql = "INSERT INTO sanpham VALUES(null,'$name','$price','$img','$mota','$iddm')";
+function addSp($name,$giatien,$img,$mota,$iddm,$soluong,$luotxem,$ngaytao,$trangthai,$thuonghieu,$mucgiamgia){
+    $sql = "INSERT INTO sanpham VALUES(null,'$name','$giatien','$img','$mota','$iddm','$soluong','$luotxem','$ngaytao','$trangthai','$thuonghieu','$mucgiamgia')";
     pdo_execute($sql);
-    header("location: index.php?act=listsp");
+    header("location: index.php?act=listsp");   
 }
 
 function deleteSp($id){

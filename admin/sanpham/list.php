@@ -27,7 +27,7 @@
                 <td style="width: 100px;">Giá</td>
                 <td style="width: 100px;">Ảnh</td>
                 <td style="width: 250px;">Mô tả</td>
-                <td style="width: 50px;">Id danh mục</td>
+                <td style="width: 80px;">Trạng thái</td>
                 <td style="width: 150px;">Chức năng</td>
             </tr>
             <?php foreach ($listsanpham as $sanpham) { 
@@ -38,10 +38,10 @@
                 echo '<tr>
                 <td>'.$id.'</td>
                 <td>'.$name.'</td>
-                <td>'.$price.'đ</td>
-                <td><img src="./Img/'.$img.'" alt=""></td>
+                <td>'.$giatien.'đ</td>
+                <td><img src="../Img/'.$img.'" alt=""></td>
                 <td>'.$mota.'</td>
-                <td>'.$iddm.'</td>
+                <td>'.($trangthai === 0 ? "Còn hàng" : "Hết hàng").'</td>
                 <td class="edit-delete">
                 <a href="'.$detail.'" class="detail">
                         Chi tiết sản phẩm
@@ -49,7 +49,7 @@
                     <a href="'.$sua.'" class="edit">
                         Sửa
                     </a>
-                    <a href="'.$xoa.'" class="delete">
+                    <a href="javascript:confirmDelete('.$xoa.')" class="delete">
                         Xóa
                     </a>
             </tr>';
@@ -57,3 +57,12 @@
         </table>
     </div>
 </div>
+<script>
+function confirmDelete(del) {
+    if (confirm("Bạn có muốn xóa không ?")) {
+        document.location = del;
+    } else {
+        return false;
+    }
+}
+</script>

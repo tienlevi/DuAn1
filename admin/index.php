@@ -21,6 +21,7 @@ if(isset($_POST["dangxuat"])){
     unset($_SESSION["admin"]);
     header("Location: ../client/index.php");
 }
+include "header.php";
 include "../model/pdo.php";
 include "../model/thongke.php";
 include "../model/taikhoan.php";
@@ -28,7 +29,6 @@ include "../model/binhluan.php";
 include "sanpham.php";
 include "danhmuc.php";
 include "khachhang.php";
-include "header.php";
 if(isset($_GET['act']) && $_GET['act'] != ""){
     $act = $_GET['act'];
     switch ($act) {
@@ -39,15 +39,19 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             if(isset($_POST['sua']) && $_POST['sua']){
                 $id = $_POST['id'];
                 $name = $_POST['name'];
-                $price = $_POST['price'];
+                $giatien = $_POST['giatien'];
                 $mota = $_POST['mota'];
-                $luotxem = $_POST['luotxem'];
                 $iddm = $_POST['iddm'];
-                $target = "./Img/";
+                $soluong = $_POST['soluong'];
+                $luotxem = $_POST['luotxem'];
+                $trangthai = $_POST['trangthai'];
+                $thuonghieu = $_POST['thuonghieu'];
+                $mucgiamgia = $_POST['mucgiamgia'];
+                $target = "../Img/";
                 $img = $_FILES["img"]["name"];
-                $target_file = $target.$img;
+                $target_file = $target.basename($_FILES["img"]["name"]);
                 move_uploaded_file($_FILES["img"]["tmp_name"],$target_file);
-                editSp($id,$name,$price,$img,$mota,$luotxem,$iddm);
+                editSp($id,$name,$giatien,$img,$mota,$iddm,$soluong,$luotxem,$trangthai,$thuonghieu,$mucgiamgia);
             }
             $listdanhmuc = loadAllDm();
             include "sanpham/edit.php";
@@ -56,17 +60,23 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             if(isset($_POST['them']) && $_POST['them']){
                 $id = $_POST['id'];
                 $name = $_POST['name'];
-                $price = $_POST['price'];
+                $giatien = $_POST['giatien'];
                 $mota = $_POST['mota'];
                 $iddm = $_POST['iddm'];
-                $target = "./Img/";
+                $soluong = $_POST['soluong'];
+                $luotxem = $_POST['luotxem'];
+                $ngaytao = date('h:i:sa d/m/Y');
+                $trangthai = $_POST['trangthai'];
+                $thuonghieu = $_POST['thuonghieu'];
+                $mucgiamgia = $_POST['mucgiamgia'];
+                $target = "../Img/";
                 $img = $_FILES["img"]["name"];
                 $target_file = $target.basename($_FILES["img"]["name"]);
                 move_uploaded_file($_FILES["img"]["tmp_name"],$target_file);
-                addSp($name,$price,$img,$mota,$iddm);
-                header("location: index.php?act=listsp");
+                addSp($name,$giatien,$img,$mota,$iddm,$soluong,$luotxem,$ngaytao,$trangthai,$thuonghieu,$mucgiamgia);
             }
             $listdanhmuc = loadAllDm();
+            $listsanpham = loadAllSp("",0);
             include "sanpham/add.php";
             break;
         case "deletesp":

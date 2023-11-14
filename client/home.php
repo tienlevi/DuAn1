@@ -4,7 +4,7 @@
     <div class="swiper-wrapper">
         <div class="swiper-slide">
             <div class="banner-img">
-                <img src="./Img/leoslideshow/slide-1-1920x800.jpg" alt="">
+                <img src="../Img/leoslideshow/slide-1-1920x800.jpg" alt="">
                 <div class="banner-text">
                     <h3>Bộ sưu tập Artifort</h3>
                     <p>Quần áo giá rẻ Tham khảo ngay</p>
@@ -14,7 +14,7 @@
         </div>
         <div class="swiper-slide">
             <div class="banner-img">
-                <img src="./Img/leoslideshow/slide-2-1920x800.jpg" alt="">
+                <img src="../Img/leoslideshow/slide-2-1920x800.jpg" alt="">
                 <div class="banner-text">
                     <h3>Artifort Collectie</h3>
                     <p>Weatherized essentials to help keep<br>them dry, whatever the weather.</p>
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-        <div class="swiper-slide"><img src="./Img/leoslideshow/slide-3-1920x800.jpg" alt="">
+        <div class="swiper-slide"><img src="../Img/leoslideshow/slide-3-1920x800.jpg" alt="">
             <div class="banner-text">
                 <h3>Artifort Collectie</h3>
                 <p>Weatherized essentials to help keep<br>them dry, whatever the weather.</p>
@@ -47,7 +47,7 @@
         $detail = "index.php?act=sanphamct&id=".$id;
          echo '<div class="product-item">
          <div class="product-img">
-                 <img src="./Img/'.$img.'" alt="">
+                 <img src="../Img/'.$img.'" alt="">
                  <div class="product-click">
                      <a href="'.$detail.'" class="product-click-view">
                          <p>Xem chi tiết</p>

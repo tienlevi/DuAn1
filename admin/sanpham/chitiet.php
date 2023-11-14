@@ -15,15 +15,20 @@ if(is_file($image)){
     </div>
     <div class="container">
         <div class="list-product-img">
-            <img src="./Img/<?=$img?>" alt="">
+            <img src="../Img/<?=$img?>" alt="">
         </div>
         <div class="list-product-detail">
             <p>Id sản phẩm: <?=$id?></p>
             <p>Tên sản phẩm: <?=$name?></p>
-            <p>Giá: <?=$price?>đ</p>
+            <p>Giá: <?=$giatien?>đ</p>
             <p>Mô tả: <?=$mota?></p>
-            <p>Tên danh mục: Áo</p>
+            <p>Tên danh mục: <?=$iddm?></p>
             <p>Lượt xem: <?=$luotxem?></p>
+            <p>Ngày tạo: <?=$ngaytao?></p>
+            <p>Trạng thái: <?=$trangthai?></p>
+            <p>Thương hiệu: <?=$thuonghieu?></p>
+            <p>Mức giảm giá: <?=$mucgiamgia?>%</p>
+
         </div>
     </div>
     <div class="function-back">
