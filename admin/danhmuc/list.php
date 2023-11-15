@@ -16,7 +16,8 @@
             <table border="1">
                 <tr>
                     <td style="width: 100px">Id</td>
-                    <td style="width: 500px">Tên danh mục</td>
+                    <td style="width: 800px">Tên danh mục</td>
+                    <td style="width: 200px">Ảnh</td>
                     <td style="width: 100px">Chức năng</td>
                 </tr>
                 <?php foreach ($listdanhmuc as $danhmuc) { 
@@ -26,6 +27,7 @@
                 echo '<tr>
                 <td style="width: 100px;">'.$id.'</td>
                 <td style="width: 500px;">'.$name.'</td>
+                <td style="width: 500px;"><img src="../Img/'.$img.'"/></td>
                 <td style="height: 100px;" class="edit-delete">
                 <a href="'.$sua.'" class="edit">
                         Sửa

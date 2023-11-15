@@ -7,10 +7,10 @@
         <div class="row-box">
             <div class="small-box">
                 <div class="inner">
-                    <?php foreach ($listthongke as $thongke) {
-                extract($thongke);
-           echo '<h3>'.$countsp.'</h3>';
-           } ?>
+                    <h3><?php foreach ($tongsp as $sp) {
+                extract($sp);
+                echo $total;
+           } ?></h3>
                     <p>Sản phẩm</p>
                 </div>
                 <div class="icon">
@@ -19,7 +19,10 @@
             </div>
             <div class="small-box">
                 <div class="inner">
-                    <h3>6</h3>
+                    <h3> <?php foreach ($tongdm as $dm) {
+                extract($dm);
+                echo $total;
+           } ?></h3>
                     <p>Danh mục</p>
                 </div>
                 <div class="icon">
@@ -29,7 +32,10 @@
             </div>
             <div class="small-box">
                 <div class="inner">
-                    <h3>1</h3>
+                    <h3><?php foreach ($tongkhachhang as $khachhang) {
+                extract($khachhang);
+                echo $total;
+           } ?></h3>
                     <p>Người dùng đã đăng ký</p>
                 </div>
                 <div class="icon">

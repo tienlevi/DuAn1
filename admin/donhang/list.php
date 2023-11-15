@@ -49,7 +49,7 @@
                 <td>'.$diachi.'</td>
                 <td>'.$thoigianmua.'</td>
                 <td>'.$soluong.'</td>
-                <td>'.($trangthai === 0 ? "<p style='color: green;'>Kiểm duyệt</p>" : "<p style='color: red;'>Hết hàng</p>").'</td>
+                <td>'.($trangthai === 0 ? "<p style='color: green;'>Thành công</p>" : "<p style='color: red;'>Hủy bỏ</p>").'</td>
                 <td>'.$ghichu.'</td>
                 <td class="edit-delete">
                 <a href="'.$detail.'" class="detail">

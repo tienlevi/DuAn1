@@ -11,8 +11,8 @@ function editDm($id,$name){
     header("location: index.php?act=listdm");
 }
 
-function addDm($name){
-    $sql = "INSERT INTO danhmuc VALUES(null,'$name')";
+function addDm($name,$img){
+    $sql = "INSERT INTO danhmuc VALUES(null,'$name','$img')";
     pdo_execute($sql);
     header("location: index.php?act=listdm");
 }

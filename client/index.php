@@ -32,11 +32,7 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
                 $sdt = $_POST['sdt'];
                 $diachi = $_POST['diachi'];
                 $trangthai = 0;
-                $target = "../Img/";
-                $img = $_FILES["img"]["name"];
-                $target_file = $target.basename($_FILES["img"]["name"]);
-                move_uploaded_file($_FILES["img"]["tmp_name"],$target_file);
-                insert_taikhoan($user,$pass,$email,$diachi,$sdt,$img,$trangthai);
+                insert_taikhoan($user,$pass,$email,$diachi,$sdt,$trangthai);
             }
             include "view/dangky.php";
             break;

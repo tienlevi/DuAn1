@@ -35,10 +35,10 @@
                     <div id="donutchart"></div>
                 </div>
 
-                <div class="chart-view">
+                <!-- <div class="chart-view">
                     <h1>Biểu đồ</h1>
                     <div id="piechart"></div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -49,41 +49,41 @@
         packages: ["corechart"],
     });
 
-    function PieChart() {
-        // Set Data
-        const data = google.visualization.arrayToDataTable([
-            ['Danh mục', 'Số lượng sản phẩm'],
-            <?php 
-        $tongdm = count($listthongke);
-        $i = 1;
-        foreach($listthongke as $thongke) {
-            extract($thongke);
-            if($i == $tongdm) {
-                $dauphay = "";
-            } else {
-                $dauphay = ",";
-            }
-            echo "['".$thongke['tendm']."', ".$thongke['countsp']."]".$dauphay;
-            $i += 1;
-        } ?>
-        ]);
+    // function PieChart() {
+    //     // Set Data
+    //     const data = google.visualization.arrayToDataTable([
+    //         ['Danh mục', 'Số lượng sản phẩm'],
+    //         <?php 
+    //     $tongdm = count($listthongke);
+    //     $i = 1;
+    //     foreach($listthongke as $thongke) {
+    //         extract($thongke);
+    //         if($i == $tongdm) {
+    //             $dauphay = "";
+    //         } else {
+    //             $dauphay = ",";
+    //         }
+    //         echo "['".$thongke['tendm']."', ".$thongke['countsp']."]".$dauphay;
+    //         $i += 1;
+    //     } ?>
+    //     ]);
 
-        // Set Options
-        const options = {
-            title: "Quản lý sản phẩm",
-            'width': 1000,
-            'height': 500
-        };
+    //     // Set Options
+    //     const options = {
+    //         title: "Quản lý sản phẩm",
+    //         'width': 1000,
+    //         'height': 500
+    //     };
 
-        // Draw
-        const chart = new google.visualization.PieChart(
-            document.getElementById("piechart")
-        );
-        chart.draw(data, options);
-    }
+    //     // Draw
+    //     const chart = new google.visualization.PieChart(
+    //         document.getElementById("piechart")
+    //     );
+    //     chart.draw(data, options);
+    // }
 
 
-    google.charts.setOnLoadCallback(PieChart);
+    // google.charts.setOnLoadCallback(PieChart);
 
     function drawChart() {
         var data = google.visualization.arrayToDataTable([

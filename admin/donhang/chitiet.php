@@ -15,7 +15,7 @@ if(is_array($donhang)){
             <p>Tên sản phẩm: <?=$sanpham?></p>
             <p>Giá: <?=$giatien?>đ</p>
             <p>Phí vận chuyển: <?=$phivanchuyen?>đ</p>
-            <p>Phương thức thanh toán: <?=$phuongthucthanhtoan?></p>
+            <p>Phương thức thanh toán: <?=$phuongthucthanhtoan === 0 ? "Chuyển khoản" : "Thanh toán khi giao hàng"?></p>
             <p>Địa chỉ giao hàng: <?=$diachi?></p>
             <p>Thời gian mua: <?=$thoigianmua?></p>
             <p>Số lượng: <?=$soluong?></p>

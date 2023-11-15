@@ -9,11 +9,11 @@ if(is_array($sanpham)){
     <h1 style="text-align: center;">Chi tiết sản phẩm</h1>
     <div class="container">
         <div class="product-detail-img">
-            <img src="./Img/<?=$img?>" alt="1">
+            <img src="../Img/<?=$img?>" alt="1">
         </div>
         <div class="product-details">
             <h1><?=$name?></h1>
-            <h2><?=$price?>đ</h2>
+            <h2><?=$giatien?>đ</h2>
             <p>Mô tả: <?=$mota?></p>
             <h3>Số lượng:
                 <div class="quantity">

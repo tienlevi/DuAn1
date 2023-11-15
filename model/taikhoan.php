@@ -1,6 +1,6 @@
 <?php
-    function insert_taikhoan($user,$pass,$email,$address,$sdt,$img,$trangthai){
-        $sql = "INSERT INTO khachhang VALUES(null,'$user','$pass','$email','$address','$sdt','$img',$trangthai)";
+    function insert_taikhoan($user,$pass,$email,$address,$sdt,$trangthai){
+        $sql = "INSERT INTO khachhang VALUES(null,'$user','$pass','$email','$address','$sdt',$trangthai)";
         pdo_execute($sql);
     }
     function dangnhap($user, $pass){

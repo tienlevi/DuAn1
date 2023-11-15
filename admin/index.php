@@ -30,6 +30,7 @@ include "sanpham.php";
 include "danhmuc.php";
 include "khachhang.php";
 include "donhang.php";
+include "tinhtong.php";
 if(isset($_GET['act']) && $_GET['act'] != ""){
     $act = $_GET['act'];
     switch ($act) {
@@ -103,6 +104,7 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             if(isset($_GET['id'])&&$_GET['id']>0){
                 $sanpham = loadOneSp($_GET['id']);
             }
+            $listdanhmuc = loadAllDm();
             include "sanpham/chitiet.php";
             break;
         case "binhluan":
@@ -124,7 +126,11 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             if(isset($_POST['them']) && $_POST['them']){
                 $id = $_POST['id'];
                 $name = $_POST['name'];
-                addDm($name);
+                $target = "./danhmuc/Image/";
+                $img = $_FILES["img"]["name"];
+                $target_file = $target.basename($_FILES["img"]["name"]);
+                move_uploaded_file($_FILES["img"]["tmp_name"],$target_file);
+                addDm($name,$img);
             }
             include "danhmuc/add.php";
             break;
@@ -177,9 +183,11 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
                 $kym = "";
                 $iddm = 0;
             };
+            $tongdm = tinhtongdm();
+            $tongsp = tinhtongsp();
+            $tongkhachhang = tinhtongkhachhang();
             $listdanhmuc = loadAllDm();
             $listsanpham = loadAllSp($kym,$iddm);
-            $listthongke = loadAllThongKe();
             include "home.php";
             break;
     } 
@@ -191,9 +199,11 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             $kym = "";
             $iddm = 0;
         };
+        $tongdm = tinhtongdm();
+        $tongsp = tinhtongsp();
+        $tongkhachhang = tinhtongkhachhang();
         $listdanhmuc = loadAllDm();
         $listsanpham = loadAllSp($kym,$iddm);
-        $listthongke = loadAllThongKe();
         include "home.php";
 }
 include "footer.php";

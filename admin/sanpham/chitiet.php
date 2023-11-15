@@ -22,10 +22,19 @@ if(is_file($image)){
             <p>Tên sản phẩm: <?=$name?></p>
             <p>Giá: <?=$giatien?>đ</p>
             <p>Mô tả: <?=$mota?></p>
-            <p>Tên danh mục: <?=$iddm?></p>
+            <p>Tên danh mục: <?php foreach ($listdanhmuc as $danhmuc) { 
+                    extract($danhmuc);
+                    if($iddm === $id){
+                        echo $name;
+                    } else {
+                        echo "";
+                    }
+             } ?></p>
             <p>Lượt xem: <?=$luotxem?></p>
             <p>Ngày tạo: <?=$ngaytao?></p>
-            <p>Trạng thái: <?=$trangthai?></p>
+            <p>Trạng thái:
+                <?=$trangthai === 0 ? "<span style='color: green;'>Còn hàng</span>" : "<span style='color: red;'>hết hàng</span>"?>
+            </p>
             <p>Thương hiệu: <?=$thuonghieu?></p>
             <p>Mức giảm giá: <?=$mucgiamgia?>%</p>
 
