@@ -15,14 +15,14 @@
                 </tr>
                 <?php foreach ($listthongke as $thongke) {
                 extract($thongke);
-           echo ' <tr>
+                echo '<tr>
                 <td>'.$madm.'</td>
                 <td>'.$tendm.'</td>
                 <td>'.$countsp.'</td>
                 <td>'.$minprice.'đ</td>
                 <td>'.$maxprice.'đ</td>
                 <td>'.$avgprice.'đ</td>
-            </tr>';
+                </tr>';
            } ?>
             </table>
         </div>

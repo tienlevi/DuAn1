@@ -7,7 +7,10 @@
         <div class="row-box">
             <div class="small-box">
                 <div class="inner">
-                    <h3>4</h3>
+                    <?php foreach ($listthongke as $thongke) {
+                extract($thongke);
+           echo '<h3>'.$countsp.'</h3>';
+           } ?>
                     <p>Sản phẩm</p>
                 </div>
                 <div class="icon">

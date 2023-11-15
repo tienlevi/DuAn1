@@ -179,6 +179,7 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             };
             $listdanhmuc = loadAllDm();
             $listsanpham = loadAllSp($kym,$iddm);
+            $listthongke = loadAllThongKe();
             include "home.php";
             break;
     } 
@@ -192,6 +193,7 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
         };
         $listdanhmuc = loadAllDm();
         $listsanpham = loadAllSp($kym,$iddm);
+        $listthongke = loadAllThongKe();
         include "home.php";
 }
 include "footer.php";
