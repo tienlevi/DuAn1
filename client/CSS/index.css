@@ -12,6 +12,10 @@ body {
   flex-direction: column;
 }
 
+.body-overflow {
+  overflow-y: hidden;
+}
+
 html {
   scroll-behavior: smooth;
 }

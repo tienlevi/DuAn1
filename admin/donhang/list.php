@@ -25,7 +25,6 @@
         <div class="table">
             <table border="1">
                 <tr>
-                    <td style="width: 50px;">STT</td>
                     <td style="width: 50px;">Mã đơn</td>
                     <td style="width: 200px;">Khách hàng</td>
                     <td style="width: 200px;">Tên hàng</td>
@@ -37,23 +36,33 @@
                     <td style="width: 200px;">Ghi chú</td>
                     <td style="width: 200px;">Chức năng</td>
                 </tr>
-                <tr>
-                    <td style="width: 50px;">1</td>
-                    <td style="width: 50px;">1</td>
-                    <td style="width: 200px;">tienlienha123</td>
-                    <td style="width: 200px;">Áo Adidas</td>
-                    <td style="width: 150px;">100.000đ</td>
-                    <td style="width: 200px;">Đan Phượng - Hà Nội</td>
-                    <td style="width: 200px;">6-11-2023</td>
-                    <td style="width: 100px;">1</td>
-                    <td style="width: 200px;"><span style="color: green;">Đã thành công</span></td>
-                    <td style="width: 200px;">Hàng ok</td>
-
-                    <td style="height: 100px;" class="edit-delete">
-                        <a href="index.php?act=chitietdonhang" class="detail"> Xem chi tiết </a>
-                        <a href="'.$xoa.'" class="delete"> Hủy đơn hàng </a>
-                    </td>
-                </tr>
+                <?php foreach ($listdonhang as $donhang) { 
+                    extract($donhang);
+                    $sua = "index.php?act=editsp&id=".$id;
+                    $xoa = "index.php?act=deletesp&id=".$id;
+                    $detail = "index.php?act=chitietdonhang&id=".$id;
+                echo '<tr>
+                <td>'.$id.'</td>
+                <td>'.$khachhang.'</td>
+                <td>'.$sanpham.'</td>
+                <td>'.$giatien.'đ</td>
+                <td>'.$diachi.'</td>
+                <td>'.$thoigianmua.'</td>
+                <td>'.$soluong.'</td>
+                <td>'.($trangthai === 0 ? "<p style='color: green;'>Kiểm duyệt</p>" : "<p style='color: red;'>Hết hàng</p>").'</td>
+                <td>'.$ghichu.'</td>
+                <td class="edit-delete">
+                <a href="'.$detail.'" class="detail">
+                        Chi tiết đơn hàng
+                    </a>
+                    <a href="'.$sua.'" class="edit">
+                        Sửa
+                    </a>
+                    <a href="'.$xoa.'" onclick="return confirmDelete()" class="delete">
+                        Xóa
+                    </a>
+            </tr>';
+             } ?>
 
             </table>
 

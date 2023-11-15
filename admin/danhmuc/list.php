@@ -26,10 +26,11 @@
                 echo '<tr>
                 <td style="width: 100px;">'.$id.'</td>
                 <td style="width: 500px;">'.$name.'</td>
-                <td style="height: 100px;" class="edit-delete"><a href="'.$sua.'" class="edit">
+                <td style="height: 100px;" class="edit-delete">
+                <a href="'.$sua.'" class="edit">
                         Sửa
                     </a>
-                    <a href="'.$xoa.'"
+                    <a href="'.$xoa.'" onclick="return confirmDelete()"
                         class="delete">
                         Xoá
                     </a>
@@ -44,9 +45,11 @@
         </div>
     </div>
     <script>
-    function confirmDelete(id) {
-        if (confirm("Are you sure you want to delete this record?")) {
-            window.location.href = "delete.php?id=" + id;
+    function confirmDelete() {
+        if (confirm("Bạn có muốn xóa không")) {
+            document.location = "index.php?act=listdm";
+        } else {
+            return false;
         }
     }
     </script>

@@ -25,6 +25,19 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             include "dangnhap.php";
             break;
         case "dangky":
+            if(isset($_POST['dangky']) && $_POST['dangky']){
+                $user = $_POST['username'];
+                $pass = $_POST['password'];
+                $email = $_POST['email'];
+                $sdt = $_POST['sdt'];
+                $diachi = $_POST['diachi'];
+                $trangthai = 0;
+                $target = "../Img/";
+                $img = $_FILES["img"]["name"];
+                $target_file = $target.basename($_FILES["img"]["name"]);
+                move_uploaded_file($_FILES["img"]["tmp_name"],$target_file);
+                insert_taikhoan($user,$pass,$email,$diachi,$sdt,$img,$trangthai);
+            }
             include "view/dangky.php";
             break;
         case "sanphamct":

@@ -29,6 +29,7 @@ include "../model/binhluan.php";
 include "sanpham.php";
 include "danhmuc.php";
 include "khachhang.php";
+include "donhang.php";
 if(isset($_GET['act']) && $_GET['act'] != ""){
     $act = $_GET['act'];
     switch ($act) {
@@ -142,11 +143,16 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             $listtk = loadAllTk(); 
             include "taikhoan/list.php";
             break;
-        case "deletetk":
+        case "khoatk":
             if(isset($_GET['id']) && ($_GET['id'] > 0)){
-                delete_taikhoan($_GET['id']);
+                khoaTk($_GET['id']);
             }
-            $listtk = loadAllTk("",0);
+            include "taikhoan/list.php";
+            break;
+        case "molaitk":
+            if(isset($_GET['id']) && ($_GET['id'] > 0)){
+                molaiTk($_GET['id']);
+            }
             include "taikhoan/list.php";
             break;
         case "thongke": 
@@ -154,13 +160,14 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             include "thongke/thongke.php";
             break;
         case "donhang":
+            $listdonhang = loadAllDonHang();
             include "donhang/list.php";
             break;
         case "chitietdonhang":
-                include "donhang/chitiet.php";
-            break;
-        case "giohang":
-            include "giohang/list.php";
+            if(isset($_GET['id'])&&$_GET['id']>0){
+                $donhang = loadOneDonHang($_GET['id']);
+            }
+            include "donhang/chitiet.php";
             break;
         default:
             if(isset($_POST['listok']) && ($_POST['listok'])){

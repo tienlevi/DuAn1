@@ -15,9 +15,18 @@
                     <input type="text" name="name">
                 </div>
                 <div class="row-btn">
-                    <input type="submit" name="them" value="Thêm">
+                    <input onclick="return confirmAdd()" type="submit" name="them" value="Thêm">
                 </div>
             </form>
         </div>
     </div>
+    <script>
+    function confirmAdd() {
+        if (confirm("Bạn có muốn thêm không")) {
+            document.location = "index.php?act=listdm";
+        } else {
+            return false;
+        }
+    }
+    </script>
 </body>

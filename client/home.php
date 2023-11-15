@@ -58,7 +58,7 @@
                  </div>
              </div>
              <div class="product-text">'.$name.'</div>
-             <div class="product-price">'.$price.'đ</div>
+             <div class="product-price">'.$giatien.'đ</div>
          </div>';
     } ?>
     </div>

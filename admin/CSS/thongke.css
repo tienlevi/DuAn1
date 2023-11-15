@@ -10,7 +10,6 @@
 
 .chart-view {
   width: 100%;
-  height: 625px;
   margin: 15px 0px;
   background-color: #fff;
   box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.125);
@@ -20,22 +19,6 @@
   background-color: #f3f3f3;
   border-bottom: 1px solid #23cee9;
   padding: 10px;
-}
-
-.chart-view #donutchart {
-  width: 700px;
-  height: 450px;
-  margin-top: 30px;
-  display: flex;
-  align-items: center;
-}
-
-.chart-view #piechart {
-  width: 700px;
-  height: 450px;
-  margin-top: 30px;
-  display: flex;
-  align-items: center;
 }
 
 @media screen and (max-width: 1350px) {

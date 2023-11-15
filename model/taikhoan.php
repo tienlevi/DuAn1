@@ -1,10 +1,10 @@
 <?php
-    function insert_taikhoan($user,$pass,$email,$address,$tel,$role){
-        $sql = "INSERT INTO user VALUES(null,'$user','$pass','$email','$address','$tel','$role')";
+    function insert_taikhoan($user,$pass,$email,$address,$sdt,$img,$trangthai){
+        $sql = "INSERT INTO khachhang VALUES(null,'$user','$pass','$email','$address','$sdt','$img',$trangthai)";
         pdo_execute($sql);
     }
     function dangnhap($user, $pass){
-        $sql = "SELECT * FROM user WHERE user='".$user."' and pass='".$pass."'";
+        $sql = "SELECT * FROM khachhang WHERE username='".$user."' and password='".$pass."'";
         $taikhoan = pdo_query_one($sql);
        return $taikhoan;
     }

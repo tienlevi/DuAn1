@@ -16,26 +16,28 @@
                     <td style="width: 200px">Email</td>
                     <td style="width: 200px">Địa chỉ</td>
                     <td style="width: 100px">SĐT</td>
-                    <td style="width: 100px">Role</td>
+                    <td style="width: 150px">Ảnh</td>
                     <td style="width: 200px">Trạng thái</td>
-                    <td style="width: 400px">Chức năng</td>
+                    <td style="width: 300px">Chức năng</td>
                 </tr>
                 <?php foreach ($listtk as $tk) {
                 extract($tk);
-                $xoa = "index.php?act=deletetk&id=".$id;
+                $khoataikhoan = "index.php?act=khoatk&id=".$id;
+                $molaitaikhoan = "index.php?act=molaitk&id=".$id;
            echo ' <tr>
                 <td>'.$id.'</td>
                 <td>'.$username.'</td>
                 <td>'.$password.'</td>
                 <td>'.$email.'</td>
-                <td>'.$address.'</td>
-                <td>'.$phone.'</td>
-                <td>'.$idrole.'</td>
-                <td>'.$trangthai.'</td>
+                <td>'.$diachi.'</td>
+                <td>'.$sdt.'</td>
+                <td><img src="./Image/'.$img.'"/></td>
+                <td>'.($trangthai === 0 ? "<p style='color: green;'>Hoạt động</p>" : "<p style='color: red;'>Bị khóa tài khoản</p>").'</td>
                 <td class="edit-delete">
-                    <a href="'.$xoa.'" class="delete">
-                        Khóa tài khoản
-                    </a>
+                    '.($trangthai === 0 ? "<a href=".$khoataikhoan." onclick='return confirmUpdate()' class='delete'>
+                    Khóa tài khoản
+                </a>"
+                 : "<a href=".$molaitaikhoan." onclick='return confirmUpdate()' class='detail'>Mở lại tài khoản</a>").'
                 </td>
             </tr>';
            } ?>
@@ -43,3 +45,12 @@
         </div>
     </div>
 </body>
+<script>
+function confirmUpdate() {
+    if (confirm("Bạn có muốn cập nhật trạng thái không ?")) {
+        document.location = "index.php?act=listsp";
+    } else {
+        return false;
+    }
+}
+</script>

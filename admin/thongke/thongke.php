@@ -13,14 +13,17 @@
                     <td style="width: 200px">Giá thấp nhất</td>
                     <td style="width: 200px">Giá trung bình</td>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Áo</td>
-                    <td>11</td>
-                    <td>800.000đ</td>
-                    <td>110.000đ</td>
-                    <td>400.000đ</td>
-                </tr>
+                <?php foreach ($listthongke as $thongke) {
+                extract($thongke);
+           echo ' <tr>
+                <td>'.$madm.'</td>
+                <td>'.$tendm.'</td>
+                <td>'.$countsp.'</td>
+                <td>'.$minprice.'đ</td>
+                <td>'.$maxprice.'đ</td>
+                <td>'.$avgprice.'đ</td>
+            </tr>';
+           } ?>
             </table>
         </div>
         <div class="chart">
@@ -49,17 +52,27 @@
     function PieChart() {
         // Set Data
         const data = google.visualization.arrayToDataTable([
-            ["Contry", "Mhl"],
-            ["Italy", 54.8],
-            ["France", 48.6],
-            ["Spain", 44.4],
-            ["USA", 23.9],
-            ["Argentina", 14.5],
+            ['Danh mục', 'Số lượng sản phẩm'],
+            <?php 
+        $tongdm = count($listthongke);
+        $i = 1;
+        foreach($listthongke as $thongke) {
+            extract($thongke);
+            if($i == $tongdm) {
+                $dauphay = "";
+            } else {
+                $dauphay = ",";
+            }
+            echo "['".$thongke['tendm']."', ".$thongke['countsp']."]".$dauphay;
+            $i += 1;
+        } ?>
         ]);
 
         // Set Options
         const options = {
             title: "Quản lý sản phẩm",
+            'width': 1000,
+            'height': 500
         };
 
         // Draw
@@ -74,17 +87,27 @@
 
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
-            ["Task", "Hours per Day"],
-            ["Work", 11],
-            ["Eat", 2],
-            ["Commute", 2],
-            ["Watch TV", 2],
-            ["Sleep", 7],
+            ['Danh mục', 'Số lượng sản phẩm'],
+            <?php 
+        $tongdm = count($listthongke);
+        $i = 1;
+        foreach($listthongke as $thongke) {
+            extract($thongke);
+            if($i == $tongdm) {
+                $dauphay = "";
+            } else {
+                $dauphay = ",";
+            }
+            echo "['".$thongke['tendm']."', ".$thongke['countsp']."]".$dauphay;
+            $i += 1;
+        } ?>
         ]);
 
         var options = {
             title: "Quản lý danh mục",
             pieHole: 0.4,
+            'width': 1000,
+            'height': 500
         };
 
         var chart = new google.visualization.PieChart(

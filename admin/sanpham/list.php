@@ -41,7 +41,7 @@
                 <td>'.$giatien.'đ</td>
                 <td><img src="../Img/'.$img.'" alt=""></td>
                 <td>'.$mota.'</td>
-                <td>'.($trangthai === 0 ? "Còn hàng" : "Hết hàng").'</td>
+                <td>'.($trangthai === 0 ? "<p style='color: green;'>Còn hàng</p>" : "<p style='color: red;'>Hết hàng</p>").'</td>
                 <td class="edit-delete">
                 <a href="'.$detail.'" class="detail">
                         Chi tiết sản phẩm
@@ -49,7 +49,7 @@
                     <a href="'.$sua.'" class="edit">
                         Sửa
                     </a>
-                    <a href="javascript:confirmDelete('.$xoa.')" class="delete">
+                    <a href="'.$xoa.'" onclick="return confirmDelete()" class="delete">
                         Xóa
                     </a>
             </tr>';
@@ -58,9 +58,9 @@
     </div>
 </div>
 <script>
-function confirmDelete(del) {
+function confirmDelete() {
     if (confirm("Bạn có muốn xóa không ?")) {
-        document.location = del;
+        document.location = "index.php?act=listsp";
     } else {
         return false;
     }

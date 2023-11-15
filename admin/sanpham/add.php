@@ -64,7 +64,6 @@
     </div>
 </div>
 <script>
-
 function confirmAdd() {
     if (confirm("Bạn có muốn thêm không")) {
         document.location = "index.php?act=listsp";

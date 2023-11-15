@@ -37,6 +37,10 @@
   border-radius: 5px;
 }
 
+.login form .form-input-img input {
+  margin: 17px 0px;
+}
+
 .login .forget-password {
   text-align: center;
   margin-top: 15px;

@@ -1,6 +1,6 @@
 <aside>
     <div class="brand">
-        <img src="./Img/user2-160x160.jpg" alt="" />
+        <img src="../Img/user2-160x160.jpg" alt="" />
         <p>Admin</p>
     </div>
     <div class="sidebar">
@@ -64,7 +64,7 @@
     </div>
 </aside>
 <div class="sidebar-overlay"></div>
-<div class="header">
+<header class="header">
     <div class="menu">
         <div class="menu-bar">
             <i class="fa-solid fa-bars"></i>
@@ -85,4 +85,4 @@
             <i class="fas fa-search fa-fw"></i>
         </button>
     </form>
-</div>
+</header>

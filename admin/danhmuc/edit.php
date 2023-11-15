@@ -1,9 +1,8 @@
 <?php
-// if(is_array($danhmuc)){
-//     extract($danhmuc);
-// }
+if(is_array($danhmuc)){
+    extract($danhmuc);
+}
 ?>
-
 
 <body>
 
@@ -21,14 +20,21 @@
                     <label>Tên danh mục</label> <br>
                     <input type="text" name="name" value="<?=$name?>">
                 </div>
-
                 <div class="row-btn">
-                    <input type="submit" name="sua" value="Sửa">
+                    <input onclick="return confirmEdit()" type="submit" name="sua" value="Sửa">
                 </div>
             </form>
         </div>
     </div>
 </body>
-
+<script>
+function confirmEdit() {
+    if (confirm("Bạn có muốn hoàn tất sửa không")) {
+        document.location = "index.php?act=listdm";
+    } else {
+        return false;
+    }
+}
+</script>
 
 <!-- END HEADER -->
