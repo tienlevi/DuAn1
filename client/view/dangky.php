@@ -18,10 +18,6 @@
                 <p>Nhập mật khẩu</p>
                 <input type="password" name="password" />
             </div>
-            <div class="form-input-img">
-                <p>Ảnh đại diện</p>
-                <input type="file" name="img" />
-            </div>
             <div class="form-input">
                 <p>Địa chỉ</p>
                 <input type="text" name="diachi" />

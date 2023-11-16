@@ -18,7 +18,9 @@ if(is_array($donhang)){
             <p>Phương thức thanh toán: <?=$phuongthucthanhtoan === 0 ? "Chuyển khoản" : "Thanh toán khi giao hàng"?></p>
             <p>Địa chỉ giao hàng: <?=$diachi?></p>
             <p>Thời gian mua: <?=$thoigianmua?></p>
+            <p>Ngày giao hàng: 16-11-2023</p>
             <p>Số lượng: <?=$soluong?></p>
+            <p>Mã xác nhận: 09321</p>
             <p>Trạng thái: <span><?=$trangthai === 0 ? "Tiền mặt" : "Chuyển khoản"?></span></p>
             <p>Ghi chú: <?=$ghichu?></p>
         </div>

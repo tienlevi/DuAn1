@@ -38,7 +38,7 @@ ob_start();
                 <input type="submit" name="dangnhap" value="Đăng nhập">
             </div>
             <div class="forget-password">
-                <a href="">Đăng ký tài khoản</a>
+                <a href="index.php?act=dangky">Đăng ký tài khoản</a>
             </div>
         </form>
     </div>
