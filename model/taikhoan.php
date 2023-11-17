@@ -22,7 +22,7 @@
     }
 
     function checkuser($user, $pass){
-        $sql="SELECT * FROM user WHERE user='".$user."' and pass='".$pass."'";
+        $sql="SELECT * FROM khachhang WHERE username='".$user."' and password='".$pass."'";
         $sp=pdo_query_one($sql);
         return $sp;
     }

@@ -1,7 +1,7 @@
 <aside>
     <div class="brand">
         <img src="../Img/user2-160x160.jpg" alt="" />
-        <p>Admin</p>
+        <p>tienlienha123</p>
     </div>
     <div class="sidebar">
         <div class="form-inline">
@@ -19,31 +19,13 @@
                 <li class="nav-item">
                     <a href="index.php" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>Trang chủ Admin</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.php?act=listdm" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Danh mục</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.php?act=listsp" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Sản phẩm</p>
+                        <p>Trang chủ người dùng</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="index.php?act=listtk" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>Khách hàng</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.php?act=thongke" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Thống kê</p>
+                        <p>Thay đổi thông tin</p>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -69,16 +51,11 @@
         <div class="menu-bar">
             <i class="fa-solid fa-bars"></i>
         </div>
-        <li><a href="../client/index.php">Trang chủ chính</a></li>
+        <li><a href="index.php">Trang chủ</a></li>
+
     </div>
     <form class="user-search" action="index.php?act=sanpham" method="POST">
         <input type="text" class="input" name="kyw" placeholder="Tìm sản phẩm" />
-        <!-- <input
-            type="submit"
-            class="searchs"
-            name="timkiem"
-            value="Tìm kiếm"
-          /> -->
 
         <button type="submit" name="timkiem">
             <i class="fas fa-search fa-fw"></i>

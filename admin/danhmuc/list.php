@@ -13,7 +13,7 @@
             <input class="filter-search" type="submit" name="listok" value="Lọc danh mục" />
         </form>
         <div class="table">
-            <table border="1">
+            <table class="table-bordered" border="1">
                 <tr>
                     <td style="width: 100px">Id</td>
                     <td style="width: 800px">Tên danh mục</td>

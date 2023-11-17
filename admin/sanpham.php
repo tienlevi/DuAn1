@@ -6,14 +6,14 @@ function loadAllDm(){
 }
 
 function loadAllSp($kym,$iddm){
-    $sql = "SELECT * FROM sanpham";
+    $sql = "SELECT * FROM sanpham where 1";
     if($kym != ""){
        $sql.= " and name like '%".$kym."%'"; 
     }
     if($iddm > 0){
         $sql.= " and iddm ='".$iddm."'"; 
     }
-    // $sql.= " order by id desc";
+    $sql.= " order by id desc";
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }

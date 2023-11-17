@@ -40,7 +40,7 @@ if(is_file($image)){
 
         </div>
     </div>
-    <iframe src="./sanpham/binhluanform.php?idpro=<?php if(is_array($sanpham)){
+    <iframe src="./sanpham/binhluan.php?idpro=<?php if(is_array($sanpham)){
     extract($sanpham);
     } 
     echo $id;?>" width="700px" height="300px" frameborder="0"></iframe>

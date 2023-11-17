@@ -25,6 +25,9 @@
             <div class="forget-password">
                 <a href="">Quên mật khẩu ?</a>
             </div>
+            <?php if(isset($_POST['dangky']) && $_POST['dangky']){
+                echo "Đăng ký tài khoản thành công";
+            }  ?>
             <div class="login-btn">
                 <input type="submit" name="dangky" value="Đăng Ký">
             </div>

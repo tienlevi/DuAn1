@@ -57,7 +57,7 @@
             <h1>Tổng quan</h1>
         </div>
         <div class="table">
-            <table border="1">
+            <table class="table-bordered" border="1">
                 <tr>
                     <td style="width: 50px">Id</td>
                     <td style="width: 200px">Tên sản phẩm</td>

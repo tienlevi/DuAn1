@@ -4,14 +4,14 @@ if(isset($_POST["dangnhap"])){
     $password = $_POST["password"];
     if($username == "admin" && $password == "admin"){
         $_SESSION["admin"] = $username;
-        header("location: ../admin/index.php");
+        header("Location: ../admin/index.php");
     } 
 }
 if(isset($_SESSION["admin"])){
-    header("location: ../admin/index.php");
+    header("Location: ../admin/index.php");
 } 
 if(isset($_SESSION["user"])){
-    header("location: ../client/index.php");
+    header("Location: index.php");
 } 
 
 ob_start();

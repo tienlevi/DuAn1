@@ -32,7 +32,7 @@ if(is_array($sanpham)){
     </div>
     <div class="comment">
         <h1 style="margin: 10px 15px;">Bình luận</h1>
-        <textarea style="resize: none; margin: 20px 20px;" name="" id="" cols="167" rows="5"></textarea>
+        <textarea style="width: 100%; resize: none; margin: 20px 20px;" name="" id=""></textarea>
     </div>
     <input style="width: 150px; height: 35px; background-color: #000; color: #fff; font-size: 17px;"
         class="submit-comment" type="submit" value="gửi bình luận">
@@ -42,7 +42,7 @@ if(is_array($sanpham)){
     <div class="other-product">
         <div class="product-item">
             <div class="product-img">
-                <img src="./Img/1.jpg" alt="">
+                <img src="../Img/1.jpg" alt="">
                 <div class="product-click">
                     <div class="product-click-view">
                         <a href="">Xem chi tiết</a>
@@ -57,7 +57,7 @@ if(is_array($sanpham)){
         </div>
         <div class="product-item">
             <div class="product-img">
-                <img src="./Img/11.jpg" alt="">
+                <img src="../Img/11.jpg" alt="">
                 <div class="product-click">
                     <div class="product-click-view">
                         <a href="">Xem chi tiết</a>
@@ -72,7 +72,7 @@ if(is_array($sanpham)){
         </div>
         <div class="product-item">
             <div class="product-img">
-                <img src="./Img/30.jpg" alt="">
+                <img src="../Img/30.jpg" alt="">
                 <div class="product-click">
                     <div class="product-click-view">
                         <a href="">Xem chi tiết</a>
@@ -83,11 +83,11 @@ if(is_array($sanpham)){
                 </div>
             </div>
             <div class="product-text"></div>
-            <div class="product-price"><?=$price?>đ</div>
+            <div class="product-price">300000đ</div>
         </div>
         <div class="product-item">
             <div class="product-img">
-                <img src="./Img/<?=$img?>" alt="">
+                <img src="../Img/2.jpg" alt="">
                 <div class="product-click">
                     <div class="product-click-view">
                         <a href="">Xem chi tiết</a>

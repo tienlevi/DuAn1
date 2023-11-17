@@ -22,7 +22,6 @@ aside {
 }
 .toggle-aside > .brand p {
   display: none;
-  margin-top: 1rem;
 }
 
 .toggle-aside:hover > .brand p {

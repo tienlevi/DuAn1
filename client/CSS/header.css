@@ -40,23 +40,23 @@ header .menu-icon {
   display: none;
 }
 
-header form {
+header .form {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   position: relative;
 }
 
-header form i {
+header .form i {
   cursor: pointer;
 }
 
-header form .header-icon {
+header .form .header-icon {
   font-size: 18px;
   margin: 0px 15px;
 }
 
-header form .header-icon a {
+header .form .header-icon a {
   color: #000;
 }
 

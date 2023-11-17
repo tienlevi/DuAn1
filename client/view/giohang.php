@@ -5,7 +5,7 @@
                 <h1>Giỏ hàng</h1>
             </div>
             <div class="inner-item">
-                <img src="./Img/Img/2.jpg" alt="">
+                <img src="../Img/2.jpg" alt="">
                 <div class="inner-item-name-price">
                     <h2>Áo adidas xanh</h2>
                     <p>200.000đ</p>
@@ -27,7 +27,9 @@
                 <p>Tổng tiền</p>
                 <p>200.000đ</p>
             </div>
-            <button>Mua hàng</button>
+            <div class="total-buy">
+                <a href="index.php?act=thanhtoan">Mua hàng</a>
+            </div>
         </div>
     </div>
 </div>

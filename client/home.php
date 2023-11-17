@@ -38,29 +38,40 @@
 <!-- <div class="row"> -->
 
 <div class="content">
-    <div class="content-main">
-        <h1>Sản phẩm</h1>
-    </div>
-    <div class="product">
-        <?php foreach($listsanpham as $sanpham) {
-        extract($sanpham);
-        $detail = "index.php?act=sanphamct&id=".$id;
-         echo '<div class="product-item">
-         <div class="product-img">
-                 <img src="../Img/'.$img.'" alt="">
-                 <div class="product-click">
-                     <a href="'.$detail.'" class="product-click-view">
-                         <p>Xem chi tiết</p>
-                     </a>
-                     <div class="product-click-add">
-                         <p>Thêm vào giỏ hàng</p>
+    <div class="inner-content">
+        <div class="content-left">
+            <h1>Sản phẩm</h1>
+            <div class="product">
+                <?php foreach($listsanpham as $sanpham) {
+                extract($sanpham);
+                $detail = "index.php?act=sanphamct&id=".$id;
+                 echo '<div class="product-item">
+                 <div class="product-img">
+                         <img src="../Img/'.$img.'" alt="">
+                         <div class="product-click">
+                             <a href="'.$detail.'" class="product-click-view">
+                                 Xem chi tiết
+                             </a>
+                             <div class="product-click-add">
+                                 Thêm vào giỏ hàng
+                             </div>
+                         </div>
                      </div>
-                 </div>
-             </div>
-             <div class="product-text">'.$name.'</div>
-             <div class="product-price">'.$giatien.'đ</div>
-         </div>';
-    } ?>
+                     <div class="product-text">'.$name.'</div>
+                     <div class="product-price">'.$giatien.'đ</div>
+                 </div>';
+            } ?>
+            </div>
+        </div>
+        <div class="content-right">
+            <h1>Danh mục</h1>
+            <?php foreach($listdanhmuc as $danhmuc) {
+                extract($danhmuc);
+                echo '<div class="content-right-tab">
+                <p><i class="fa-solid fa-caret-right"></i><span>'.$name.'</span></p>
+            </div>';
+            } ?>
+        </div>
     </div>
 </div>
 <div class="mkt-customer">

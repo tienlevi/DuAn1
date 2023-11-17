@@ -23,6 +23,21 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
     $act = $_GET['act'];
     switch ($act) {
         case "dangnhap":
+            if(isset($_POST["dangxuat"])){
+                unset($_SESSION["user"]);
+                header("Location: index.php");
+            } 
+            if(isset($_POST['dangnhap'])&&($_POST['dangnhap'])){
+                $user = $_POST['username'];
+                $pass = $_POST['password'];
+                $checkuser = checkuser($user,$pass);
+                if(is_array($checkuser)){
+                    $_SESSION['user'] = $checkuser;
+                    header('location: index.php');
+                }else{
+                    $thongbao="tài khoản không tồn tại. Vui lòng kiểm tra hoặc đăng ký";
+                }
+            }
             include "dangnhap.php";
             break;
         case "dangky":
@@ -46,6 +61,9 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
         case "giohang":
             include "view/giohang.php";
             break;
+        case "vewebsite":
+            include "view/vewebsite.php";
+            break;
         case "thanhtoan":
             include "view/thanhtoan.php";
             break;
@@ -61,7 +79,6 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
                 $iddm = 0;
             }
             $dssp = loadAllSp("",$iddm);
-            // $dssp = loadAllSp();
             $listsanpham = loadAllSp($kym,$iddm);
             $listdanhmuc = loadAllDm();
             include "view/timkiem.php";

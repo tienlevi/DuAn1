@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <div class="row">
+    <div class="wrapper">
         <div class="admin">
 
             <h1>Đơn hàng</h1>
@@ -23,7 +23,7 @@
             <input class="filter-search" type="submit" name="listok" value="Lọc đơn hàng" />
         </form>
         <div class="table">
-            <table border="1">
+            <table class="table-bordered" border="1">
                 <tr>
                     <td style="width: 50px;">Mã đơn</td>
                     <td style="width: 200px;">Khách hàng</td>
@@ -59,7 +59,7 @@
                         Sửa
                     </a>
                     <a href="'.$xoa.'" onclick="return confirmDelete()" class="delete">
-                        Xóa
+                        Hủy giao hàng
                     </a>
             </tr>';
              } ?>
@@ -70,6 +70,14 @@
     </div>
 
 </body>
-
+<script>
+function confirmUpdate() {
+    if (confirm("Bạn có muốn cập nhật trạng thái không ?")) {
+        document.location = "index.php?act=donhang";
+    } else {
+        return false;
+    }
+}
+</script>
 
 </html>

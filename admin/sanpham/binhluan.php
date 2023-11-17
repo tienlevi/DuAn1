@@ -6,19 +6,20 @@
   include "../../model/binhluan.php";
   $idpro = $_REQUEST['idpro'];
   $listbl = loadall_binhluan($idpro);
-  echo $idpro;
 ?>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="../CSS/index.css">
 <div class="wrapper">
-    <div class="box_title">
+    <div class="mt-3 px-3">
         <h2>BÌNH LUẬN</h2>
     </div>
-    <div class="box-content">
-        <table>
+    <div class="mt-3 px-3">
+        <table class="table table-borderless">
             <tr>
-                <th>Id user</th>
-                <th>Nội dung</th>
-                <th>Ngày bình luận</th>
+                <th class="w-5">Id user</th>
+                <th class="w-5">Nội dung</th>
+                <th class="w-5">Ngày bình luận</th>
+                <th class="w-5">Chức năng</th>
             </tr>
             <?php
                      foreach($listbl as $ds){
@@ -27,6 +28,7 @@
                         <td>'.$iduser.'</td>
                         <td>'.$noidung.'</td>
                         <td>'.$ngaybinhluan.'</td>
+                        <td><a href="" class="btn btn-danger">Ẩn bình luận</a></td>
                       </tr>';
                      }
                      ?>
