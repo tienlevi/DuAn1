@@ -1,14 +1,14 @@
-.row {
+.wrapper {
   margin-left: 250px;
   padding: 0px 10px;
 }
 
-.toggle-row {
+.toggle-wrapper {
   margin-left: 75px;
   transition: margin-left 0.3s ease-in-out, margin-right 0.3s ease-in-out;
 }
 
-.row h1 {
+.wrapper h1 {
   text-align: left;
   font-size: 1.8rem;
   font-weight: 400;
@@ -168,7 +168,7 @@ table tr td a {
 }
 
 @media screen and (max-width: 950px) {
-  .row {
+  .wrapper {
     margin-left: 0;
   }
 

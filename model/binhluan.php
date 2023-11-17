@@ -1,7 +1,7 @@
 <?php
 function loadall_binhluan($idpro)
 {
-    $sql="SELECT * from binhluan where idpro='".$idpro."' order by id desc";
+    $sql="SELECT * from binhluan where idpro='$idpro'";
     $listbl = pdo_query($sql);
     return $listbl;
 }
@@ -71,10 +71,7 @@ function update_binhluan($id,$noidung){
 function insert_binhluan($idpro, $iduser, $noidung,$ngaybinhluan)
 {
     if (!empty($noidung)) {
-        $sql = "
-            INSERT INTO binhluan (`noidung`, `iduser`, `idpro`, `ngaybinhluan`)
-            VALUES ('$noidung','$iduser','$idpro','$ngaybinhluan');
-        ";
+        $sql = "INSERT INTO binhluan VALUES(null,'$noidung','$iduser','$idpro','$ngaybinhluan')";
         // echo $sql;
         // die();
         pdo_execute($sql);

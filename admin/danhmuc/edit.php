@@ -6,7 +6,7 @@ if(is_array($danhmuc)){
 
 <body>
 
-    <div class="row">
+    <div class="wrapper">
         <div class="font-title">
             <h1>Sửa danh mục</h1>
         </div>

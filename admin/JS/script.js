@@ -1,13 +1,13 @@
 const menuBar = document.querySelector(".menu-bar");
 const aside = document.querySelector("aside");
-const row = document.querySelector(".row");
+const wrapper = document.querySelector(".wrapper");
 const header = document.querySelector(".header");
 const footer = document.querySelector("footer");
 const sidebarBg = document.querySelector(".sidebar-overlay");
 
 menuBar.addEventListener("click", () => {
   aside.classList.toggle("toggle-aside");
-  row.classList.toggle("toggle-row");
+  wrapper.classList.toggle("toggle-wrapper");
   header.classList.toggle("toggle-header");
   sidebarBg.classList.toggle("sidebar-bg");
   footer.classList.toggle("toggle-footer");
@@ -23,7 +23,7 @@ window.addEventListener("resize", () => {
   }
   if (innerWidth < 1125) {
     aside.classList.add("toggle-aside");
-    row.classList.add("toggle-row");
+    wrapper.classList.add("toggle-wrapper");
     header.classList.add("toggle-header");
     footer.classList.add("toggle-footer");
   }
@@ -36,7 +36,7 @@ window.addEventListener("resize", () => {
     !sidebarBg.classList.remove("sidebar-bg") &&
     innerWidth < 950
   ) {
-    row.classList.remove("toggle-row");
+    wrapper.classList.remove("toggle-wrapper");
     header.classList.remove("toggle-header");
     footer.classList.remove("toggle-footer");
   }

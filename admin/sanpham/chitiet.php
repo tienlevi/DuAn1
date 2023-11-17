@@ -9,7 +9,7 @@ if(is_file($image)){
     echo "";
 }
 ?>
-<div class="row">
+<div class="wrapper">
     <div class="container-h1">
         <h1>Chi tiết sản phẩm</h1>
     </div>
@@ -40,6 +40,10 @@ if(is_file($image)){
 
         </div>
     </div>
+    <iframe src="./sanpham/binhluanform.php?idpro=<?php if(is_array($sanpham)){
+    extract($sanpham);
+    } 
+    echo $id;?>" width="700px" height="300px" frameborder="0"></iframe>
     <div class="function-back">
         <a href="index.php?act=listsp">Quay lại trang sản phẩm</a>
     </div>

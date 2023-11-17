@@ -4,7 +4,7 @@ if(is_array($donhang)){
 }
 
 ?>
-<div class="row">
+<div class="wrapper">
     <div class="container-h1">
         <h1>Chi tiết đơn hàng</h1>
     </div>

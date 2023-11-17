@@ -1,4 +1,4 @@
-<div class="row">
+<div class="wrapper">
     <div class="font-title">
         <h1>Thêm mới sản phẩm</h1>
     </div>

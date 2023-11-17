@@ -15,7 +15,7 @@
             </div>
         </div>
         <nav>
-            <ul class="nav-parent">
+            <div class="nav-parent">
                 <li class="nav-item">
                     <a href="index.php" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
@@ -59,7 +59,7 @@
                         </form>
                     </div>
                 </li>
-            </ul>
+            </div>
         </nav>
     </div>
 </aside>

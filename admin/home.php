@@ -1,6 +1,6 @@
 <body>
 
-    <div class="row">
+    <div class="wrapper">
         <div class="admin">
             <h1>Trang quản lý Admin</h1>
         </div>

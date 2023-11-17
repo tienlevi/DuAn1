@@ -1,9 +1,9 @@
-.row {
+.wrapper {
   margin-left: 250px;
   padding: 0px 10px;
 }
 
-.row h1 {
+.wrapper h1 {
   text-align: left;
   font-size: 1.8rem;
   font-weight: 400;

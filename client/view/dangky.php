@@ -1,4 +1,4 @@
-<div class="row">
+<div class="wrapper">
     <div class="login">
         <h1>Đăng ký</h1>
         <form action="" method="post" class="form-login">

@@ -5,7 +5,7 @@ if(is_array($sanpham)){
 ?>
 <link rel="stylesheet" href="./CSS/sanpham.css" />
 
-<div class="row">
+<div class="wrapper">
     <h1 style="text-align: center;">Chi tiết sản phẩm</h1>
     <div class="container">
         <div class="product-detail-img">

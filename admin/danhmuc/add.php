@@ -1,6 +1,6 @@
 <body>
 
-    <div class="row">
+    <div class="wrapper">
         <div class="font-title">
             <h1>Thêm mới danh mục</h1>
         </div>

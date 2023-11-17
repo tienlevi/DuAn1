@@ -16,7 +16,7 @@ if(isset($_SESSION["user"])){
 
 ob_start();
 ?>
-<div class="row">
+<div class="wrapper">
     <div class="login">
         <h1>Đăng nhập</h1>
         <form action="" method="post" class="form-login">

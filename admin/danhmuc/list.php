@@ -1,5 +1,5 @@
 <body>
-    <div class="row">
+    <div class="wrapper">
         <div class="admin">
             <h1>Danh sách danh mục</h1>
         </div>

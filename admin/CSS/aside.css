@@ -28,12 +28,12 @@ aside {
   display: block;
 }
 
-.toggle-aside > .sidebar nav ul li .nav-link p {
+.toggle-aside > .sidebar nav .nav-parent li .nav-link p {
   transition: 0.3s;
   opacity: 0;
 }
 
-.toggle-aside:hover > .sidebar nav ul li .nav-link p {
+.toggle-aside:hover > .sidebar nav .nav-parent li .nav-link p {
   opacity: 1;
 }
 
@@ -135,15 +135,15 @@ nav {
   margin-top: 4px;
 }
 
-nav ul {
+nav .nav-parent {
   margin: 10px 0px;
 }
 
-nav ul .nav-item {
+nav .nav-parent .nav-item {
   display: flex;
 }
 
-nav ul li .nav-link {
+nav .nav-parent .nav-link {
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -156,27 +156,28 @@ nav ul li .nav-link {
   border-radius: 4px;
 }
 
-nav ul li .nav-link:hover {
+nav .nav-parent li .nav-link:hover {
   background-color: #494e53;
   color: #d2d4d5;
 }
 
-nav ul li .active-nav-link {
+nav .nav-parent li .active-nav-link {
   background-color: rgba(255, 255, 255, 0.9);
   color: #343a40;
 }
 
-nav ul li .active-nav-link:hover {
+nav .nav-parent li .active-nav-link:hover {
   background-color: rgba(255, 255, 255, 0.9);
   color: #343a40;
 }
 
-nav ul li .nav-link p {
+nav .nav-parent li .nav-link p {
   padding-left: 8px;
   font-size: 16px;
+  margin-top: 1rem;
 }
 
-nav ul li .nav-link i {
+nav .nav-parent li .nav-link i {
   margin-left: 12px;
   font-size: 16px;
 }

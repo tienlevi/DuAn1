@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="./CSS/index.css">
 <link rel="stylesheet" href="./CSS/chitietsp.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
 <?php
 session_start();
@@ -24,13 +25,14 @@ if(isset($_POST["dangxuat"])){
 include "header.php";
 include "../model/pdo.php";
 include "../model/thongke.php";
-include "../model/taikhoan.php";
 include "../model/binhluan.php";
+include "../model/taikhoan.php";
 include "sanpham.php";
 include "danhmuc.php";
 include "khachhang.php";
 include "donhang.php";
 include "tinhtong.php";
+include "test.php";
 if(isset($_GET['act']) && $_GET['act'] != ""){
     $act = $_GET['act'];
     switch ($act) {
@@ -106,10 +108,7 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             }
             $listdanhmuc = loadAllDm();
             include "sanpham/chitiet.php";
-            break;
-        case "binhluan":
-            $listbinhluan = loadAllBl();
-            include "sanpham/binhluan.php";
+            // include "sanpham/binhluanform.php";
             break;
         case "editdm":
             if(isset($_GET['id'])&&$_GET['id']>0){
