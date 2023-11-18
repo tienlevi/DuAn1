@@ -1,15 +1,4 @@
 <?php
-if(isset($_POST["dangnhap"])){
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    if($username == "admin" && $password == "admin"){
-        $_SESSION["admin"] = $username;
-        header("Location: ../admin/index.php");
-    } 
-}
-if(isset($_SESSION["admin"])){
-    header("Location: ../admin/index.php");
-} 
 if(isset($_SESSION["user"])){
     header("Location: index.php");
 } 

@@ -1,3 +1,9 @@
+<?php 
+ if(isset($_POST["dangxuat"])){
+    unset($_SESSION["user"]);
+    header("Location: index.php");
+} 
+?>
 <header class="header">
     <div class="menu-icon">
         <i class="fa-solid fa-bars"></i>
@@ -38,14 +44,13 @@
                     extract($_SESSION['user']);
                     echo '<p>'.$username.'</p>
                     <form action="" method="post">
-                    <input type="submit" name="dangxuat" value="đăng xuất" style="background: none; border: none;">
+                    <button type="submit" name="dangxuat" style="background: none; border: none;"><i class="fa-solid fa-arrow-right-to-bracket"></i><span>đăng xuất</span></button>
                 </form>';
+                } else {
+                    echo " <li><a href='index.php?act=dangnhap'><i class='fa-solid fa-arrow-right-to-bracket'></i> <span>Đăng
+                    nhập</span></a></li>";
                 }?>
-                <?php if(isset($_SESSION["admin"])){
-                    echo $_SESSION["admin"];
-                }  ?>
-                <li><a href="index.php?act=dangnhap"><i class="fa-solid fa-arrow-right-to-bracket"></i> <span>Đăng
-                            nhập</span></a></li>
+
                 <li><a href="index.php?act=dangky"><i class="fa-solid fa-user-plus"></i><span>Đăng ký</span></a></li>
             </div>
         </div>

@@ -23,10 +23,6 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
     $act = $_GET['act'];
     switch ($act) {
         case "dangnhap":
-            if(isset($_POST["dangxuat"])){
-                unset($_SESSION["user"]);
-                header("Location: index.php");
-            } 
             if(isset($_POST['dangnhap'])&&($_POST['dangnhap'])){
                 $user = $_POST['username'];
                 $pass = $_POST['password'];

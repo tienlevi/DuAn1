@@ -127,6 +127,10 @@ header .form .header-icon a {
   z-index: 100;
 }
 
+.user-dropdown {
+  font-size: 13px;
+}
+
 .user-dropdown li {
   list-style: none;
   margin: 5px 0px;

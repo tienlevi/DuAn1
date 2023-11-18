@@ -40,7 +40,7 @@
 <div class="content">
     <div class="inner-content">
         <div class="content-left">
-            <h1>Sản phẩm</h1>
+            <h1>Sản phẩm bán chạy</h1>
             <div class="product">
                 <?php foreach($listsanpham as $sanpham) {
                 extract($sanpham);

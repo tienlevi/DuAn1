@@ -12,16 +12,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
 <?php
-session_start();
-if(!isset($_SESSION["admin"])){
-   echo "Ban khong co quyen truy cap trang nay";
-   die;
-}
-echo $_SESSION["admin"];
-if(isset($_POST["dangxuat"])){
-    unset($_SESSION["admin"]);
-    header("Location: ../client/index.php");
-}
 include "header.php";
 include "../model/pdo.php";
 include "../model/thongke.php";
