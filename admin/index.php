@@ -98,7 +98,6 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             }
             $listdanhmuc = loadAllDm();
             include "sanpham/chitiet.php";
-            // include "sanpham/binhluanform.php";
             break;
         case "editdm":
             if(isset($_GET['id'])&&$_GET['id']>0){
@@ -153,6 +152,12 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
         case "thongke": 
             $listthongke = loadAllThongKe();
             include "thongke/thongke.php";
+            break;
+        case "huydonhang":
+            if(isset($_GET['id']) && ($_GET['id'] > 0)){
+                huyHang($_GET['id']);
+            }
+            include "taikhoan/list.php";
             break;
         case "donhang":
             $listdonhang = loadAllDonHang();

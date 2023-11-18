@@ -10,4 +10,11 @@ function loadOneDonHang($id){
     $donhang = pdo_query_one($sql);
     return $donhang;
 }
+
+function huyHang($id){
+    $sql = "UPDATE donhang SET trangthai = 1 WHERE id = $id";
+    pdo_execute($sql);
+    header("location: index.php?act=donhang");
+}
+
 ?>

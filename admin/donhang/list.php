@@ -39,7 +39,7 @@
                 <?php foreach ($listdonhang as $donhang) { 
                     extract($donhang);
                     $sua = "index.php?act=editsp&id=".$id;
-                    $xoa = "index.php?act=deletesp&id=".$id;
+                    $huyhang = "index.php?act=huydonhang&id=".$id;
                     $detail = "index.php?act=chitietdonhang&id=".$id;
                 echo '<tr>
                 <td>'.$id.'</td>
@@ -55,10 +55,7 @@
                 <a href="'.$detail.'" class="detail">
                         Chi tiết đơn hàng
                     </a>
-                    <a href="'.$sua.'" class="edit">
-                        Sửa
-                    </a>
-                    <a href="'.$xoa.'" onclick="return confirmDelete()" class="delete">
+                    <a href="'.$huyhang.'" onclick="return confirmUpdate()" class="delete">
                         Hủy giao hàng
                     </a>
             </tr>';
