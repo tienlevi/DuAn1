@@ -16,9 +16,13 @@
 session_start();
 include "../model/pdo.php";
 include "../model/taikhoan.php";
-include "../admin/sanpham.php";
-include "../admin/danhmuc.php";
+include "../model/sanpham.php";
+include "../model/danhmuc.php";
 include "header.php";
+if(!isset($_SESSION['mycart'])) {
+    $_SESSION['mycart'] = [];
+}
+
 if(isset($_GET['act']) && $_GET['act'] != ""){
     $act = $_GET['act'];
     switch ($act) {
@@ -55,13 +59,35 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             include "view/chitietsanpham.php";
             break;
         case "giohang":
+            if(isset($_POST['addtocart']) && $_POST['addtocart']){
+                $id = $_POST['id'];
+                $name = $_POST['name'];
+                $img = $_POST['img'];
+                $giatien = $_POST['giatien'];
+                $soluong = 1;
+                $tien = $soluong * $giatien;
+                $giohang = [$id,$name,$img,$giatien,$tien];
+                array_push($_SESSION['mycart'],$giohang);
+            }
             include "view/giohang.php";
+            break;
+        case "deletecart":
+            if(isset($_GET['id'])){
+                array_splice($_SESSION['mycart'],$_GET['id'],1);
+            } else {
+                $_SESSION['mycart'] = [];
+            }
+            header("Location: index.php?act=giohang");
             break;
         case "vewebsite":
             include "view/vewebsite.php";
             break;
         case "thanhtoan":
             include "view/thanhtoan.php";
+            break;
+        case "tatcasp":
+            $listsanpham = loadAllSp();
+            include "view/tatcasp.php";
             break;
         case "timkiem":
             if(isset($_POST['kyw']) && ($_POST['kyw'] != "")){
@@ -74,21 +100,23 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             } else {
                 $iddm = 0;
             }
-            $dssp = loadAllSp("",$iddm);
-            $listsanpham = loadAllSp($kym,$iddm);
+            $dssp = loadAllSpFilter("",$iddm);
+            $listsanpham = loadAllSpFilter($kym,$iddm);
             $listdanhmuc = loadAllDm();
             include "view/timkiem.php";
             break;
+        case "timkiemdm":
+            if(isset($_GET['iddm']) && ($_GET['iddm']) > 0){
+                $iddm = $_GET['iddm'];
+                $danhmuc = loadOneDm($_GET['iddm']);
+            } else {
+                $iddm = 0;
+            }
+            $listsanpham = loadAllSpFilter("",$iddm);
+            include "view/timkiemdm.php";
+            break;
         default:
-        if(isset($_POST['listok']) && ($_POST['listok'])){
-            $kym = $_POST['kym'];
-            $iddm = $_POST['iddm'];
-        } else {
-            $kym = "";
-            $iddm = 0;
-        };
-        $listdanhmuc = loadAllDm();
-        $listsanpham = loadAllSp($kym,$iddm);
+        $listsanpham = loadAllSp();
             include "home.php";
             break;
     } 

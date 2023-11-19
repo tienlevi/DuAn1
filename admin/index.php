@@ -17,10 +17,10 @@ include "../model/pdo.php";
 include "../model/thongke.php";
 include "../model/binhluan.php";
 include "../model/taikhoan.php";
-include "sanpham.php";
-include "danhmuc.php";
-include "khachhang.php";
-include "donhang.php";
+include "../model/sanpham.php";
+include "../model/danhmuc.php";
+include "../model/khachhang.php";
+include "../model/donhang.php";
 include "tinhtong.php";
 include "test.php";
 if(isset($_GET['act']) && $_GET['act'] != ""){
@@ -43,7 +43,7 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
                 $mucgiamgia = $_POST['mucgiamgia'];
                 $target = "../Img/";
                 $img = $_FILES["img"]["name"];
-                $target_file = $target.basename($_FILES["img"]["name"]);
+                $target_file = $target.$img;
                 move_uploaded_file($_FILES["img"]["tmp_name"],$target_file);
                 editSp($id,$name,$giatien,$img,$mota,$iddm,$soluong,$luotxem,$trangthai,$thuonghieu,$mucgiamgia);
             }
@@ -170,34 +170,20 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             include "donhang/chitiet.php";
             break;
         default:
-            if(isset($_POST['listok']) && ($_POST['listok'])){
-                $kym = $_POST['kym'];
-                $iddm = $_POST['iddm'];
-            } else {
-                $kym = "";
-                $iddm = 0;
-            };
             $tongdm = tinhtongdm();
             $tongsp = tinhtongsp();
             $tongkhachhang = tinhtongkhachhang();
             $listdanhmuc = loadAllDm();
-            $listsanpham = loadAllSp($kym,$iddm);
+            $listsanpham = loadAllSp();
             include "home.php";
             break;
     } 
 } else {
-        if(isset($_POST['listok']) && ($_POST['listok'])){
-            $kym = $_POST['kym'];
-            $iddm = $_POST['iddm'];
-        } else {
-            $kym = "";
-            $iddm = 0;
-        };
         $tongdm = tinhtongdm();
         $tongsp = tinhtongsp();
         $tongkhachhang = tinhtongkhachhang();
         $listdanhmuc = loadAllDm();
-        $listsanpham = loadAllSp($kym,$iddm);
+        $listsanpham = loadAllSp();
         include "home.php";
 }
 include "footer.php";

@@ -14,7 +14,7 @@
     <div class="menu">
         <li><a href="index.php">Trang chủ</a></li>
         <li><a href="">Shop</a></li>
-        <li><a href="">Sản phẩm</a></li>
+        <li><a href="index.php?act=tatcasp">Sản phẩm</a></li>
         <li><a href="">Liên hệ</a></li>
         <li><a href="">Về website</a></li>
     </div>
@@ -48,10 +48,11 @@
                 </form>';
                 } else {
                     echo " <li><a href='index.php?act=dangnhap'><i class='fa-solid fa-arrow-right-to-bracket'></i> <span>Đăng
-                    nhập</span></a></li>";
+                    nhập</span></a></li>
+                <li><a href='index.php?act=dangky'><i class='fa-solid fa-user-plus'></i><span>Đăng ký</span></a></li>
+                    ";
                 }?>
 
-                <li><a href="index.php?act=dangky"><i class="fa-solid fa-user-plus"></i><span>Đăng ký</span></a></li>
             </div>
         </div>
         <div class="header-icon">

@@ -38,12 +38,25 @@ h1 {
 
 .item h2 {
   color: #777;
+  font-size: 21px;
 }
 
 .inner-item {
   display: flex;
   justify-content: space-between;
   padding: 16px;
+}
+
+.inner-item a {
+  color: #000;
+}
+
+.inner-item-name {
+  display: flex;
+}
+
+.inner-item-name-price {
+  margin-left: 9px;
 }
 
 .total {

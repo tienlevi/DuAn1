@@ -194,15 +194,14 @@
   color: #000;
 }
 
-.product-click-add {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.product-details .product-click-add input[type="submit"] {
   width: 200px;
-  height: 40px;
+  height: 64px;
   margin: 13px 0px;
-  background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #000;
 }
 
 .product-text {

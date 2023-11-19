@@ -52,9 +52,13 @@
                              <a href="'.$detail.'" class="product-click-view">
                                  Xem chi tiết
                              </a>
-                             <div class="product-click-add">
-                                 Thêm vào giỏ hàng
-                             </div>
+                             <form action="index.php?act=giohang" method="post" class="product-click-add">
+                             <input type="hidden" name="id" value="'.$id.'"/>    
+                             <input type="hidden" name="name" value="'.$name.'"/>
+                             <input type="hidden" name="img" value="'.$img.'"/>
+                             <input type="hidden" name="giatien" value="'.$giatien.'"/>
+                             <input type="submit" name="addtocart" value="Thêm vào giỏ hàng"/>
+                             </form>
                          </div>
                      </div>
                      <div class="product-text">'.$name.'</div>
@@ -67,9 +71,9 @@
             <h1>Danh mục</h1>
             <?php foreach($listdanhmuc as $danhmuc) {
                 extract($danhmuc);
-                echo '<div class="content-right-tab">
+                echo '<a href="index.php?act=timkiemdm&iddm='.$id.'" class="content-right-tab">
                 <p><i class="fa-solid fa-caret-right"></i><span>'.$name.'</span></p>
-            </div>';
+            </a>';
             } ?>
         </div>
     </div>

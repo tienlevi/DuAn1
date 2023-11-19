@@ -4,7 +4,6 @@ const formSearch = document.querySelector(".form-search");
 const userIcon = document.querySelector("#user-icon");
 const userDropdown = document.querySelector(".user-dropdown");
 const backtotop = document.querySelector(".back-to-top");
-const addToCart = document.querySelector(".product-details-click");
 const menuIcon = document.querySelector("header .menu-icon");
 const menuRes = document.querySelector("header .menu-res");
 const closeIcon = document.querySelector("header .menu-res i");
@@ -28,10 +27,6 @@ searchIcon.addEventListener("click", () => {
 
 userIcon.addEventListener("click", () => {
   userDropdown.classList.toggle("user-dropdown-active");
-});
-
-addToCart.addEventListener("click", () => {
-  alert("Thêm giỏ hàng thành công");
 });
 
 window.addEventListener("scroll", () => {

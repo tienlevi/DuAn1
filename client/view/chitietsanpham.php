@@ -22,9 +22,13 @@ if(is_array($sanpham)){
                     <button class="increase">+</button>
                 </div>
             </h3>
-            <div class="product-details-click">
-                <p>Thêm vào giỏ hàng</p>
-            </div>
+            <form action="index.php?act=giohang" method="post" class="product-click-add">
+                <input type="hidden" name="id" value="<?=$id?>" />
+                <input type="hidden" name="name" value="<?=$name?>" />
+                <input type="hidden" name="img" value="<?=$img?>" />
+                <input type="hidden" name="giatien" value="<?=$giatien?>" />
+                <input type="submit" name="addtocart" value="Thêm vào giỏ hàng" />
+            </form>
             <div class="product-details-buy">
                 <a href="index.php?act=thanhtoan">Mua hàng</a>
             </div>

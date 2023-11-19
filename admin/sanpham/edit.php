@@ -24,7 +24,7 @@ if(is_file($image)){
 
 <body>
 
-    <div class="row">
+    <div class="wrapper">
         <div class="font-title">
             <h1>Sửa sản phẩm</h1>
         </div>

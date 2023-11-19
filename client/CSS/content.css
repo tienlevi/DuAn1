@@ -36,6 +36,8 @@
   margin: 15px 0px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  color: #000;
+  text-decoration: none;
 }
 
 .content-right-tab:hover {
@@ -108,14 +110,12 @@
   color: #000;
 }
 
-.product-click-add {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.product-click .product-click-add input[type="submit"] {
   width: 200px;
   height: 40px;
   margin: 13px 0px;
-  background-color: rgba(255, 255, 255, 0.95);
+  border: none;
+  background: rgba(255, 255, 255, 0.95);
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 

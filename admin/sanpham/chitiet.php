@@ -26,9 +26,7 @@ if(is_file($image)){
                     extract($danhmuc);
                     if($iddm === $id){
                         echo $name;
-                    } else {
-                        echo "";
-                    }
+                    } 
              } ?></p>
             <p>Lượt xem: <?=$luotxem?></p>
             <p>Ngày tạo: <?=$ngaytao?></p>

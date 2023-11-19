@@ -1,6 +1,11 @@
+<?php
+if(is_array($danhmuc)){
+    extract($danhmuc);
+}
+?>
 <div class="result-search">
     <div class="result-search-main">
-        <h1>Kết quả tìm kiếm <?=$kym?></h1>
+        <h1>Danh mục tìm kiếm <?=$name?></h1>
     </div>
     <div class="aside"></div>
     <div class="product">
@@ -21,12 +26,12 @@
                         <a href="'.$detail.'">Xem chi tiết</a>
                     </div>
                     <form action="index.php?act=giohang" method="post" class="product-click-add">
-                             <input type="hidden" name="id" value="'.$id.'"/>    
-                             <input type="hidden" name="name" value="'.$name.'"/>
-                             <input type="hidden" name="img" value="'.$img.'"/>
-                             <input type="hidden" name="giatien" value="'.$giatien.'"/>
-                             <input type="submit" name="addtocart" value="Thêm vào giỏ hàng"/>
-                             </form>
+                    <input type="hidden" name="id" value="'.$id.'"/>    
+                    <input type="hidden" name="name" value="'.$name.'"/>
+                    <input type="hidden" name="img" value="'.$img.'"/>
+                    <input type="hidden" name="giatien" value="'.$giatien.'"/>
+                    <input type="submit" name="addtocart" value="Thêm vào giỏ hàng"/>
+                    </form>
                 </div>
             </div>
             <div class="product-text">'.$name.'</div>
