@@ -218,6 +218,19 @@
   font-weight: 700;
 }
 
+.comment input {
+  width: 100%;
+}
+
+.comment input[type="submit"] {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  width: 200px;
+  height: 35px;
+  margin-top: 15px;
+}
+
 .submit-comment {
   margin: 0px 17px;
 }

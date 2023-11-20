@@ -35,12 +35,15 @@
 .content-right-tab {
   margin: 15px 0px;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
   color: #000;
   text-decoration: none;
 }
 
-.content-right-tab:hover {
+.content-right-tab p {
+  transition: all 0.2s ease-in-out;
+}
+
+.content-right-tab p:hover {
   margin-left: 10px;
 }
 

@@ -34,12 +34,10 @@ if(is_array($sanpham)){
             </div>
         </div>
     </div>
-    <div class="comment">
-        <h1 style="margin: 10px 15px;">Bình luận</h1>
-        <textarea style="width: 100%; resize: none; margin: 20px 20px;" name="" id=""></textarea>
-    </div>
-    <input style="width: 150px; height: 35px; background-color: #000; color: #fff; font-size: 17px;"
-        class="submit-comment" type="submit" value="gửi bình luận">
+    <iframe src="./view/binhluanform.php?idpro=<?php if(is_array($sanpham)){
+    extract($sanpham);
+    } 
+    echo $id;?>" width="100%" height="300px" frameborder="0"></iframe>
     <div class="other">
         <h1>Sản phẩm khác</h1>
     </div>
