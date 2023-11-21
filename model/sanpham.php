@@ -24,6 +24,18 @@ function loadAllSp(){
     return $listsanpham;
 }
 
+function topSp(){
+    $sql = "SELECT * FROM sanpham ORDER BY name DESC LIMIT 12";
+    $topsp = pdo_query($sql);
+    return $topsp;
+}
+
+function spKhac(){
+    $sql = "SELECT * FROM sanpham ORDER BY id DESC LIMIT 4";
+    $topsp = pdo_query($sql);
+    return $topsp;
+}
+
 function loadOneSp($id){
     $sql = "SELECT * FROM sanpham WHERE id = $id";
     $sanpham = pdo_query_one($sql);

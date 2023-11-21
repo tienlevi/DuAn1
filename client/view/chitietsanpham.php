@@ -3,7 +3,6 @@ if(is_array($sanpham)){
     extract($sanpham);
 }
 ?>
-<link rel="stylesheet" href="./CSS/sanpham.css" />
 
 <div class="wrapper">
     <h1 style="text-align: center;">Chi tiết sản phẩm</h1>

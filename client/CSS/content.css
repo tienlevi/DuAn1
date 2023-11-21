@@ -10,50 +10,14 @@
   justify-content: space-between;
 }
 
-.content-left {
-  width: 80%;
-  margin: 10px 0px;
-  padding: 0px 15px;
+.inner-content h1 {
+  font-size: 30px;
+  text-align: center;
 }
 
 .content-left h1 {
   font-weight: bold;
   padding: 0px 15px;
-}
-
-.content-right {
-  width: 20%;
-  margin: 10px 0px;
-  float: right;
-}
-
-.content-right h1 {
-  font-weight: bold;
-  text-align: left;
-}
-
-.content-right-tab {
-  margin: 15px 0px;
-  cursor: pointer;
-  color: #000;
-  text-decoration: none;
-}
-
-.content-right-tab p {
-  transition: all 0.2s ease-in-out;
-}
-
-.content-right-tab p:hover {
-  margin-left: 10px;
-}
-
-.content-right-tab p {
-  font-size: 20px;
-}
-
-.content-right-tab span {
-  font-size: 18px;
-  margin-left: 14px;
 }
 
 .product {
@@ -69,11 +33,11 @@
   cursor: pointer;
 }
 
-.product-img {
+.product-item .product-img {
   position: relative;
 }
 
-.product-img img {
+.product-item .product-img img {
   width: 295px;
   height: 350px;
   object-fit: cover;
@@ -93,7 +57,7 @@
   text-decoration: none;
 }
 
-.product-item:hover > .product-img .product-click {
+.product-item:hover > .product-img a .product-click {
   opacity: 1;
 }
 
@@ -106,6 +70,12 @@
   margin: 13px 0px;
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.25s ease-in-out;
+}
+
+.product-click-view:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 .product-click-view a {
@@ -120,6 +90,12 @@
   border: none;
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.25s ease-in-out;
+}
+
+.product-click .product-click-add input[type="submit"]:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 .product-text {

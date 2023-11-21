@@ -48,7 +48,7 @@
         margin-bottom: 0;
     }
     </style>
-    <div class="container">
+    <div class="wrapper">
         <h1>Chào mừng đến với công ty của chúng tôi</h1>
         <section>
             <h2 class="section-title">Những sản phẩm chất lượng hàng đầu</h2>

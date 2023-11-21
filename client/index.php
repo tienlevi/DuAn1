@@ -3,13 +3,13 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="./CSS/index.css" />
 <link rel="stylesheet" href="./CSS/header.css" />
-<link rel="stylesheet" href="./CSS/slider.css" />
 <link rel="stylesheet" href="./CSS/content.css" />
 <link rel="stylesheet" href="./CSS/footer.css" />
 <link rel="stylesheet" href="./CSS/form.css" />
 <link rel="stylesheet" href="./CSS/giohang.css" />
 <link rel="stylesheet" href="./CSS/thanhtoan.css" />
 <link rel="stylesheet" href="./CSS/timkiem.css" />
+<link rel="stylesheet" href="./CSS/sanpham.css" />
 
 
 <?php
@@ -117,6 +117,8 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             break;
         default:
         $listsanpham = loadAllSp();
+        $topsp = topSp();
+        $spkhac = spKhac();
             include "home.php";
             break;
     } 
@@ -128,6 +130,8 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
         $kym = "";
         $iddm = 0;
     };
+    $topsp = topSp();
+    $spkhac = spKhac();
     $listdanhmuc = loadAllDm();
     $listsanpham = loadAllSp($kym,$iddm);
     include "home.php";
@@ -136,5 +140,4 @@ include "footer.php";
 
 ?>
 <div class="back-to-top"><i class="fa-solid fa-arrow-up"></i></div>
-<script type="text/javascript" src="./JS/swiper.js"></script>
 <script src="./JS/script.js"></script>

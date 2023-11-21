@@ -15,8 +15,8 @@
         <li><a href="index.php">Trang chủ</a></li>
         <li><a href="">Shop</a></li>
         <li><a href="index.php?act=tatcasp">Sản phẩm</a></li>
-        <li><a href="">Liên hệ</a></li>
-        <li><a href="">Về website</a></li>
+        <li><a href="index.php?act=vewebsite">Liên hệ</a></li>
+        <li><a href="index.php?act=vewebsite">Về website</a></li>
     </div>
     <div class="menu-res">
         <i class="fa-regular fa-circle-xmark"></i>

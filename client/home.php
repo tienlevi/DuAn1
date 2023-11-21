@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link rel="stylesheet" href="./CSS/slider.css" />
 
-<div class="swiper mySwiper" style="--swiper-navigation-color: #fff; --swiper-pagination-color: #000">
+<div class="swiper mySwiper"
+    style="--swiper-navigation-color: #fff;--swiper-navigation-font-size: 20px;--swiper-pagination-color: #000; height: 800px;">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
             <div class="banner-img">
@@ -30,24 +32,47 @@
             </div>
         </div>
     </div>
-    <!-- <div class="swiper-button-next" style="width: 60px; height: 60px; background-color: rgba(0, 0, 0, 0.2);"></div>
     <div class="swiper-button-prev" style="width: 60px; height: 60px; background-color: rgba(0, 0, 0, 0.2);"></div>
-    <div class="swiper-pagination"></div> -->
+    <div class="swiper-button-next" style="width: 60px; height: 60px; background-color: rgba(0, 0, 0, 0.2);"></div>
+    <div class="swiper-pagination"></div>
 </div>
+
+<div class="wrapper">
+    <h1 style="text-align: center; margin: 25px 0px;">Danh mục</h1>
+    <div class="swiper mySwipers" style="--swiper-navigation-color: #fff; height: 300px;">
+        <div class="swiper-wrapper">
+            <?php foreach($listdanhmuc as $danhmuc) {
+                extract($danhmuc);
+                echo '<div class="swiper-slide content-tab">
+                <div class="content-tab-img">
+                    <img src="../Img/'.$img.'" alt=""/>
+                    <div class="content-tab-a">
+                        <a href="index.php?act=timkiemdm&iddm='.$id.'">'.$name.'</a>
+                    </div>
+                </div>
+            </div>';
+            } ?>
+        </div>
+        <div class="swiper-button-prev swiper-btn swiper-btn-prev">
+        </div>
+        <div class="swiper-button-next swiper-btn swiper-btn-next">
+        </div>
+    </div>
 </div>
-<!-- <div class="row"> -->
 
 <div class="content">
     <div class="inner-content">
         <div class="content-left">
             <h1>Sản phẩm bán chạy</h1>
             <div class="product">
-                <?php foreach($listsanpham as $sanpham) {
+                <?php foreach($topsp as $sanpham) {
                 extract($sanpham);
                 $detail = "index.php?act=sanphamct&id=".$id;
                  echo '<div class="product-item">
-                 <div class="product-img">
-                         <img src="../Img/'.$img.'" alt="">
+                     <div class="product-img">
+                     <a href="'.$detail.'">
+                          <img src="../Img/'.$img.'" alt="">
+                       </a>
                          <div class="product-click">
                              <a href="'.$detail.'" class="product-click-view">
                                  Xem chi tiết
@@ -67,15 +92,6 @@
             } ?>
             </div>
         </div>
-        <div class="content-right">
-            <h1>Danh mục</h1>
-            <?php foreach($listdanhmuc as $danhmuc) {
-                extract($danhmuc);
-                echo '<a href="index.php?act=timkiemdm&iddm='.$id.'" class="content-right-tab">
-                <p><i class="fa-solid fa-caret-right"></i><span>'.$name.'</span></p>
-            </a>';
-            } ?>
-        </div>
     </div>
 </div>
 <div class="mkt-customer">
@@ -84,6 +100,39 @@
         nghiệp của bạn cung cấp. Các</p>
     <img src="https://movic.b-cdn.net/at_gucci_demo/themes/at_gucci/assets/img/modules/appagebuilder/images/avata-man.jpg"
         alt="">
+</div>
+
+<div class="wrapper">
+    <div class="other" style="margin-top: 25px;">
+        <h1>Sản phẩm mới</h1>
+    </div>
+    <div class="other-product">
+        <?php foreach($spkhac as $sanpham) {
+       extract($sanpham);
+       $detail = "index.php?act=sanphamct&id=".$id;
+        echo '<div class="product-item">
+        <div class="product-img">
+                <img src="../Img/'.$img.'" alt="">
+                <div class="product-click">
+                    <a href="'.$detail.'" class="product-click-view">
+                        Xem chi tiết
+                    </a>
+                    <form action="index.php?act=giohang" method="post" class="product-click-add">
+                    <input type="hidden" name="id" value="'.$id.'"/>    
+                    <input type="hidden" name="name" value="'.$name.'"/>
+                    <input type="hidden" name="img" value="'.$img.'"/>
+                    <input type="hidden" name="giatien" value="'.$giatien.'"/>
+                    <input type="submit" name="addtocart" value="Thêm vào giỏ hàng"/>
+                    </form>
+                </div>
+            </div>
+            <div class="product-text">'.$name.'</div>
+            <div class="product-price">'.$giatien.'đ</div>
+        </div>';
+       } ?>
+    </div>
+</div>
+<div class="bg-gray" style="background-color: #f5f5f5; height: 150px; margin: 80px 0px;">
 </div>
 <div class="intro">
     <div class="intro-inner">
@@ -104,7 +153,8 @@
         </div>
     </div>
 </div>
-<!-- </div> -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script type="text/javascript">
 var swiper = new Swiper(".mySwiper", {
     loop: true,
@@ -125,4 +175,19 @@ var swiper = new Swiper(".mySwiper", {
         prevEl: ".swiper-button-prev",
     },
 });
+
+var swipers = new Swiper(".mySwipers", {
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 30,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
+
+
+function addToCart() {
+    alert("Thêm vào giỏ hàng thành công")
+}
 </script>

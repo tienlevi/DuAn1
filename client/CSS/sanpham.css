@@ -3,6 +3,12 @@
   margin: auto;
 }
 
+.wrapper-main {
+  text-align: center;
+  font-size: 30px;
+  margin: 24px 0px;
+}
+
 .container {
   display: flex;
   padding: 20px;
