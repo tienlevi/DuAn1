@@ -2,6 +2,12 @@
 if(is_array($danhmuc)){
     extract($danhmuc);
 }
+$image = "../Img/$img";
+if(is_file($image)){
+    $img = "<img src='".$image."' alt=''>";
+} else {
+    echo "";
+}
 ?>
 
 <body>
@@ -19,6 +25,11 @@ if(is_array($danhmuc)){
                 <div class="row-input">
                     <label>Tên danh mục</label> <br>
                     <input type="text" name="name" value="<?=$name?>">
+                </div>
+                <div class="row-input">
+                    <label>Ảnh </label> <br>
+                    <img src="<?=$image?>" alt="">
+                    <input type="file" name="img">
                 </div>
                 <div class="row-btn">
                     <input onclick="return confirmEdit()" type="submit" name="sua" value="Sửa">

@@ -17,6 +17,13 @@
                     <p>Giá: '.$cart[3].'đ</p>
                     </div>
                 </div>
+                <h2>Số lượng:
+                <div class="quantity-cart">
+                    <button class="decrease">-</button>
+                    <input type="number" name="soluong" class="count" value="'.$cart[5].'">
+                    <button class="increase">+</button>
+                </div>
+            </h2>
                 <a href='.$xoa.'><i class="fa-solid fa-trash"></i></a>
             </div>';
             $i += 1;

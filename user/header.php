@@ -1,64 +1,66 @@
-<aside>
-    <div class="brand">
-        <img src="../Img/user2-160x160.jpg" alt="" />
-        <p>tienlienha123</p>
-    </div>
-    <div class="sidebar">
-        <div class="form-inline">
-            <div class="input-group">
-                <input class="form-control form-control-sidebar" placeholder="Search" />
-            </div>
-            <div class="input-group-append">
-                <button class="btn btn-sidebar">
-                    <i class="fas fa-search fa-fw"></i>
-                </button>
-            </div>
-        </div>
-        <nav>
-            <div class="nav-parent">
-                <li class="nav-item">
-                    <a href="index.php" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Trang chủ người dùng</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.php?act=listtk" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Thay đổi thông tin</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.php?act=donhang" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Đơn hàng</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <div class="function">
-                        <form action="" method="post">
-                            <input type="submit" name="dangxuat" value="Đăng xuất" />
-                        </form>
-                    </div>
-                </li>
-            </div>
-        </nav>
-    </div>
-</aside>
-<div class="sidebar-overlay"></div>
+<?php 
+ if(isset($_POST["dangxuat"])){
+    unset($_SESSION["user"]);
+    header("Location: index.php");
+} 
+?>
 <header class="header">
-    <div class="menu">
-        <div class="menu-bar">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-        <li><a href="index.php">Trang chủ</a></li>
-
+    <div class="menu-icon">
+        <i class="fa-solid fa-bars"></i>
     </div>
-    <form class="user-search" action="index.php?act=sanpham" method="POST">
-        <input type="text" class="input" name="kyw" placeholder="Tìm sản phẩm" />
+    <div class="img">
+        <img src="../Img/z4509521763007_86ba43887da4a7064e7fb678f9df5244.jpg" alt="" />
+    </div>
+    <div class="menu">
+        <li><a href="../client/index.php">Trang chủ</a></li>
+        <li><a href="">Shop</a></li>
+        <li><a href="index.php?act=tatcasp">Sản phẩm</a></li>
+        <li><a href="index.php?act=vewebsite">Liên hệ</a></li>
+        <li><a href="index.php?act=vewebsite">Về website</a></li>
+    </div>
+    <div class="menu-res">
+        <i class="fa-regular fa-circle-xmark"></i>
+        <div class="menu-res-inner">
+            <li><a href="index.php">Trang chủ</a></li>
+            <li><a href="">Shop</a></li>
+            <li><a href="">Sản phẩm</a></li>
+            <li><a href="">Liên hệ</a></li>
+            <li><a href="index.php?act=vewebsite">Về website</a></li>
+        </div>
+    </div>
+    <div class="form">
+        <form action="index.php?act=timkiem" method="post" class="header-icon">
+            <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+            <div class="form-search">
+                <input type="text" placeholder="Tìm kiếm sản phẩm" name="kyw" />
+                <button type="submit" name="timkiem"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </form>
+        <div class="header-icon">
+            <i class="fa-regular fa-user" id="user-icon"></i>
+            <div class="user-dropdown">
 
-        <button type="submit" name="timkiem">
-            <i class="fas fa-search fa-fw"></i>
-        </button>
-    </form>
+                <?php if(isset($_SESSION["user"])){
+                    extract($_SESSION['user']);
+                    echo '<p>'.$username.'</p>
+                    <form action="" method="post">
+                    <button type="submit" name="dangxuat" style="background: none; border: none;"><i class="fa-solid fa-arrow-right-to-bracket"></i><span>đăng xuất</span></button>
+                </form>';
+                } else {
+                    echo " <li><a href='index.php?act=dangnhap'><i class='fa-solid fa-arrow-right-to-bracket'></i> <span>Đăng
+                    nhập</span></a></li>
+                <li><a href='index.php?act=dangky'><i class='fa-solid fa-user-plus'></i><span>Đăng ký</span></a></li>
+                    ";
+                }?>
+
+            </div>
+        </div>
+        <div class="header-icon">
+            <a href="index.php?act=giohang" class="bag-icon">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </a>
+        </div>
+    </div>
+    </div>
 </header>
+<div class="overlay"></div>

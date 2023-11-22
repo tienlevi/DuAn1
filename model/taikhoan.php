@@ -9,14 +9,27 @@
        return $taikhoan;
     }
 
+    function doimatkhau($id,$password){
+        $sql = "UPDATE khachhang SET password='$password' where id=$id";
+        $doimk = pdo_query_one($sql);
+        header("Location: index.php?act=doimk&id=$id");
+        return $doimk;
+    }
+
+    function laymatkhau($id){
+        $sql = "SELECT password from khachhang where id=".$id;
+        $laymatkhau = pdo_query_one($sql);
+        return $laymatkhau;
+    }
+
     function loadall_taikhoan(){
-        $sql="select * from user order by id desc";
+        $sql="select * from khachhang order by id desc";
         $listtaikhoan=pdo_query($sql);
         return $listtaikhoan;
     }
 
     function loadone_taikhoan($id){
-        $sql="select * from user where id=".$id;
+        $sql="select * from khachhang where id=".$id;
         $listtaikhoan = pdo_query_one($sql);
         return $listtaikhoan;
     }
@@ -27,10 +40,10 @@
         return $sp;
     }
 
-    function update_taikhoan($id, $user, $pass, $email, $address, $tel){
-        $sql="UPDATE user SET user='".$user."', pass='".$pass."', email='".$email."',  address='".$address."', tel='".$tel."' where id=".$id;
-      
+    function update_taikhoan($id, $user, $email, $diachi, $sdt){
+        $sql="UPDATE khachhang SET username='".$user."', email='".$email."',  diachi='".$diachi."', sdt='".$sdt."' where id=".$id;
         pdo_execute($sql);
+        header("Location: index.php");
     }
     function delete_taikhoan($id){
         $sql="delete from user where id=".$id;

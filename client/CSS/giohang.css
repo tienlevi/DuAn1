@@ -59,6 +59,9 @@ h1 {
   margin-left: 9px;
 }
 
+.quantity-cart .decrease {
+}
+
 .total {
   width: 32%;
   border: 1px solid #e1e1e1;

@@ -1,14 +1,33 @@
-<body>
-
-    <div class="wrapper">
-        <div class="admin">
-            <h1>Trang người dùng</h1>
-        </div>
-        <div class="view-all">
-            <p>Tên tài khoản: tienlienha123</p>
-            <p>Email: tien@gmail.com</p>
-            <p>SĐT: 0928312311</p>
-            <p>Địa chỉ: Hà Nội</p>
-        </div>
+<?php
+ if(isset($_SESSION["user"])){
+    extract($_SESSION["user"]);
+}
+?>
+<div class="content">
+    <div class="user-information">
+        <h1>Tài khoản của bạn</h1>
     </div>
-</body>
+    <div class="link">
+        <a class="link-information" href="index.php?act=thongtin&id=<?=$id?>">
+            <span class="link-item">
+                <i class="fa-solid fa-user"></i>
+                <p>Thông tin cá nhân</p>
+            </span>
+        </a>
+        <a class="link-information" href="">
+            <span class="link-item">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>Lịch sửa mua hàng</p>
+            </span>
+        </a>
+        <!-- <a class="link-information" href="">
+            <span class="link-item">
+                <i class="fa-solid fa-user"></i>
+                <p>Information</p>
+            </span>
+        </a> -->
+    </div>
+    <div class="user-information">
+        <form action="" method="post"><input type="submit" name="dangxuat" value="Đăng xuất"></form>
+    </div>
+</div>

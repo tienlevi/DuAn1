@@ -1,48 +1,80 @@
-const menuBar = document.querySelector(".menu-bar");
-const aside = document.querySelector("aside");
-const wrapper = document.querySelector(".wrapper");
-const header = document.querySelector(".header");
-const footer = document.querySelector("footer");
-const sidebarBg = document.querySelector(".sidebar-overlay");
+const body = document.querySelector("body");
+const searchIcon = document.querySelector("#search-icon");
+const formSearch = document.querySelector(".form-search");
+const userIcon = document.querySelector("#user-icon");
+const userDropdown = document.querySelector(".user-dropdown");
+const backtotop = document.querySelector(".back-to-top");
+const menuIcon = document.querySelector("header .menu-icon");
+const menuRes = document.querySelector("header .menu-res");
+const closeIcon = document.querySelector("header .menu-res i");
+const overlay = document.querySelector(".overlay");
+const togglePass = document.querySelectorAll(".form-input .toggle-showpass");
+const passwordInput = document.querySelectorAll(".form-input .input-showpass");
+var currentPasswordIndex = 0;
 
-menuBar.addEventListener("click", () => {
-  aside.classList.toggle("toggle-aside");
-  wrapper.classList.toggle("toggle-wrapper");
-  header.classList.toggle("toggle-header");
-  sidebarBg.classList.toggle("sidebar-bg");
-  footer.classList.toggle("toggle-footer");
-  if (innerWidth < 950) {
-    aside.classList.remove("toggle-aside");
-    aside.classList.add("toggle-aside-res");
+togglePass.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    var index = Array.from(togglePass).indexOf(btn);
+    var input = passwordInput[index];
+
+    if (input.type === "password") {
+      input.type = "text";
+    } else {
+      input.type = "password";
+    }
+  });
+});
+
+menuIcon.addEventListener("click", () => {
+  menuRes.classList.add("active-menu-res");
+  overlay.classList.add("overlay-toggle");
+  body.classList.add("body-overflow");
+});
+
+closeIcon.addEventListener("click", () => {
+  menuRes.classList.remove("active-menu-res");
+  overlay.classList.remove("overlay-toggle");
+  body.classList.remove("body-overflow");
+});
+
+searchIcon.addEventListener("click", () => {
+  formSearch.classList.toggle("form-search-active");
+});
+
+userIcon.addEventListener("click", () => {
+  userDropdown.classList.toggle("user-dropdown-active");
+});
+
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 100) {
+    backtotop.classList.add("active");
+  } else {
+    backtotop.classList.remove("active");
   }
 });
 
-window.addEventListener("resize", () => {
-  if (innerWidth < 950) {
-    aside.classList.remove("toggle-aside");
-  }
-  if (innerWidth < 1125) {
-    aside.classList.add("toggle-aside");
-    wrapper.classList.add("toggle-wrapper");
-    header.classList.add("toggle-header");
-    footer.classList.add("toggle-footer");
-  }
-  if (innerWidth > 950) {
-    aside.classList.remove("toggle-aside-res");
-    sidebarBg.classList.remove("sidebar-bg");
-  }
-  if (
-    !aside.classList.contains("toggle-aside-res") &&
-    !sidebarBg.classList.remove("sidebar-bg") &&
-    innerWidth < 950
-  ) {
-    wrapper.classList.remove("toggle-wrapper");
-    header.classList.remove("toggle-header");
-    footer.classList.remove("toggle-footer");
-  }
-});
+backtotop.addEventListener("click", returntop);
 
-sidebarBg.addEventListener("click", () => {
-  aside.classList.remove("toggle-aside-res");
-  sidebarBg.classList.remove("sidebar-bg");
+function returntop() {
+  window.scrollTo(0, 0);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const decreaseBtn = document.querySelector(".decrease");
+  const increaseBtn = document.querySelector(".increase");
+  const countInput = document.querySelector(".count");
+
+  decreaseBtn.addEventListener("click", () => {
+    let count = parseInt(countInput.value);
+    if (count > 1) {
+      count--;
+      countInput.value = count;
+    }
+  });
+
+  increaseBtn.addEventListener("click", () => {
+    let count = parseInt(countInput.value);
+    count++;
+    countInput.value = count;
+  });
 });

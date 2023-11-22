@@ -44,8 +44,8 @@
             <?php foreach($listdanhmuc as $danhmuc) {
                 extract($danhmuc);
                 echo '<div class="swiper-slide content-tab">
-                <div class="content-tab-img">
-                    <img src="../Img/'.$img.'" alt=""/>
+                <div class="content-tab-img" style="height: 300px;">
+                    <img src="../Img/'.$img.'" alt="" style="height: 300px;"/>
                     <div class="content-tab-a">
                         <a href="index.php?act=timkiemdm&iddm='.$id.'">'.$name.'</a>
                     </div>
@@ -82,6 +82,7 @@
                              <input type="hidden" name="name" value="'.$name.'"/>
                              <input type="hidden" name="img" value="'.$img.'"/>
                              <input type="hidden" name="giatien" value="'.$giatien.'"/>
+                             <input type="hidden" name="soluong" value="'.$soluong.'"/>
                              <input type="submit" name="addtocart" value="Thêm vào giỏ hàng"/>
                              </form>
                          </div>
@@ -122,6 +123,7 @@
                     <input type="hidden" name="name" value="'.$name.'"/>
                     <input type="hidden" name="img" value="'.$img.'"/>
                     <input type="hidden" name="giatien" value="'.$giatien.'"/>
+                    <input type="hidden" name="soluong" value="'.$soluong.'"/>
                     <input type="submit" name="addtocart" value="Thêm vào giỏ hàng"/>
                     </form>
                 </div>
