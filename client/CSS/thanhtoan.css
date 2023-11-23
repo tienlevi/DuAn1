@@ -7,14 +7,13 @@
 }
 
 .pay-form {
-  display: flex;
-  justify-content: space-between;
+  display: block;
 }
 
 .pay-form form {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 100%;
   border: 1px solid #e1e1e1;
   padding: 16px;
 }
@@ -92,6 +91,18 @@
 
 .total-block span {
   margin-left: 6px;
+}
+
+.bill {
+  margin: 30px 0px;
+}
+
+.bill h1 {
+  margin-bottom: 15px;
+}
+
+.bill table tr {
+  padding: 10px;
 }
 
 @media screen and (max-width: 1300px) {

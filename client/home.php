@@ -61,11 +61,10 @@
 </div>
 
 <div class="content">
+    <h1 style="text-align: center;">Sản phẩm bán chạy</h1>
     <div class="inner-content">
-        <div class="content-left">
-            <h1>Sản phẩm bán chạy</h1>
-            <div class="product">
-                <?php foreach($topsp as $sanpham) {
+        <div class="product">
+            <?php foreach($topsp as $sanpham) {
                 extract($sanpham);
                 $detail = "index.php?act=sanphamct&id=".$id;
                  echo '<div class="product-item">
@@ -91,7 +90,6 @@
                      <div class="product-price">'.$giatien.'đ</div>
                  </div>';
             } ?>
-            </div>
         </div>
     </div>
 </div>

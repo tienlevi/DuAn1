@@ -59,7 +59,20 @@ h1 {
   margin-left: 9px;
 }
 
-.quantity-cart .decrease {
+.quantity-cart input {
+  border: none;
+  outline: none;
+}
+
+.quantity-cart input::-webkit-inner-spin-button,
+.quantity-cart input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.quantity-cart-btn {
+  background: transparent;
+  border: none;
 }
 
 .total {

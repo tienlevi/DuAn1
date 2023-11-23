@@ -55,11 +55,10 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             }
             if(isset($_POST['suathongtin']) && $_POST['suathongtin']){
                 $id = $_POST['id'];
-                $username = $_POST['username'];
                 $email = $_POST['email'];
                 $diachi = $_POST['diachi'];
                 $sdt = $_POST['sdt'];
-                update_taikhoan($id,$username,$email,$diachi,$sdt);
+                update_taikhoan($id,$email,$diachi,$sdt);
             }
             include "view/update.php";
             break;

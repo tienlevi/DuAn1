@@ -40,10 +40,10 @@
         return $sp;
     }
 
-    function update_taikhoan($id, $user, $email, $diachi, $sdt){
-        $sql="UPDATE khachhang SET username='".$user."', email='".$email."',  diachi='".$diachi."', sdt='".$sdt."' where id=".$id;
+    function update_taikhoan($id, $email, $diachi, $sdt){
+        $sql="UPDATE khachhang SET email='".$email."',  diachi='".$diachi."', sdt='".$sdt."' where id=".$id;
         pdo_execute($sql);
-        header("Location: index.php");
+        header("Location: index.php?act=thongtin&id=$id");
     }
     function delete_taikhoan($id){
         $sql="delete from user where id=".$id;

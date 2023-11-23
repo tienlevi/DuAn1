@@ -9,10 +9,6 @@
         <form action="" method="post" class="form-login">
             <input type="hidden" value="<?=$id?>" name="id" />
             <div class="form-input">
-                <p class="form-input-name">Tài khoản</p>
-                <input class="input-infor" type="text" value="<?=$username?>" name="username" />
-            </div>
-            <div class="form-input">
                 <p class="form-input-name">Email</p>
                 <input class="input-infor" type="text" value="<?=$email?>" name="email" />
             </div>

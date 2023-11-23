@@ -1,7 +1,7 @@
 <div class="wrapper">
     <div class="login">
         <h1>Đăng ký</h1>
-        <form action="" method="post" class="form-login">
+        <form action="" onsubmit="Success()" method="post" class="form-login">
             <div class="form-input">
                 <p>Tài khoản</p>
                 <input type="text" name="username" />
@@ -25,11 +25,8 @@
             <div class="forget-password">
                 <a href="">Quên mật khẩu ?</a>
             </div>
-            <?php if(isset($_POST['dangky']) && $_POST['dangky']){
-                echo "Đăng ký tài khoản thành công";
-            }  ?>
             <div class="login-btn">
-                <input type="submit" name="dangky" value="Đăng Ký">
+                <input type="submit" onclick="" name="dangky" value="Đăng Ký">
             </div>
             <div class="forget-password">
                 <a href="">Đăng ký tài khoản</a>
@@ -37,3 +34,8 @@
         </form>
     </div>
 </div>
+<script>
+function Success() {
+    alert("Đăng ký tài khoản thành công")
+}
+</script>

@@ -2,7 +2,7 @@
     <div class="inner-cart">
         <div class="item">
             <div class="cart-block">
-                <h1>Giỏ hàng</h1>
+                <h1>Hóa đơn</h1>
             </div>
             <?php 
             $i = 0;
@@ -19,9 +19,9 @@
                 </div>
                 <h2>Số lượng:
                 <div class="quantity-cart">
-                    <button class="quantity-cart-btn decrease">-</button>
-                    <input type="number" name="soluong" class="count" value="1">
-                    <button class="quantity-cart-btn increase">+</button>
+                    <button class="decrease">-</button>
+                    <input type="number" name="soluong" class="count" value="'.$cart[5].'">
+                    <button class="increase">+</button>
                 </div>
             </h2>
                 <a href='.$xoa.'><i class="fa-solid fa-trash"></i></a>
@@ -35,8 +35,8 @@
                 $tong = 0;
                 foreach ($_SESSION['mycart'] as $cart) { 
                 $tong += $cart[4];
-            }
-            $count = count($_SESSION['mycart']);
+                $count = count($_SESSION['mycart']);
+                }
                 echo '<p>x'.$count.' Số lượng</p>
                 <p>'.$tong.'đ</p>';
                  ?>

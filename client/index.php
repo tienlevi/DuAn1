@@ -83,6 +83,9 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             include "view/vewebsite.php";
             break;
         case "thanhtoan":
+            // if(isset($_GET['id'])&&$_GET['id']>0){
+            //     $sanpham = loadOneSp($_GET['id']);
+            // }
             include "view/thanhtoan.php";
             break;
         case "tatcasp":
