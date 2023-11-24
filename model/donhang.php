@@ -1,4 +1,24 @@
 <?php
+function viewDonHang($donhang){
+    $i = 0;
+    $tong = 0;
+     foreach ($donhang as $cart) {
+        $tong += $cart['giatien'];
+        $image = '../Img/'.$cart['img'].'';
+        echo '<tr class="p-4">
+        <td class="p-2">'.$i.'</td>
+        <td class="p-2"><img src='.$image.' height="180px"/></td>
+        <td class="p-2">'.$cart['sanpham'].'</td>
+        <td class="p-2">'.$cart['giatien'].'đ</td>
+        <td class="p-2">1</td>
+        </tr>
+        ';
+        $i += 1;
+    }
+    echo "<h3>Tổng tiền: $tong</h3>";
+}
+
+
 function loadAllDonHang(){
     $sql = "SELECT * FROM donhang";
     $listdonhang = pdo_query($sql);
@@ -16,5 +36,20 @@ function huyHang($id){
     pdo_execute($sql);
     header("location: index.php?act=donhang");
 }
+
+function tongDonHang(){
+    $tong = 0;
+    foreach($_SESSION['mycart'] as $cart) {
+        $tien = $cart[3] + $cart[4];
+        $tong += $tien;
+    }
+    return $tong;
+}
+
+function insert_donhang($khachhang,$sanpham,$giatien,$diachi,$sdt,$email,$thoigiandathang,$phuongthucthanhtoan,$soluong,$ghichu){
+    $sql="INSERT INTO donhang VALUES(null,'$khachhang','$sanpham','$giatien','$diachi','$sdt','$email','$thoigiandathang','$phuongthucthanhtoan','$soluong',0,'$ghichu')";
+   return pdo_execute_return_lastInsertId($sql);
+}
+
 
 ?>

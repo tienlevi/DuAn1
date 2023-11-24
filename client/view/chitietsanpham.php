@@ -29,7 +29,7 @@ if(is_array($sanpham)){
                 <input type="submit" name="addtocart" value="Thêm vào giỏ hàng" />
             </form>
             <div class="product-details-buy">
-                <a href="index.php?act=thanhtoan">Mua hàng</a>
+                <a href="index.php?act=dathang">Mua hàng</a>
             </div>
         </div>
     </div>

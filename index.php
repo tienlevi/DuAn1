@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="./CSS/footer.css" />
 <link rel="stylesheet" href="./CSS/form.css" />
 <link rel="stylesheet" href="./CSS/giohang.css" />
-<link rel="stylesheet" href="./CSS/dathang.css" />
+<link rel="stylesheet" href="./CSS/thanhtoan.css" />
 <link rel="stylesheet" href="./CSS/timkiem.css" />
 <link rel="stylesheet" href="./CSS/sanpham.css" />
 
@@ -18,8 +18,6 @@ include "../model/pdo.php";
 include "../model/taikhoan.php";
 include "../model/sanpham.php";
 include "../model/danhmuc.php";
-include "../model/giohang.php";
-include "../model/donhang.php";
 include "header.php";
 if(!isset($_SESSION['mycart'])) {
     $_SESSION['mycart'] = [];
@@ -84,39 +82,26 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
         case "vewebsite":
             include "view/vewebsite.php";
             break;
-        case "dathang":
-            $donhang = null;
-            $giohang = null;
+        case "thanhtoan":
+            include "view/thanhtoan.php";
+            break;
+            //
+            case "billcomfirm":
                 if(isset($_POST['dongydathang'])&&($_POST['dongydathang'])){
-                    $khachhang=$_POST['khachhang'];
-                    $diachi=$_POST['diachi'];
-                    $sdt=$_POST['sdt'];
+                    $name=$_POST['name'];
                     $email=$_POST['email'];
-                    $phuongthucthanhtoan = $_POST['phuongthucthanhtoan'];
-                    $thoigiandathang = date('h:i:sa d/m/Y');
-                    $ghichu = $_POST['ghichu'];
-                    $giatien=tongdonhang();
+                    $addrees=$_POST['addrees'];
+                    $tel=$_POST['tel'];
+                    $ngaydathang=date('h:i:sa d/m/Y');
+                    $tongdonhang=tongdonhang();
 
-                    $iddathang = insert_donhang($khachhang,$sanpham,$giatien,$diachi,$sdt,$email,$thoigiandathang,$phuongthucthanhtoan,count($_SESSION['mycart']),$ghichu );
-                    $donhang = loadOneDonHang($iddathang);
-                    $giohang = loadOneCart($iddathang);
-                    foreach ($_SESSION['mycart']as $cart ) {
-                        insert_giohang($_SESSION['user']['id'],$cart[0],$cart[1],$cart[2],$cart[3],$cart[4],$cart[5],$iddathang);
+                    $idthanhtoan=insert_thanhtoan($name,$email,$diachi,$sdt,$pttt,$ngaydathang,$tongdonhang );
+                    foreach ($_SESSION['giohang']as $giohang ) {
+                    insert_giohang($_SESSION['user']['id'],$giohang[0],$giohang[1],$giohang[2],$giohang[3],$giohang[4],$giohang[5],$idbill);
                     }
-                    $_SESSION['mycart'] = [];
                 }
-                $donhang = loadOneDonHang($_SESSION['user']['id']);
-                $giohang = loadOneCart($_SESSION['user']['id']);
-                include "view/dathang.php";
-            break;
-        case "hoadon":
-            if ($_SESSION['mycart'] = []){
-                header("Location: index.php");
-            }
-            $donhang = loadOneDonHang($_SESSION['user']['id']);
-            $giohang = loadOneCart($_SESSION['user']['id']);
-            include "view/hoadon.php";
-            break;
+
+                //
         case "tatcasp":
             $listsanpham = loadAllSp();
             include "view/tatcasp.php";

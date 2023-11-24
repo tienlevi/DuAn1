@@ -91,3 +91,10 @@ footer {
   padding-bottom: 20px;
   color: #aaaaaa;
 }
+
+@media screen and (max-width: 700px) {
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+  }
+}

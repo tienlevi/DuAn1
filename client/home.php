@@ -5,26 +5,23 @@
     style="--swiper-navigation-color: #fff;--swiper-navigation-font-size: 20px;--swiper-pagination-color: #000; height: 800px;">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
-            <div class="banner-img">
-                <img src="../Img/leoslideshow/slide-1-1920x800.jpg" alt="">
-                <div class="banner-text">
-                    <h3>Bộ sưu tập Artifort</h3>
-                    <p>Quần áo giá rẻ Tham khảo ngay</p>
-                    <a href="">Xem thêm</a>
-                </div>
+            <img src="../Img/leoslideshow/slide-1-1920x800.jpg" alt="">
+            <div class="banner-text">
+                <h3>Bộ sưu tập Artifort</h3>
+                <p>Quần áo giá rẻ Tham khảo ngay</p>
+                <a href="">Xem thêm</a>
             </div>
         </div>
         <div class="swiper-slide">
-            <div class="banner-img">
-                <img src="../Img/leoslideshow/slide-2-1920x800.jpg" alt="">
-                <div class="banner-text">
-                    <h3>Artifort Collectie</h3>
-                    <p>Weatherized essentials to help keep<br>them dry, whatever the weather.</p>
-                    <a href="">Xem thêm</a>
-                </div>
+            <img src="../Img/leoslideshow/slide-2-1920x800.jpg" alt="">
+            <div class="banner-text">
+                <h3>Artifort Collectie</h3>
+                <p>Weatherized essentials to help keep<br>them dry, whatever the weather.</p>
+                <a href="">Xem thêm</a>
             </div>
         </div>
-        <div class="swiper-slide"><img src="../Img/leoslideshow/slide-3-1920x800.jpg" alt="">
+        <div class="swiper-slide">
+            <img src="../Img/leoslideshow/slide-3-1920x800.jpg" alt="">
             <div class="banner-text">
                 <h3>Artifort Collectie</h3>
                 <p>Weatherized essentials to help keep<br>them dry, whatever the weather.</p>
@@ -178,8 +175,16 @@ var swiper = new Swiper(".mySwiper", {
 
 var swipers = new Swiper(".mySwipers", {
     loop: true,
-    slidesPerView: 3,
-    spaceBetween: 30,
+    breakpoints: {
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 20
+        },
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 20
+        }
+    },
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",

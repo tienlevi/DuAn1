@@ -10,13 +10,16 @@ if(isset($_SESSION['user'])){
     $email = "";
     $sdt = "";
 }
+if(isset($donhang) && is_array($donhang)){
+    extract($donhang);
+} 
 ?>
 <div class="pay">
     <div class="pay-form">
-        <form action="" onsubmit="thanhToan()" method="POST">
+        <form action="" method="POST">
             <div class="pay-label">
                 <label for="card-number">Tên tài khoản</label>
-                <input type="text" name="name" value="<?=$name?>" required>
+                <input type="text" name="khachhang" value="<?=$name?>" required>
             </div>
             <div class="pay-label">
                 <label for="card-number">Địa chỉ</label>
@@ -32,22 +35,22 @@ if(isset($_SESSION['user'])){
             </div>
             <div class="pay-label">
                 <label for="card-number">Ghi chú</label>
-                <input type="text" name="ghichu">
+                <input type="text" name="ghichu" value="">
             </div>
             <div class="pay-label">
                 <label for="card-number">Hình thức thanh toán</label>
                 <div class="payment_methods">
                     <div class="payment_method">
-                        <input name="trangthai" type="radio">
+                        <input value="1" name="phuongthucthanhtoan" type="radio" checked>
                         <label>Chuyển khoản trực tiếp</label>
                     </div>
                     <div class="payment_method">
-                        <input name="trangthai" type="radio">
+                        <input value="2" name="phuongthucthanhtoan" type="radio">
                         <label>Thanh toán khi giao hàng</label>
                     </div>
                 </div>
             </div>
-            <button type="submit">Đặt hàng</button>
+            <input class="confirm-pay" type="submit" name="dongydathang" value="đặt hàng">
         </form>
         <div class="bill">
             <h1>Thông tin giỏ hàng</h1>
@@ -58,7 +61,6 @@ if(isset($_SESSION['user'])){
                     <td class="p-2" style="width: 200px;">Tên sản phẩm</td>
                     <td class="p-2" style="width: 100px;">Giá</td>
                     <td class="p-2" style="width: 100px;">Số lượng</td>
-                    <td class="p-2" style="width: 150px;">Xóa</td>
                 </tr>
                 <?php 
                 $i = 0;
@@ -66,14 +68,12 @@ if(isset($_SESSION['user'])){
                  foreach ($_SESSION['mycart'] as $cart) {
                     $tong += $cart[4];
                     $image = '../Img/'.$cart[2].'';
-                    $xoa = 'index.php?act=thanhtoan&id='.$i.'';
                     echo '<tr class="p-4">
                     <td class="p-2">'.$i.'</td>
                     <td class="p-2"><img src='.$image.' height="180px"/></td>
                     <td class="p-2">'.$cart[1].'</td>
-                    <td class="p-2">'.$cart[4].'</td>
+                    <td class="p-2">'.$cart[4].'đ</td>
                     <td class="p-2">1</td>
-                    <td class="p-2"><a href='.$xoa.'>Xoá</a></td>
                     </tr>
                     ';
                     $i += 1;
@@ -82,10 +82,23 @@ if(isset($_SESSION['user'])){
                  ?>
             </table>
         </div>
+        <!-- <div class="bill">
+            <h1>Thông tin đặt hàng</h1>
+            <ul>
+                <li class="p-2">Mã đơn <?=$donhang['id']?></li>
+                <li class="p-2">Người đặt hàng <?=$donhang['khachhang']?></li>
+                <li class="p-2">Ngày đặt hàng <?=$donhang['thoigiandathang']?></li>
+                <li class="p-2">Tổng <?=$donhang['giatien']?></li>
+                <li class="p-2">Phương thức thanh toán:
+                    <?=$donhang['phuongthucthanhtoan'] === 0 ? "Chuyển khoản" : "Thanh toán khi giao hàng" ?></li>
+                <li class="p-2">Số lượng</li>
+            </ul>
+        </div> -->
     </div>
 </div>
+
 <script>
-function thanhToan() {
-    alert("Thanh toán thành công");
-}
+// function thanhToan() {
+//     alert("Thanh toán thành công");
+// }
 </script>

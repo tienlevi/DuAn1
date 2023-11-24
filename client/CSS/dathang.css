@@ -40,7 +40,7 @@
   margin-top: 5px;
 }
 
-.pay-form button {
+.pay-form .confirm-pay {
   background-color: #000;
   color: white;
   width: 50%;
@@ -53,7 +53,7 @@
   cursor: pointer;
 }
 
-.pay-form button:hover {
+.pay-form .confirm-pay:hover {
   opacity: 0.9;
 }
 
@@ -105,9 +105,42 @@
   padding: 10px;
 }
 
+.bill-information {
+  margin: 20px 0px;
+}
+
+.wrapper-bill {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.bill-information {
+  padding: 0px 10px;
+}
+
+.box-bill {
+  margin: 20px 0px;
+}
+
+.wrapper-bill .bill-table {
+  margin: 25px 0px;
+  padding: 0px 10px;
+}
+
+.wrapper-bill table {
+  width: 100%;
+}
+
 @media screen and (max-width: 1300px) {
   .pay {
     max-width: 975px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .pay {
+    width: 80%;
     margin: auto;
   }
 }

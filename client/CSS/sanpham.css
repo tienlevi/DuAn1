@@ -265,3 +265,23 @@
     margin: auto;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .wrapper {
+    max-width: 330px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .wrapper {
+    max-width: 220px;
+    margin: auto;
+  }
+
+  .product-img img {
+    width: 180px;
+    height: 300px;
+    object-fit: cover;
+  }
+}

@@ -119,7 +119,7 @@
 }
 
 .mkt-customer p {
-  width: 450px;
+  width: 45%;
   margin: auto;
   margin-top: 29px;
   text-align: center;
@@ -184,5 +184,33 @@
   .content {
     max-width: 670px;
     margin: auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .content {
+    max-width: 330px;
+    margin: auto;
+  }
+
+  .mkt-customer p {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .content {
+    max-width: 250px;
+    margin: auto;
+  }
+
+  .product-item .product-img img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .intro-item {
+    width: 200px;
   }
 }
