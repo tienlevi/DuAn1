@@ -97,7 +97,7 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
                     $ghichu = $_POST['ghichu'];
                     $giatien=tongdonhang();
 
-                    $iddathang = insert_donhang($khachhang,$sanpham,$giatien,$diachi,$sdt,$email,$thoigiandathang,$phuongthucthanhtoan,count($_SESSION['mycart']),$ghichu );
+                    $iddathang = insert_donhang($khachhang,$giatien,$diachi,$sdt,$email,$thoigiandathang,$phuongthucthanhtoan,count($_SESSION['mycart']),$ghichu );
                     $donhang = loadOneDonHang($iddathang);
                     $giohang = loadOneCart($iddathang);
                     foreach ($_SESSION['mycart']as $cart ) {

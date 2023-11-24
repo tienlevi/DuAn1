@@ -46,8 +46,8 @@ function tongDonHang(){
     return $tong;
 }
 
-function insert_donhang($khachhang,$sanpham,$giatien,$diachi,$sdt,$email,$thoigiandathang,$phuongthucthanhtoan,$soluong,$ghichu){
-    $sql="INSERT INTO donhang VALUES(null,'$khachhang','$sanpham','$giatien','$diachi','$sdt','$email','$thoigiandathang','$phuongthucthanhtoan','$soluong',0,'$ghichu')";
+function insert_donhang($khachhang,$giatien,$diachi,$sdt,$email,$thoigiandathang,$phuongthucthanhtoan,$soluong,$ghichu){
+    $sql="INSERT INTO donhang VALUES(null,'$khachhang','$giatien','$diachi','$sdt','$email','$thoigiandathang','$phuongthucthanhtoan','$soluong',0,'$ghichu')";
    return pdo_execute_return_lastInsertId($sql);
 }
 
