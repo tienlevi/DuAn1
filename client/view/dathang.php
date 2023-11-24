@@ -10,9 +10,6 @@ if(isset($_SESSION['user'])){
     $email = "";
     $sdt = "";
 }
-if(isset($donhang) && is_array($donhang)){
-    extract($donhang);
-} 
 ?>
 <div class="pay">
     <div class="pay-form">
@@ -41,11 +38,11 @@ if(isset($donhang) && is_array($donhang)){
                 <label for="card-number">Hình thức thanh toán</label>
                 <div class="payment_methods">
                     <div class="payment_method">
-                        <input value="1" name="phuongthucthanhtoan" type="radio" checked>
+                        <input value="0" name="phuongthucthanhtoan" type="radio" checked>
                         <label>Chuyển khoản trực tiếp</label>
                     </div>
                     <div class="payment_method">
-                        <input value="2" name="phuongthucthanhtoan" type="radio">
+                        <input value="1" name="phuongthucthanhtoan" type="radio">
                         <label>Thanh toán khi giao hàng</label>
                     </div>
                 </div>
@@ -82,18 +79,6 @@ if(isset($donhang) && is_array($donhang)){
                  ?>
             </table>
         </div>
-        <!-- <div class="bill">
-            <h1>Thông tin đặt hàng</h1>
-            <ul>
-                <li class="p-2">Mã đơn <?=$donhang['id']?></li>
-                <li class="p-2">Người đặt hàng <?=$donhang['khachhang']?></li>
-                <li class="p-2">Ngày đặt hàng <?=$donhang['thoigiandathang']?></li>
-                <li class="p-2">Tổng <?=$donhang['giatien']?></li>
-                <li class="p-2">Phương thức thanh toán:
-                    <?=$donhang['phuongthucthanhtoan'] === 0 ? "Chuyển khoản" : "Thanh toán khi giao hàng" ?></li>
-                <li class="p-2">Số lượng</li>
-            </ul>
-        </div> -->
     </div>
 </div>
 

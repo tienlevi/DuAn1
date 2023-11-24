@@ -1,13 +1,28 @@
 <?php
 function loadall_binhluan($idpro)
 {
-    $sql="SELECT * from binhluan where idpro='$idpro'";
+    $sql="SELECT binhluan.id, binhluan.noidung, khachhang.username, binhluan.iduser, binhluan.idpro, binhluan.ngaybinhluan FROM `binhluan` 
+    LEFT JOIN khachhang ON binhluan.iduser = khachhang.id
+    LEFT JOIN sanpham ON binhluan.idpro = sanpham.id where idpro= $idpro";
     $listbl = pdo_query($sql);
     return $listbl;
 }
 
 function loadAllBl(){
     $sql = "SELECT * FROM binhluan";
+    $listbinhluan = pdo_query($sql);
+    return $listbinhluan;
+}
+
+
+function loadall_binhluantrangchu()
+{
+    
+    $sql = "
+    SELECT binhluan.id, binhluan.noidung, khachhang.username, binhluan.iduser, binhluan.idpro, binhluan.ngaybinhluan FROM `binhluan` 
+    LEFT JOIN khachhang ON binhluan.iduser = khachhang.id
+    LEFT JOIN sanpham ON binhluan.idpro = sanpham.id; 
+        ";
     $listbinhluan = pdo_query($sql);
     return $listbinhluan;
 }
@@ -32,8 +47,8 @@ function loadall_binhluan_admin($idpro = 0) {
 function loadone_binhluan($id)
 {
     $sql = "
-            SELECT binhluan.id,binhluan.iduser, binhluan.noidung, taikhoan.user, binhluan.ngaybinhluan FROM `binhluan` 
-            LEFT JOIN taikhoan ON binhluan.iduser = taikhoan.id
+            SELECT binhluan.id,binhluan.iduser, binhluan.noidung, khachhang.username, binhluan.ngaybinhluan FROM `binhluan` 
+            LEFT JOIN khachhang ON binhluan.iduser = khachhang.id
             LEFT JOIN sanpham ON binhluan.idpro = sanpham.id
             where binhluan.id = $id;
             ;
@@ -68,7 +83,7 @@ function update_binhluan($id,$noidung){
 }
 
 
-function insert_binhluan($idpro, $iduser, $noidung,$ngaybinhluan)
+function insert_binhluan($noidung,$iduser,$idpro,  $ngaybinhluan)
 {
     if (!empty($noidung)) {
         $sql = "INSERT INTO binhluan VALUES(null,'$noidung','$iduser','$idpro','$ngaybinhluan')";

@@ -29,13 +29,19 @@ function viewCart($delete){
    }
 }
 
-function insert_giohang($iduser,$idpro,$img,$name,$giatien,$soluong,$iddonhang ){
-$sql="INSERT into giohang values(null,'$iduser','$idpro','$img','$name','$giatien','$soluong','$iddonhang')";
+function insert_giohang($iduser,$idpro,$name,$img,$giatien,$iddonhang ){
+$sql="INSERT into giohang values(null,'$iduser','$idpro','$name','$img','$giatien',1,'$iddonhang')";
 return pdo_execute($sql);
 }
 
-function loadOneCart($iddonhang){
+function loadCart($iddonhang){
     $sql = "SELECT * FROM giohang WHERE iddonhang = $iddonhang";
+    $giohang = pdo_query($sql);
+    return $giohang;
+}
+
+function loadHoaDon($iddonhang){
+    $sql = "SELECT * FROM giohang WHERE iduser = $iddonhang";
     $giohang = pdo_query($sql);
     return $giohang;
 }

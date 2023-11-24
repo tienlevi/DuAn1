@@ -1,11 +1,18 @@
 <?php
-// if(is_array($sanpham)){
-//     extract($sanpham);
-// }
+  session_start();
   include "../../model/pdo.php";
   include "../../model/binhluan.php";
+  include "../../model/sanpham.php";
   $idpro = $_REQUEST['idpro'];
+  if($_SESSION["user"]){
+    $iduser = $_SESSION["user"]["id"];
+  }  
   $listbl = loadall_binhluan($idpro);
+  $sanpham = loadOneSp($idpro);
+  if(is_array($sanpham)){
+    extract($sanpham);
+  }
+  // echo $_SESSION["user"]["id"];
 ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="../CSS/index.css">
@@ -14,7 +21,7 @@
     <h1>Bình luận</h1>
     <table class="table table-borderless">
         <tr>
-            <th class="w-5">Id user</th>
+            <th class="w-5">Tên tài khoản</th>
             <th class="w-5">Nội dung</th>
             <th class="w-5">Ngày bình luận</th>
         </tr>
@@ -22,7 +29,7 @@
                      foreach($listbl as $ds){
                         extract($ds);
                         echo '<tr>
-                        <td>'.$iduser.'</td>
+                        <td>'.$username.'</td>
                         <td>'.$noidung.'</td>
                         <td>'.$ngaybinhluan.'</td>
                       </tr>';
@@ -40,12 +47,12 @@
     </form>
 </div>
 <?php 
-      if(isset($_POST['guibinhluan']) && ($_POST['guibinhluan'])){
+      if(isset($_POST['guibinhluan']) && ($_POST['guibinhluan']) && $_SESSION["user"]){
         $noidung = $_POST['noidung'];
         $idpro = $_POST['idpro'];
-        $iduser=$_SESSION['user']['id'];
+        $iduser = $_SESSION['user']['id'];
         $ngaybinhluan=date('h:i:sa d/m/Y');
-        insert_binhluan( $idpro,$iduser, $noidung,$ngaybinhluan);
+        insert_binhluan($noidung,$iduser, $sanpham['id'], $ngaybinhluan);
         header("Location: ".$_SERVER['HTTP_REFERER']);
       }
       ?>

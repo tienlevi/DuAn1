@@ -33,10 +33,7 @@ if(is_array($sanpham)){
             </div>
         </div>
     </div>
-    <iframe src="./view/binhluanform.php?idpro=<?php if(is_array($sanpham)){
-    extract($sanpham);
-    } 
-    echo $id;?>" width="100%" height="300px" frameborder="0"></iframe>
+    <iframe src="./view/binhluanform.php?idpro=<?=$id?>" width="100%" height="300px" frameborder="0"></iframe>
     <div class="other">
         <h1>Sản phẩm khác</h1>
     </div>

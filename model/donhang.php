@@ -31,6 +31,12 @@ function loadOneDonHang($id){
     return $donhang;
 }
 
+function loadDonHangTrangChu($id){
+    $sql = "SELECT * FROM donhang WHERE id = $id";
+    $donhang = pdo_query_one($sql);
+    return $donhang;
+}
+
 function huyHang($id){
     $sql = "UPDATE donhang SET trangthai = 1 WHERE id = $id";
     pdo_execute($sql);
@@ -46,9 +52,9 @@ function tongDonHang(){
     return $tong;
 }
 
-function insert_donhang($khachhang,$giatien,$diachi,$sdt,$email,$thoigiandathang,$phuongthucthanhtoan,$soluong,$ghichu){
-    $sql="INSERT INTO donhang VALUES(null,'$khachhang','$giatien','$diachi','$sdt','$email','$thoigiandathang','$phuongthucthanhtoan','$soluong',0,'$ghichu')";
-   return pdo_execute_return_lastInsertId($sql);
+function insert_donhang($khachhang,$diachi,$sdt,$email,$thoigiandathang,$phuongthucthanhtoan,$soluong,$ghichu){
+    $sql="INSERT INTO donhang VALUES(null,'$khachhang','$diachi','$sdt','$email','$thoigiandathang','$phuongthucthanhtoan','$soluong',0,'$ghichu')";
+    return pdo_execute_return_lastInsertId($sql);
 }
 
 

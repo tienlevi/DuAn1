@@ -24,6 +24,16 @@ include "header.php";
 if(!isset($_SESSION['mycart'])) {
     $_SESSION['mycart'] = [];
 }
+if(isset($_SESSION["user"])){
+    extract($_SESSION['user']);
+    if($trangthai === 1){
+        echo "Bạn đã bị khóa tài khoản vui lòng liên hệ admin để khôi phục lại tài khoản của bạn";
+        echo "<form action='' method='post'>
+        <input type='submit' name='dangxuat' value='Quay lại trang chủ và đăng xuất'/>
+    </form>";
+        die;
+    }
+}
 
 if(isset($_GET['act']) && $_GET['act'] != ""){
     $act = $_GET['act'];
@@ -95,26 +105,23 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
                     $phuongthucthanhtoan = $_POST['phuongthucthanhtoan'];
                     $thoigiandathang = date('h:i:sa d/m/Y');
                     $ghichu = $_POST['ghichu'];
-                    $giatien=tongdonhang();
 
-                    $iddathang = insert_donhang($khachhang,$giatien,$diachi,$sdt,$email,$thoigiandathang,$phuongthucthanhtoan,count($_SESSION['mycart']),$ghichu );
+                    $iddathang = insert_donhang($khachhang,$diachi,$sdt,$email,$thoigiandathang,$phuongthucthanhtoan,count($_SESSION['mycart']),$ghichu );
                     $donhang = loadOneDonHang($iddathang);
-                    $giohang = loadOneCart($iddathang);
+                    $giohang = loadCart($iddathang);
                     foreach ($_SESSION['mycart']as $cart ) {
-                        insert_giohang($_SESSION['user']['id'],$cart[0],$cart[1],$cart[2],$cart[3],$cart[4],$cart[5],$iddathang);
+                        insert_giohang($_SESSION['user']['id'],$cart[0],$cart[1],$cart[2],$cart[3],$iddathang);
                     }
                     $_SESSION['mycart'] = [];
+                    header("Location: index.php?act=hoadon");
                 }
                 $donhang = loadOneDonHang($_SESSION['user']['id']);
-                $giohang = loadOneCart($_SESSION['user']['id']);
+                $giohang = loadCart($_SESSION['user']['id']);
                 include "view/dathang.php";
             break;
         case "hoadon":
-            if ($_SESSION['mycart'] = []){
-                header("Location: index.php");
-            }
             $donhang = loadOneDonHang($_SESSION['user']['id']);
-            $giohang = loadOneCart($_SESSION['user']['id']);
+            $giohang = loadHoaDon($_SESSION['user']['id']);
             include "view/hoadon.php";
             break;
         case "tatcasp":
