@@ -23,6 +23,20 @@ ob_start();
             <div class="forget-password">
                 <a href="">Quên mật khẩu ?</a>
             </div>
+            <?php 
+            if(isset($_POST['dangnhap'])&&($_POST['dangnhap'])){
+                $user = $_POST['username'];
+                $pass = $_POST['password'];
+                $checkuser = checkuser($user,$pass);
+                if(is_array($checkuser)){
+                    $_SESSION['user'] = $checkuser;
+                    header('location: index.php');
+                }
+                if(!$checkuser){
+                    echo "Tài khoản hoặc mật khẩu không chính xác";
+                }
+            }
+            ?>
             <div class="login-btn">
                 <input type="submit" name="dangnhap" value="Đăng nhập">
             </div>

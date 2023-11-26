@@ -24,6 +24,6 @@
             <p>Số điện thoại: </p>
             <span><?=$sdt?></span>
         </div>
-        <a class="information-change" href="index.php?act=thaydoithongtin&id=<?=$id?>">Thay đổi thông tin</a>
+        <a class="information-change" href="index.php?act=thaydoithongtin">Thay đổi thông tin</a>
     </div>
 </div>

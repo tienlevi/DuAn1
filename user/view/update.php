@@ -24,7 +24,7 @@
                 <input class="input-infor" type="submit" name="suathongtin" value="Thay đổi thông tin">
             </div>
             <div class="login-btn">
-                <a href="index.php?act=doimk&id=<?=$id?>" class="change-password">
+                <a href="index.php?act=doimk" class="change-password">
                     <p>Thay đổi mật khẩu</p>
                 </a>
             </div>

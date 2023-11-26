@@ -20,7 +20,6 @@ include "../model/sanpham.php";
 include "../model/danhmuc.php";
 include "../model/giohang.php";
 include "../model/donhang.php";
-include "header.php";
 if(!isset($_SESSION['mycart'])) {
     $_SESSION['mycart'] = [];
 }
@@ -30,26 +29,16 @@ if(isset($_SESSION["user"])){
         echo "Bạn đã bị khóa tài khoản vui lòng liên hệ admin để khôi phục lại tài khoản của bạn";
         echo "<form action='' method='post'>
         <input type='submit' name='dangxuat' value='Quay lại trang chủ và đăng xuất'/>
-    </form>";
+        </form>";
         die;
     }
 }
+include "header.php";
 
 if(isset($_GET['act']) && $_GET['act'] != ""){
     $act = $_GET['act'];
     switch ($act) {
         case "dangnhap":
-            if(isset($_POST['dangnhap'])&&($_POST['dangnhap'])){
-                $user = $_POST['username'];
-                $pass = $_POST['password'];
-                $checkuser = checkuser($user,$pass);
-                if(is_array($checkuser)){
-                    $_SESSION['user'] = $checkuser;
-                    header('location: index.php');
-                }else{
-                    $thongbao="tài khoản không tồn tại. Vui lòng kiểm tra hoặc đăng ký";
-                }
-            }
             include "dangnhap.php";
             break;
         case "dangky":

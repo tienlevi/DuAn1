@@ -40,19 +40,21 @@ if(isset($_SESSION['user'])){
             <table style="background-color: #fff;">
                 <tr>
                     <td width="200px">Ảnh</td>
-                    <td width="300px">Tên sản phẩm</td>
+                    <td width="250px">Tên sản phẩm</td>
                     <td width="150px">Đơn giá</td>
                     <td width="100px">Số lượng</td>
+                    <td width="150px">Trạng thái</td>
                 </tr>
                 <?php
                     foreach ($giohang as $value) {
                         extract($value);
-                        echo "<tr>
-                        <td style='padding: 10px'><img src='../Img/$img' width='120px'></td>
-                        <td style='padding: 10px'>$name</td>
-                        <td style='padding: 10px'>".$giatien."đ</td>
-                        <td style='padding: 10px'>$soluong </td>
-                        </tr>";
+                        echo '<tr>
+                        <td style="padding: 10px"><img src="../Img/'.$img.'" width="120px"/></td>
+                        <td style="padding: 10px">'.$name.'</td>
+                        <td style="padding: 10px">'.$giatien.'đ</td>
+                        <td style="padding: 10px">'.$soluong.' </td>
+                        <td style="padding: 10px">'.($trangthai === 0 ? '<p style="color: orange">Đang kiểm duyệt</p>' : '<p style="color: red;">Hủy bỏ</p>').'</td>
+                        </tr>';
                     } 
                     ?>
             </table>

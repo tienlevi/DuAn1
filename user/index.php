@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="./CSS/footer.css" />
 <link rel="stylesheet" href="./CSS/form.css" />
 <link rel="stylesheet" href="./CSS/thongtin.css" />
+<link rel="stylesheet" href="./CSS/dathang.css" />
 
 
 <?php
@@ -31,28 +32,27 @@ if(isset($_SESSION["user"])){
 
 include "../model/pdo.php";
 include "../model/taikhoan.php";
+include "../model/donhang.php";
+include "../model/giohang.php";
 include "header.php";
 if(isset($_GET['act']) && $_GET['act'] != ""){
     $act = $_GET['act'];
     switch ($act) {
+        case "lichsudathang":
+            $giohang = loadHoaDonUser($_SESSION['user']['id']);
+            include "view/dathang.php";
+            break;
         case "thongtin":
-            if(isset($_GET['id'])&&$_GET['id']>0){
-                $taikhoan = loadone_taikhoan($id);
-            }
+            $taikhoan = loadone_taikhoan($_SESSION["user"]["id"]);
             include "view/thongtin.php";
             break;
         case "doimk":
-            if(isset($_GET['id'])&&$_GET['id']>0){
-                $taikhoan = loadone_taikhoan($id);
-                $laymatkhau = laymatkhau($id);
-            }
-            
+            $taikhoan = loadone_taikhoan($_SESSION["user"]["id"]);
+            $laymatkhau = laymatkhau($_SESSION["user"]["id"]);            
             include "view/doimk.php";
             break;
         case "thaydoithongtin":
-            if(isset($_GET['id'])&&$_GET['id']>0){
-                $taikhoan = loadone_taikhoan($_GET['id']);
-            }
+            $taikhoan = loadone_taikhoan($_SESSION["user"]["id"]);
             if(isset($_POST['suathongtin']) && $_POST['suathongtin']){
                 $id = $_POST['id'];
                 $email = $_POST['email'];
@@ -63,17 +63,13 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             include "view/update.php";
             break;
             default:
-            if(isset($_GET['id'])&&$_GET['id']>0){
-                $taikhoan = loadone_taikhoan($id);
-            }
+            $taikhoan = loadone_taikhoan($_SESSION["user"]["id"]);
             include "home.php";
             break;
         } 
         
     } else {
-        if(isset($_GET['id'])&&$_GET['id']>0){
-            $taikhoan = loadone_taikhoan($id);
-        }
+        $taikhoan = loadone_taikhoan($_SESSION["user"]["id"]);
         include "home.php";
     }
     include "footer.php";

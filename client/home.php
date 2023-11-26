@@ -4,7 +4,7 @@
 <div class="swiper mySwiper"
     style="--swiper-navigation-color: #fff;--swiper-navigation-font-size: 20px;--swiper-pagination-color: #000; height: 800px;">
     <div class="swiper-wrapper">
-        <div class="swiper-slide">
+        <div class="swiper-slide swiper-banner">
             <img src="../Img/leoslideshow/slide-1-1920x800.jpg" alt="">
             <div class="banner-text">
                 <h3>Bộ sưu tập Artifort</h3>

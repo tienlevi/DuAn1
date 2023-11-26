@@ -21,6 +21,7 @@ include "../model/sanpham.php";
 include "../model/danhmuc.php";
 include "../model/khachhang.php";
 include "../model/donhang.php";
+include "../model/giohang.php";
 include "tinhtong.php";
 include "test.php";
 if(isset($_GET['act']) && $_GET['act'] != ""){
@@ -160,12 +161,15 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             include "taikhoan/list.php";
             break;
         case "donhang":
+            
+            // $giohang = loadHoaDon($_SESSION['user']['id']);
             $listdonhang = loadAllDonHang();
             include "donhang/list.php";
             break;
         case "chitietdonhang":
             if(isset($_GET['id'])&&$_GET['id']>0){
                 $donhang = loadOneDonHang($_GET['id']);
+                $giohang = loadHoaDon($_GET['id']);
             }
             include "donhang/chitiet.php";
             break;

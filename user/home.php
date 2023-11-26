@@ -8,24 +8,18 @@
         <h1>Tài khoản của bạn</h1>
     </div>
     <div class="link">
-        <a class="link-information" href="index.php?act=thongtin&id=<?=$id?>">
+        <a class="link-information" href="index.php?act=thongtin">
             <span class="link-item">
                 <i class="fa-solid fa-user"></i>
                 <p>Thông tin cá nhân</p>
             </span>
         </a>
-        <a class="link-information" href="">
+        <a class="link-information" href="index.php?act=lichsudathang">
             <span class="link-item">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <p>Lịch sửa mua hàng</p>
             </span>
         </a>
-        <!-- <a class="link-information" href="">
-            <span class="link-item">
-                <i class="fa-solid fa-user"></i>
-                <p>Information</p>
-            </span>
-        </a> -->
     </div>
     <div class="user-information">
         <form action="" method="post"><input type="submit" name="dangxuat" value="Đăng xuất"></form>
