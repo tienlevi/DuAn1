@@ -1,12 +1,7 @@
 <?php
     function insert_taikhoan($user,$pass,$email,$address,$sdt,$trangthai){
-        $sql = "INSERT INTO khachhang VALUES(null,'$user','$pass','$email','$address','$sdt',$trangthai)";
+        $sql = "INSERT INTO khachhang VALUES(null,'$user','$pass','$email','$address','$sdt',$trangthai,2)";
         pdo_execute($sql);
-    }
-    function dangnhap($user, $pass){
-        $sql = "SELECT * FROM khachhang WHERE username='".$user."' and password='".$pass."'";
-        $taikhoan = pdo_query_one($sql);
-       return $taikhoan;
     }
 
     function doimatkhau($id,$password){
@@ -34,8 +29,20 @@
         return $listtaikhoan;
     }
 
-    function checkuser($user, $pass){
+    function dangnhap($user, $pass){
         $sql="SELECT * FROM khachhang WHERE username='".$user."' and password='".$pass."'";
+        $check = pdo_query_one($sql);
+        return $check;
+    }
+
+    function checkuser($user){
+        $sql="SELECT * FROM khachhang WHERE username='".$user."'";
+        $check = pdo_query_one($sql);
+        return $check;
+    }
+
+    function checkemail($email){
+        $sql="SELECT * FROM khachhang WHERE email='".$email."'";
         $sp=pdo_query_one($sql);
         return $sp;
     }
@@ -53,10 +60,5 @@
     function dangxuat(){
         unset($_SESSION['user']);
     }
-    
-    function checkemail($email){
-        $sql="SELECT * FROM user WHERE email='".$email."'";
-        $sp=pdo_query_one($sql);
-        return $sp;
-    }
+
 ?>

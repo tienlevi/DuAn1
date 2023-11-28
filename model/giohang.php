@@ -50,7 +50,7 @@ function loadHoaDonUser($id){
     $sql = "SELECT giohang.id, giohang.iduser,
     giohang.idpro, giohang.name, giohang.img, giohang.giatien,
     giohang.soluong, giohang.iddonhang, donhang.thoigiandathang, donhang.trangthai FROM giohang
-    LEFT JOIN donhang ON giohang.iddonhang = donhang.id WHERE iduser = $id";
+    LEFT JOIN donhang ON giohang.iddonhang = donhang.id WHERE iduser = $id ORDER BY id DESC";
     $giohang = pdo_query($sql);
     return $giohang;
 }

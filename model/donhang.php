@@ -45,7 +45,7 @@ function huyHang($id){
 
 function tongDonHang(){
     $tong = 0;
-    foreach($_SESSION['mycart'] as $cart) {
+    foreach($_SESSION['cart'] as $cart) {
         $tien = $cart[3] + $cart[4];
         $tong += $tien;
     }

@@ -87,8 +87,6 @@ function insert_binhluan($noidung,$iduser,$idpro,  $ngaybinhluan)
 {
     if (!empty($noidung)) {
         $sql = "INSERT INTO binhluan VALUES(null,'$noidung','$iduser','$idpro','$ngaybinhluan')";
-        // echo $sql;
-        // die();
         pdo_execute($sql);
     }
 }
