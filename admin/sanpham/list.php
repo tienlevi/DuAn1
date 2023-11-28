@@ -27,7 +27,6 @@
                 <td style="width: 100px;">Giá</td>
                 <td style="width: 100px;">Ảnh</td>
                 <td style="width: 250px;">Mô tả</td>
-                <td style="width: 80px;">Trạng thái</td>
                 <td style="width: 150px;">Chức năng</td>
             </tr>
             <?php foreach ($listsanpham as $sanpham) { 
@@ -41,7 +40,6 @@
                 <td>'.$giatien.'đ</td>
                 <td><img src="../Img/'.$img.'" alt=""></td>
                 <td>'.$mota.'</td>
-                <td>'.($trangthai === 0 ? "<p style='color: green;'>Còn hàng</p>" : "<p style='color: red;'>Hết hàng</p>").'</td>
                 <td class="edit-delete">
                 <a href="'.$detail.'" class="detail">
                         Chi tiết sản phẩm
