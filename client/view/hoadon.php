@@ -43,6 +43,7 @@ if(isset($_SESSION['user'])){
                     <td width="250px">Tên sản phẩm</td>
                     <td width="150px">Đơn giá</td>
                     <td width="100px">Số lượng</td>
+                    <td width="150px">Thời gian đặt hàng</td>
                     <td width="150px">Trạng thái</td>
                 </tr>
                 <?php
@@ -53,6 +54,7 @@ if(isset($_SESSION['user'])){
                         <td style="padding: 10px">'.$name.'</td>
                         <td style="padding: 10px">'.$giatien.'đ</td>
                         <td style="padding: 10px">'.$soluong.' </td>
+                        <td style="padding: 10px">'.$thoigiandathang.' </td>
                         <td style="padding: 10px">'.($trangthai === 0 ? '<p style="color: orange">Đang kiểm duyệt</p>' : '<p style="color: red;">Hủy bỏ</p>').'</td>
                         </tr>';
                     } 
