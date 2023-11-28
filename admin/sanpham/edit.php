@@ -74,23 +74,6 @@ if(is_file($image)){
                     <input type="text" name="luotxem" value="<?=$luotxem?>">
                 </div>
                 <div class="row-input">
-                    <label>Trạng thái </label> <br>
-                    <select name="trangthai" id="">
-                        <?php 
-                    if($trangthai === 0){
-                        echo '<option value="0" selected>Còn hàng</option>';
-                    } else {
-                        echo '<option value="1">Hết hàng</option>';
-
-                    }
-                    ?>
-                    </select>
-                </div>
-                <div class="row-input">
-                    <label>Thương hiệu </label> <br>
-                    <input type="text" name="thuonghieu" value="<?=$thuonghieu?>">
-                </div>
-                <div class="row-input">
                     <label>Mức giảm giá </label> <br>
                     <input type="text" name="mucgiamgia" value="<?=$mucgiamgia?>">
                 </div>

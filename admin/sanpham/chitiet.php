@@ -30,10 +30,6 @@ if(is_file($image)){
              } ?></p>
             <p>Lượt xem: <?=$luotxem?></p>
             <p>Ngày tạo: <?=$ngaytao?></p>
-            <p>Trạng thái:
-                <?=$trangthai === 0 ? "<span style='color: green;'>Còn hàng</span>" : "<span style='color: red;'>hết hàng</span>"?>
-            </p>
-            <p>Thương hiệu: <?=$thuonghieu?></p>
             <p>Mức giảm giá: <?=$mucgiamgia?>%</p>
 
         </div>

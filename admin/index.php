@@ -62,14 +62,12 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
                 $soluong = $_POST['soluong'];
                 $luotxem = $_POST['luotxem'];
                 $ngaytao = date('h:i:sa d/m/Y');
-                $trangthai = $_POST['trangthai'];
-                $thuonghieu = $_POST['thuonghieu'];
                 $mucgiamgia = $_POST['mucgiamgia'];
                 $target = "../Img/";
                 $img = $_FILES["img"]["name"];
                 $target_file = $target.basename($_FILES["img"]["name"]);
                 move_uploaded_file($_FILES["img"]["tmp_name"],$target_file);
-                addSp($name,$giatien,$img,$mota,$iddm,$soluong,$luotxem,$ngaytao,$trangthai,$thuonghieu,$mucgiamgia);
+                addSp($name,$giatien,$img,$mota,$iddm,$luotxem,$ngaytao,$mucgiamgia);
             }
             $listdanhmuc = loadAllDm();
             $listsanpham = loadAllSp("",0);
@@ -116,7 +114,7 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             if(isset($_POST['them']) && $_POST['them']){
                 $id = $_POST['id'];
                 $name = $_POST['name'];
-                $target = "./danhmuc/Image/";
+                $target = "../Img/";
                 $img = $_FILES["img"]["name"];
                 $target_file = $target.basename($_FILES["img"]["name"]);
                 move_uploaded_file($_FILES["img"]["tmp_name"],$target_file);

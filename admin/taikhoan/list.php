@@ -33,7 +33,7 @@
                 <td>'.$diachi.'</td>
                 <td>'.$sdt.'</td>
                 <td>'.($trangthai === 0 ? "<p style='color: green;'>Hoạt động</p>" : "<p style='color: red;'>Bị khóa tài khoản</p>").'</td>
-                <td>'.($idvaitro === 0 ? "Admin" : ($idvaitro === 1 ? "Nhân viên" : "Khách hàng")).'</td>
+                <td>'.($idvaitro === 1 ? "Admin" : ($idvaitro === 2 ? "Nhân viên" : "Khách hàng")).'</td>
                 <td class="edit-delete">
                     '.($trangthai === 0 ? "<a href=".$khoataikhoan." onclick='return confirmUpdate()' class='delete'>
                     Khóa tài khoản

@@ -46,9 +46,9 @@ if(is_array($taikhoan)){
                         <?php  foreach ($vaitro as $vt) {
                         extract($vt);
                     if($id === $idvaitro){
-                        echo '<option value="'.$idvaitro.'" selected>'.$tenvaitro.'</option>';
+                        echo '<option value="'.$id.'" selected>'.$tenvaitro.'</option>';
                     } else {
-                        echo '<option value="'.$idvaitro.'">'.$tenvaitro.'</option>';
+                        echo '<option value="'.$id.'">'.$tenvaitro.'</option>';
                     }
                 }
                     ?>

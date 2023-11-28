@@ -35,23 +35,8 @@
                 </select>
             </div>
             <div class="row-input">
-                <label>Số lượng </label> <br>
-                <input type="text" name="soluong">
-            </div>
-            <div class="row-input">
                 <label>Lượt xem </label> <br>
                 <input type="text" name="luotxem">
-            </div>
-            <div class="row-input">
-                <label>Trạng thái </label> <br>
-                <select name="trangthai" id="">
-                    <option value="0" selected>Còn hàng</option>
-                    <option value="1" selected>Hết hàng</option>
-                </select>
-            </div>
-            <div class="row-input">
-                <label>Thương hiệu </label> <br>
-                <input type="text" name="thuonghieu">
             </div>
             <div class="row-input">
                 <label>Mức giảm giá </label> <br>
