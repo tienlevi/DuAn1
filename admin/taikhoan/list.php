@@ -17,12 +17,14 @@
                     <td style="width: 200px">Địa chỉ</td>
                     <td style="width: 100px">SĐT</td>
                     <td style="width: 200px">Trạng thái</td>
+                    <td style="width: 200px">Vai trò</td>
                     <td style="width: 300px">Chức năng</td>
                 </tr>
                 <?php foreach ($listtk as $tk) {
                 extract($tk);
                 $khoataikhoan = "index.php?act=khoatk&id=".$id;
                 $molaitaikhoan = "index.php?act=molaitk&id=".$id;
+                $sua = "index.php?act=edittk&id=".$id;
            echo ' <tr>
                 <td>'.$id.'</td>
                 <td>'.$username.'</td>
@@ -31,11 +33,13 @@
                 <td>'.$diachi.'</td>
                 <td>'.$sdt.'</td>
                 <td>'.($trangthai === 0 ? "<p style='color: green;'>Hoạt động</p>" : "<p style='color: red;'>Bị khóa tài khoản</p>").'</td>
+                <td>'.($idvaitro === 0 ? "Admin" : ($idvaitro === 1 ? "Nhân viên" : "Khách hàng")).'</td>
                 <td class="edit-delete">
                     '.($trangthai === 0 ? "<a href=".$khoataikhoan." onclick='return confirmUpdate()' class='delete'>
                     Khóa tài khoản
                 </a>"
                  : "<a href=".$molaitaikhoan." onclick='return confirmUpdate()' class='detail'>Mở lại tài khoản</a>").'
+                 <a class="edit" href='.$sua.'>Sửa</a>
                 </td>
             </tr>';
            } ?>

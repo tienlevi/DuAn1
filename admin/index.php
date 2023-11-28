@@ -22,6 +22,7 @@ include "../model/danhmuc.php";
 include "../model/khachhang.php";
 include "../model/donhang.php";
 include "../model/giohang.php";
+include "../model/vaitro.php";
 include "tinhtong.php";
 include "test.php";
 if(isset($_GET['act']) && $_GET['act'] != ""){
@@ -137,6 +138,21 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
         case "listtk":
             $listtk = loadAllTk(); 
             include "taikhoan/list.php";
+            break;
+        case "edittk":
+            if(isset($_GET['id']) && ($_GET['id'] > 0)){
+               $taikhoan = loadOneTk($_GET['id']);
+            }
+            if(isset($_POST['sua']) && $_POST['sua']){
+                $id = $_POST['id'];
+                $email = $_POST['email'];
+                $diachi = $_POST['diachi'];
+                $sdt = $_POST['sdt'];
+                $idvaitro = $_POST['idvaitro'];
+                editTk($id,$email,$diachi,$sdt,$idvaitro);
+            }
+            $vaitro = loadAllVaitro();
+            include "taikhoan/edit.php";
             break;
         case "khoatk":
             if(isset($_GET['id']) && ($_GET['id'] > 0)){
