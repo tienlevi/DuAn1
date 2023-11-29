@@ -13,7 +13,6 @@
     </div>
     <div class="menu">
         <li><a href="index.php">Trang chủ</a></li>
-        <li><a href="">Shop</a></li>
         <li><a href="index.php?act=tatcasp">Sản phẩm</a></li>
         <li><a href="index.php?act=vewebsite">Liên hệ</a></li>
         <li><a href="index.php?act=vewebsite">Về website</a></li>

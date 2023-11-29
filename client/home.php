@@ -7,25 +7,25 @@
         <div class="swiper-slide swiper-banner">
             <img src="../Img/leoslideshow/slide-1-1920x800.jpg" alt="">
             <div class="banner-text">
-                <h3>Bộ sưu tập Artifort</h3>
-                <p>Quần áo giá rẻ Tham khảo ngay</p>
-                <a href="">Xem thêm</a>
+                <h3>Bộ sưu tập Adidas</h3>
+                <p>Tất cả sản phẩm mà bạn thích</p>
+                <a href="index.php?act=tatcasp">Xem thêm</a>
             </div>
         </div>
         <div class="swiper-slide">
             <img src="../Img/leoslideshow/slide-2-1920x800.jpg" alt="">
             <div class="banner-text">
-                <h3>Artifort Collectie</h3>
-                <p>Weatherized essentials to help keep<br>them dry, whatever the weather.</p>
-                <a href="">Xem thêm</a>
+                <h3>Thành viên của chúng tôi</h3>
+                <!-- <p></p> -->
+                <a href="index.php?act=vewebsite">Xem thêm</a>
             </div>
         </div>
         <div class="swiper-slide">
             <img src="../Img/leoslideshow/slide-3-1920x800.jpg" alt="">
             <div class="banner-text">
-                <h3>Artifort Collectie</h3>
-                <p>Weatherized essentials to help keep<br>them dry, whatever the weather.</p>
-                <a href="">Xem thêm</a>
+                <h3>Đặt hàng nhanh</h3>
+                <p>Đăng nhập hoặc đăng ký để đặt hàng ngay</p>
+                <a href="index.php?act=dangnhap">Đăng nhập</a>
             </div>
         </div>
     </div>
@@ -73,7 +73,7 @@
                              <a href="'.$detail.'" class="product-click-view">
                                  Xem chi tiết
                              </a>
-                             <form action="index.php?act=giohang" method="post" class="product-click-add">
+                             <form onsubmit="prevent()" action="index.php?act=giohang" method="post" class="product-click-add">
                              <input type="hidden" name="id" value="'.$id.'"/>    
                              <input type="hidden" name="name" value="'.$name.'"/>
                              <input type="hidden" name="img" value="'.$img.'"/>
@@ -191,6 +191,9 @@ var swipers = new Swiper(".mySwipers", {
     },
 });
 
+// function prevent(e) {
+//     e.preventDefault();
+// }
 
 function addToCart() {
     alert("Thêm vào giỏ hàng thành công")

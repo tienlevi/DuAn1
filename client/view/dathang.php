@@ -70,7 +70,7 @@ if(isset($_SESSION['user'])){
                     <td class="p-2"><img src='.$image.' height="180px"/></td>
                     <td class="p-2">'.$cart[1].'</td>
                     <td class="p-2">'.$cart[4].'đ</td>
-                    <td class="p-2">1</td>
+                    <td class="p-2">'.$cart[5].'</td>
                     </tr>
                     ';
                     $i += 1;

@@ -21,11 +21,13 @@
         <?php
                      foreach($listbl as $ds){
                         extract($ds);
-                        echo '<tr>
-                        <td>'.$username.'</td>
-                        <td>'.$noidung.'</td>
-                        <td>'.$ngaybinhluan.'</td>
-                      </tr>';
+                        if($trangthai === 0){
+                          echo '<tr>
+                          <td>'.$username.'</td>
+                          <td>'.$noidung.'</td>
+                          <td>'.$ngaybinhluan.'</td>
+                        </tr>';
+                        }
                      }
                      ?>
     </table>
