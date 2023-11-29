@@ -18,9 +18,7 @@ function viewCart($delete){
        </div>
        <h2>Số lượng:
        <div class="quantity-cart">
-           <button class="quantity-cart-btn decrease">-</button>
-           <input type="number" name="soluong" class="count" value="1">
-           <button class="quantity-cart-btn increase">+</button>
+           <input type="number" name="soluong" class="count" value="'.$cart[5].'">
        </div>
    </h2>
        <a href='.$xoa.'><i class="fa-solid fa-trash"></i></a>
