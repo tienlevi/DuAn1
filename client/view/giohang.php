@@ -15,8 +15,15 @@
                 foreach ($_SESSION['mycart'] as $cart) { 
                 $tong += $cart[4];
             }
-            $count = count($_SESSION['mycart']);
-                echo '<p>x'.$count.' Số lượng</p>
+            $tongSoLuong = 0;
+            if (isset($_SESSION['mycart'])) {
+                $cartItems = $_SESSION['mycart'];
+            
+                foreach ($cartItems as $cart) {
+                    $tongSoLuong += $cart[5]; // Số lượng sản phẩm là phần tử thứ 3 trong mỗi mục
+                }
+            }
+                echo '<p>x'.$tongSoLuong.' Số lượng</p>
                 <p>'.$tong.'đ</p>';
                  ?>
             </div>
