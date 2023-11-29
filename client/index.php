@@ -23,6 +23,8 @@ include "../model/donhang.php";
 if(!isset($_SESSION['mycart'])) {
     $_SESSION['mycart'] = [];
 }
+
+
 if(isset($_SESSION["user"])){
     extract($_SESSION['user']);
     if($trangthai === 1){
@@ -42,16 +44,7 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             include "dangnhap.php";
             break;
         case "dangky":
-            if(isset($_POST['dangky']) && $_POST['dangky']){
-                $user = $_POST['username'];
-                $pass = $_POST['password'];
-                $email = $_POST['email'];
-                $sdt = $_POST['sdt'];
-                $diachi = $_POST['diachi'];
-                $trangthai = 0;
-                insert_taikhoan($user,$pass,$email,$diachi,$sdt,$trangthai);
-            }
-            include "view/dangky.php";
+            include "dangky.php";
             break;
         case "sanphamct":
             if(isset($_GET['id'])&&$_GET['id']>0){
@@ -65,10 +58,29 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
                 $name = $_POST['name'];
                 $img = $_POST['img'];
                 $giatien = $_POST['giatien'];
-                $soluong = 1;
+                $soluong = $_POST['soluong'];
                 $tien = $soluong * $giatien;
-                $giohang = [$id,$name,$img,$giatien,$tien];
-                array_push($_SESSION['mycart'],$giohang);
+                $giohang = [$id,$name,$img,$giatien,$tien,$soluong];
+                // array_push($_SESSION['mycart'],$giohang);
+                if (isset($_SESSION['mycart'])) {
+                    $cartItems = $_SESSION['mycart'];
+                    $existingItemKey = null;
+                    foreach ($cartItems as $key => $item) {
+                        if ($item[0] == $id) {
+                            $existingItemKey = $key;
+                            break;
+                        }
+                    }
+                }  
+                if ($existingItemKey !== null) {
+                    // Nếu sản phẩm đã tồn tại, tăng số lượng
+                    $cartItems[$existingItemKey][4] += $tien; // Cập nhật tổng tiền
+                    $cartItems[$existingItemKey][5]++; // Tăng số lượng
+                } else {
+                    // Nếu sản phẩm chưa tồn tại, thêm mới sản phẩm vào giỏ hàng
+                    array_push($cartItems, $giohang);
+                }  
+                $_SESSION['mycart'] = $cartItems;
             }
             include "view/giohang.php";
             break;
@@ -104,7 +116,7 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
                     $_SESSION['mycart'] = [];
                     header("Location: index.php?act=hoadon");
                 }
-                $donhang = loadOneDonHang($_SESSION['user']['id']);
+                $donhang = loadHoaDonUser($_SESSION['user']['id']);
                 $giohang = loadCart($_SESSION['user']['id']);
                 include "view/dathang.php";
             break;
@@ -164,8 +176,8 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
     $listsanpham = loadAllSp($kym,$iddm);
     include "home.php";
 }
-include "footer.php";
 
+include "footer.php";
 ?>
 <div class="back-to-top"><i class="fa-solid fa-arrow-up"></i></div>
 <script src="./JS/script.js"></script>

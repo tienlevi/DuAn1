@@ -78,7 +78,7 @@
                              <input type="hidden" name="name" value="'.$name.'"/>
                              <input type="hidden" name="img" value="'.$img.'"/>
                              <input type="hidden" name="giatien" value="'.$giatien.'"/>
-                             <input type="hidden" name="soluong" value="'.$soluong.'"/>
+                             <input type="hidden" name="soluong" value="1"/>
                              <input type="submit" name="addtocart" value="Thêm vào giỏ hàng"/>
                              </form>
                          </div>
@@ -118,7 +118,7 @@
                     <input type="hidden" name="name" value="'.$name.'"/>
                     <input type="hidden" name="img" value="'.$img.'"/>
                     <input type="hidden" name="giatien" value="'.$giatien.'"/>
-                    <input type="hidden" name="soluong" value="'.$soluong.'"/>
+                    <input type="hidden" name="soluong" value="1"/>
                     <input type="submit" name="addtocart" value="Thêm vào giỏ hàng"/>
                     </form>
                 </div>

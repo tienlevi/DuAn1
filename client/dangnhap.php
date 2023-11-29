@@ -27,7 +27,7 @@ ob_start();
             if(isset($_POST['dangnhap'])&&($_POST['dangnhap'])){
                 $user = $_POST['username'];
                 $pass = $_POST['password'];
-                $checkuser = checkuser($user,$pass);
+                $checkuser = dangnhap($user,$pass);
                 if(is_array($checkuser)){
                     $_SESSION['user'] = $checkuser;
                     header('location: index.php');
