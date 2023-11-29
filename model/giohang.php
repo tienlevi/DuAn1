@@ -13,7 +13,7 @@ function viewCart($delete){
            <img src="'.$image.'" alt=""/>
            <div class="inner-item-name-price">
            <h2>'.$cart[1].'</h2>
-           <p>Giá: '.$cart[3].'đ</p>
+           <p>Giá: '.$cart[4].'đ</p>
            </div>
        </div>
        <h2>Số lượng:
@@ -27,8 +27,8 @@ function viewCart($delete){
    }
 }
 
-function insert_giohang($iduser,$idpro,$name,$img,$giatien,$iddonhang ){
-$sql="INSERT into giohang values(null,'$iduser','$idpro','$name','$img','$giatien',1,'$iddonhang')";
+function insert_giohang($iduser,$idpro,$name,$img,$giatien,$soluong,$iddonhang ){
+$sql="INSERT into giohang values(null,'$iduser','$idpro','$name','$img','$giatien','$soluong','$iddonhang')";
 return pdo_execute($sql);
 }
 
@@ -52,5 +52,7 @@ function loadHoaDonUser($id){
     $giohang = pdo_query($sql);
     return $giohang;
 }
+
+
 
 ?>

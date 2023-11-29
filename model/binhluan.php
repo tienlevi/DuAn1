@@ -1,15 +1,15 @@
 <?php
 function loadall_binhluan($idpro)
 {
-    $sql="SELECT binhluan.id, binhluan.noidung, khachhang.username, binhluan.iduser, binhluan.idpro, binhluan.ngaybinhluan FROM `binhluan` 
+    $sql="SELECT binhluan.id, binhluan.noidung, khachhang.username, binhluan.iduser, binhluan.idpro, binhluan.ngaybinhluan , binhluan.trangthai FROM `binhluan` 
     LEFT JOIN khachhang ON binhluan.iduser = khachhang.id
     LEFT JOIN sanpham ON binhluan.idpro = sanpham.id where idpro= $idpro";
     $listbl = pdo_query($sql);
     return $listbl;
 }
 
-function loadAllBl(){
-    $sql = "SELECT * FROM binhluan";
+function loadAllBl($idpro){
+    $sql = "SELECT * FROM binhluan where idpro = $idpro";
     $listbinhluan = pdo_query($sql);
     return $listbinhluan;
 }
@@ -83,12 +83,18 @@ function update_binhluan($id,$noidung){
 }
 
 
-function insert_binhluan($noidung,$iduser,$idpro,  $ngaybinhluan)
+function insert_binhluan($noidung,$iduser,$idpro,$ngaybinhluan)
 {
     if (!empty($noidung)) {
-        $sql = "INSERT INTO binhluan VALUES(null,'$noidung','$iduser','$idpro','$ngaybinhluan')";
+        $sql = "INSERT INTO binhluan VALUES(null,'$noidung','$iduser','$idpro','$ngaybinhluan',0)";
         pdo_execute($sql);
     }
+}
+
+function anBinhLuan($id){
+    $sql = "UPDATE binhluan SET trangthai = 1 WHERE id = $id";
+    pdo_execute($sql);
+    header("Location: binhluan.php?idpro");
 }
 
 function delete_binhluan_theo_nhieu_id($dieukhien)
