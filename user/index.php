@@ -11,14 +11,14 @@
 
 <?php
 session_start();
-if(!isset($_SESSION["user"])){
-    echo "Bạn không có quyền truy cập vào trang này";
-    die;
-}
 if(isset($_POST["dangxuat"])){
     unset($_SESSION["user"]);
     header("Location: ../client/index.php");
 } 
+if(!isset($_SESSION["user"])){
+    echo "Bạn không có quyền truy cập vào trang này";
+    die;
+}
 if(isset($_SESSION["user"])){
     extract($_SESSION['user']);
     if($trangthai === 1){
