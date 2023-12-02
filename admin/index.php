@@ -59,7 +59,6 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
                 $giatien = $_POST['giatien'];
                 $mota = $_POST['mota'];
                 $iddm = $_POST['iddm'];
-                $soluong = $_POST['soluong'];
                 $luotxem = $_POST['luotxem'];
                 $ngaytao = date('h:i:sa d/m/Y');
                 $mucgiamgia = $_POST['mucgiamgia'];
@@ -175,8 +174,6 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             include "taikhoan/list.php";
             break;
         case "donhang":
-            
-            // $giohang = loadHoaDon($_SESSION['user']['id']);
             $listdonhang = loadAllDonHang();
             include "donhang/list.php";
             break;
@@ -190,6 +187,7 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
         default:
             $tongdm = tinhtongdm();
             $tongsp = tinhtongsp();
+            $tongbl = tinhtongbinhluan();
             $tongkhachhang = tinhtongkhachhang();
             $listdanhmuc = loadAllDm();
             $listsanpham = loadAllSp();
@@ -199,6 +197,7 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
 } else {
         $tongdm = tinhtongdm();
         $tongsp = tinhtongsp();
+        $tongbl = tinhtongbinhluan();
         $tongkhachhang = tinhtongkhachhang();
         $listdanhmuc = loadAllDm();
         $listsanpham = loadAllSp();

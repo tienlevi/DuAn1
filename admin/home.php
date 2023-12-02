@@ -45,7 +45,10 @@
             </div>
             <div class="small-box">
                 <div class="inner">
-                    <h3>0</h3>
+                    <h3><?php foreach ($tongbl as $bl) {
+                extract($bl);
+                echo $total;
+                }?></h3>
                     <p>Lượt bình luận</p>
                 </div>
                 <div class="icon">

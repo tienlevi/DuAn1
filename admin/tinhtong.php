@@ -17,4 +17,10 @@ function tinhtongkhachhang(){
     $tongkhachhang = pdo_query($sql);
     return $tongkhachhang;
 }
+
+function tinhtongbinhluan(){
+    $sql = "SELECT Count(*) AS total FROM binhluan";
+    $tongbinhluan = pdo_query($sql);
+    return $tongbinhluan;
+}
 ?>
