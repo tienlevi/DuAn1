@@ -47,11 +47,11 @@ if(isset($_SESSION['user'])){
                     </div>
                 </div>
             </div>
-            <input class="confirm-pay" type="submit" name="dongydathang" value="đặt hàng">
+            <input onclick="datHang()" class="confirm-pay" type="submit" name="dongydathang" value="Đặt hàng">
         </form>
         <div class="bill">
             <h1>Thông tin giỏ hàng</h1>
-            <table class="table-bordered" border="1">
+            <!-- <table class="table-bordered" border="1">
                 <tr>
                     <td class="p-2" style="width: 100px;">STT</td>
                     <td class="p-2" style="width: 200px;">Ảnh</td>
@@ -77,13 +77,30 @@ if(isset($_SESSION['user'])){
                 }
                 echo "<h3>Tổng tiền: $tong</h3>";
                  ?>
-            </table>
+            </table> -->
+            <div class="product-bill-item">
+                <li class="product-bill-media">
+                    <div class="product-bill-media-img">
+                        <img src="../Img/1.jpg" alt="" width="60px" height="60px" style="object-fit: cover;">
+                    </div>
+                    <div class="product-bill-media-text">
+                        <span class="product-bill-media-name">Áo Adidas</span>
+                        <span class="product-bill-media-amount">x1</span>
+                        <span class="product-bill-media-price">100000đ</span>
+                    </div>
+                </li>
+                <div class="product-bill-item-total"></div>
+            </div>
         </div>
     </div>
 </div>
 
 <script>
-// function thanhToan() {
-//     alert("Thanh toán thành công");
-// }
+function datHang() {
+    if (confirm("Bạn có muốn đặt hàng không ?")) {
+        document.location = "index.php?act=hoadon";
+    } else {
+        return false;
+    }
+}
 </script>

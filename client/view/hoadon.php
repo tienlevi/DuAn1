@@ -20,8 +20,8 @@ if(isset($_SESSION['user'])){
         <div class="bill-information">
             <h3 class="box_title">Thông tin đơn hàng</h3>
             <div class="box-bill" style="min-height: 20px;">
-                <p>Mã đơn hàng: DAM-<?=$donhang['id']?></p>
-                <p>Ngày đặt hàng:<?=$donhang['thoigiandathang']?> </p>
+                <p>Mã đơn hàng: DAM-<?=$id?></p>
+                <p>Ngày đặt hàng:<?=$thoigiandathang?> </p>
                 <p>Phương thức thanh toán:
                     <?= $donhang['phuongthucthanhtoan'] === 0 ? "Chuyển khoản" : "Thanh toán khi giao hàng" ?></p>
                 <p>Ghi chú: <?=$donhang['ghichu']?></p>
@@ -36,13 +36,14 @@ if(isset($_SESSION['user'])){
 
         </div>
         <div class="bill-table">
-            <h3 class="box_title">Chi tiết giỏ hàng</h3>
+            <h3 class="box_title">Chi tiết sản phẩm đặt hàng</h3>
             <table style="background-color: #fff;">
                 <tr>
                     <td width="200px">Ảnh</td>
                     <td width="250px">Tên sản phẩm</td>
                     <td width="150px">Đơn giá</td>
                     <td width="100px">Số lượng</td>
+                    <td width="100px">Thành tiền</td>
                     <td width="150px">Thời gian đặt hàng</td>
                     <td width="150px">Trạng thái</td>
                 </tr>
@@ -54,6 +55,7 @@ if(isset($_SESSION['user'])){
                         <td style="padding: 10px">'.$name.'</td>
                         <td style="padding: 10px">'.$giatien.'đ</td>
                         <td style="padding: 10px">'.$soluong.' </td>
+                        <td style="padding: 10px">'.($giatien * $soluong).'đ</td>
                         <td style="padding: 10px">'.$thoigiandathang.' </td>
                         <td style="padding: 10px">'.($trangthai === 0 ? '<p style="color: orange">Đang kiểm duyệt</p>' : '<p style="color: red;">Hủy bỏ</p>').'</td>
                         </tr>';
