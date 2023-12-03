@@ -24,13 +24,14 @@ if(is_file($image)){
             <p>Mô tả: <?=$mota?></p>
             <p>Tên danh mục: <?php foreach ($listdanhmuc as $danhmuc) { 
                     extract($danhmuc);
-                    if($iddm === $id){
+                    if($id === $iddm){
                         echo $name;
                     } 
              } ?></p>
             <p>Lượt xem: <?=$luotxem?></p>
+            <p>Số lượng: <?=$soluong?></p>
             <p>Ngày tạo: <?=$ngaytao?></p>
-            <p>Mức giảm giá: <?=$mucgiamgia?>%</p>
+            <p>Mức giảm giá: <?=$trangthai === 0 ? "Còn hàng" : "hết hàng"?></p>
 
         </div>
     </div>

@@ -73,10 +73,6 @@ if(is_file($image)){
                     <label>Lượt xem </label> <br>
                     <input type="text" name="luotxem" value="<?=$luotxem?>">
                 </div>
-                <div class="row-input">
-                    <label>Mức giảm giá </label> <br>
-                    <input type="text" name="mucgiamgia" value="<?=$mucgiamgia?>">
-                </div>
                 <div class="row-btn">
                     <input onclick="return confirmEdit()" type="submit" name="sua" value="Sửa">
                 </div>

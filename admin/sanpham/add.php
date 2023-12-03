@@ -39,8 +39,8 @@
                 <input type="text" name="luotxem">
             </div>
             <div class="row-input">
-                <label>Mức giảm giá </label> <br>
-                <input type="text" name="mucgiamgia">
+                <label>Số lượng </label> <br>
+                <input type="text" name="soluong">
             </div>
             <div class="row-btn">
                 <input onclick="return confirmAdd()" type="submit" name="them" value="Thêm">

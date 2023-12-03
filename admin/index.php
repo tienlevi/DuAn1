@@ -40,14 +40,12 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
                 $iddm = $_POST['iddm'];
                 $soluong = $_POST['soluong'];
                 $luotxem = $_POST['luotxem'];
-                $trangthai = $_POST['trangthai'];
-                $thuonghieu = $_POST['thuonghieu'];
-                $mucgiamgia = $_POST['mucgiamgia'];
+                $soluong = $_POST['soluong'];
                 $target = "../Img/";
                 $img = $_FILES["img"]["name"];
                 $target_file = $target.$img;
                 move_uploaded_file($_FILES["img"]["tmp_name"],$target_file);
-                editSp($id,$name,$giatien,$img,$mota,$iddm,$soluong,$luotxem,$trangthai,$thuonghieu,$mucgiamgia);
+                editSp($id,$name,$giatien,$img,$mota,$iddm,$luotxem,$soluong);
             }
             $listdanhmuc = loadAllDm();
             include "sanpham/edit.php";
@@ -60,13 +58,13 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
                 $mota = $_POST['mota'];
                 $iddm = $_POST['iddm'];
                 $luotxem = $_POST['luotxem'];
+                $soluong = $_POST['soluong'];
                 $ngaytao = date('h:i:sa d/m/Y');
-                $mucgiamgia = $_POST['mucgiamgia'];
                 $target = "../Img/";
                 $img = $_FILES["img"]["name"];
                 $target_file = $target.basename($_FILES["img"]["name"]);
                 move_uploaded_file($_FILES["img"]["tmp_name"],$target_file);
-                addSp($name,$giatien,$img,$mota,$iddm,$luotxem,$ngaytao,$mucgiamgia);
+                addSp($name,$giatien,$img,$mota,$iddm,$luotxem,$ngaytao,$soluong);
             }
             $listdanhmuc = loadAllDm();
             $listsanpham = loadAllSp("",0);
@@ -172,6 +170,12 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
                 huyHang($_GET['id']);
             }
             include "taikhoan/list.php";
+            break;
+        case "xacnhandonhang":
+            if(isset($_GET['id']) && ($_GET['id'] > 0)){
+                xacNhanHang($_GET['id']);
+            }
+            include "donhang/list.php";
             break;
         case "donhang":
             $listdonhang = loadAllDonHang();

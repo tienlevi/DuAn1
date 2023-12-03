@@ -38,6 +38,7 @@
                     extract($donhang);
                     $sua = "index.php?act=editsp&id=".$id;
                     $huyhang = "index.php?act=huydonhang&id=".$id;
+                    $xacnhanhang = "index.php?act=xacnhandonhang&id=".$id;
                     $detail = "index.php?act=chitietdonhang&id=".$id;
                 echo '<tr>
                 <td>'.$id.'</td>
@@ -45,14 +46,17 @@
                 <td>'.$diachi.'</td>
                 <td>'.$thoigiandathang.'</td>
                 <td>'.$soluong.'</td>
-                <td>'.($trangthai === 0 ? "<p style='color: orange'>Đang kiểm duyệt</p>" : "<p style='color: red;'>Hủy bỏ</p>").'</td>
+                <td>'.($trangthai === 0 ? "<p style='color: orange;'>Đang kiểm duyệt</p>" : ($trangthai === 2 ? "<p style='color: green;'>Thành công</p>" : "<p style='color: red;'>Hủy bỏ</p>")).'</td>
                 <td>'.$ghichu.'</td>
                 <td class="edit-delete">
                 <a href="'.$detail.'" class="detail">
                         Chi tiết đơn hàng
                     </a>
-                    <a href="'.$huyhang.'" onclick="return confirmUpdate()" class="delete">
+                    <a href="'.$huyhang.'" onclick="return xacNhanHuy()" class="delete">
                         Hủy giao hàng
+                    </a>
+                    <a href="'.$xacnhanhang.'" onclick="return xacNhan()" class="success">
+                        Xác nhận hàng
                     </a>
             </tr>';
              } ?>
@@ -64,8 +68,17 @@
 
 </body>
 <script>
-function confirmUpdate() {
-    if (confirm("Bạn có muốn cập nhật trạng thái không ?")) {
+function xacNhanHuy() {
+    if (confirm("Bạn có muốn hủy hàng không ?")) {
+        document.location = "index.php?act=donhang";
+        alert("Cập nhật thành công");
+    } else {
+        return false;
+    }
+}
+
+function xacNhan() {
+    if (confirm("Bạn có muốn hủy hàng không ?")) {
         document.location = "index.php?act=donhang";
         alert("Cập nhật thành công");
     } else {
