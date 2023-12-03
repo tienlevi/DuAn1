@@ -51,6 +51,24 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             $laymatkhau = laymatkhau($_SESSION["user"]["id"]);            
             include "view/doimk.php";
             break;
+        case "doimk":
+            $taikhoan = loadone_taikhoan($_SESSION["user"]["id"]);
+            $laymatkhau = laymatkhau($_SESSION["user"]["id"]);            
+            include "view/doimk.php";
+            break;
+        case "chitietdonhang":
+            if(isset($_GET['id']) && $_GET['id']){
+                $giohang = loadHoaDonChiTiet($_GET['id']);
+            }
+            include "view/chitietdonhang.php";
+            break;
+        case "huydonhang":
+            if(isset($_GET['id']) && ($_GET['id'] > 0)){
+                huyHang($_GET['id']);
+                header("Location: index.php?act=lichsudathang");
+            }
+            include "taikhoan/list.php";
+            break;
         case "thaydoithongtin":
             $taikhoan = loadone_taikhoan($_SESSION["user"]["id"]);
             if(isset($_POST['suathongtin']) && $_POST['suathongtin']){
