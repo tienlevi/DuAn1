@@ -37,7 +37,7 @@ if(is_file($image)){
     <iframe src="./sanpham/binhluan.php?idpro=<?php if(is_array($sanpham)){
     extract($sanpham);
     } 
-    echo $id;?>" width="700px" height="300px" frameborder="0"></iframe>
+    echo $id;?>" width="100%" height="300px" frameborder="0"></iframe>
     <div class="function-back">
         <a href="index.php?act=listsp">Quay lại trang sản phẩm</a>
     </div>

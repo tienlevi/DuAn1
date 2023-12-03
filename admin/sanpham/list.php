@@ -16,7 +16,6 @@
     </form>
     <div class="function">
         <a href="index.php">Quay lại trang chủ</a>
-        <a href="index.php?act=binhluan">Bình luận</a>
         <a href="index.php?act=addsp" class="btn btn-success">Thêm sản phẩm</a>
     </div>
     <div class="table">
