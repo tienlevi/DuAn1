@@ -17,6 +17,16 @@ function loadHoaDon($iddonhang){
     return $giohang;
 }
 
+function loadHoaDonChiTiet($id){
+    $sql = "SELECT giohang.id, giohang.iduser,
+    giohang.idpro, giohang.name, giohang.img, giohang.giatien,
+    giohang.soluong, giohang.iddonhang, donhang.thoigiandathang,
+    donhang.phuongthucthanhtoan,donhang.ghichu, donhang.trangthai FROM giohang
+    LEFT JOIN donhang ON donhang.id = giohang.id WHERE giohang.id = $id";
+    $giohang = pdo_query_one($sql);
+    return $giohang;
+}
+
 function loadHoaDonUser($id){
     $sql = "SELECT giohang.id, giohang.iduser,
     giohang.idpro, giohang.name, giohang.img, giohang.giatien,

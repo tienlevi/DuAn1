@@ -43,6 +43,13 @@ function huyHang($id){
     header("location: index.php?act=donhang");
 }
 
+function xacNhanHang($id){
+    $sql = "UPDATE donhang SET trangthai = 2 WHERE id = $id";
+    pdo_execute($sql);
+    header("location: index.php?act=donhang");
+}
+
+
 function tongDonHang(){
     $tong = 0;
     foreach($_SESSION['cart'] as $cart) {

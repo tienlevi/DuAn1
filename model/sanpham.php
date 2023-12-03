@@ -42,14 +42,14 @@ function loadOneSp($id){
     return $sanpham;
 }
 
-function editSp($id,$name,$giatien,$img,$mota,$iddm,$luotxem,$mucgiamgia){
-    $sql = "UPDATE sanpham set name='$name',giatien='$giatien',img='$img',mota='$mota',iddm='$iddm',luotxem='$luotxem',mucgiamgia='$mucgiamgia' WHERE id = $id";
+function editSp($id,$name,$giatien,$img,$mota,$iddm,$luotxem,$soluong){
+    $sql = "UPDATE sanpham set name='$name',giatien='$giatien',img='$img',mota='$mota',iddm='$iddm',luotxem='$luotxem',soluong='$soluong' WHERE id = $id";
     pdo_execute($sql);
     header("location: index.php?act=listsp");
 }
 
-function addSp($name,$giatien,$img,$mota,$iddm,$luotxem,$ngaytao,$mucgiamgia){
-    $sql = "INSERT INTO sanpham VALUES(null,'$name','$giatien','$img','$mota','$iddm','$luotxem','$ngaytao','$mucgiamgia')";
+function addSp($name,$giatien,$img,$mota,$iddm,$luotxem,$ngaytao,$soluong){
+    $sql = "INSERT INTO sanpham VALUES(null,'$name','$giatien','$img','$mota','$iddm','$luotxem','$ngaytao','$soluong',0)";
     pdo_execute($sql);
     header("location: index.php?act=listsp");   
 }
