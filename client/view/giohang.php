@@ -25,6 +25,7 @@
                   <input type="submit" name="tangsoluong" class="count" value="+">
               </form>
           </h2>
+          <h2>Thành tiền: '.$cart[4].'đ</h2>
               <a href='.$xoa.'><i class="fa-solid fa-trash"></i></a>
           </div>';
           $i += 1;
@@ -38,7 +39,7 @@
                 foreach ($_SESSION['mycart'] as $cart) { 
                 $tong += $cart[4];
                 }
-                echo '<p>Tổng tiền</p>
+                echo '<p>Tổng tiền tất cả</p>
                 <p>'.$tong.'đ</p>';
                  ?>
             </div>
