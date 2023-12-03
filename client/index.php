@@ -72,13 +72,49 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
                     }
                 }  
                 if ($existingItemKey !== null) {
-                    // Nếu sản phẩm đã tồn tại, tăng số lượng
-                    $cartItems[$existingItemKey][4] += $tien; // Cập nhật tổng tiền
-                    $cartItems[$existingItemKey][5]++; // Tăng số lượng
+                    $cartItems[$existingItemKey][4] += $tien; 
+                    $cartItems[$existingItemKey][5] += $soluong; 
                 } else {
-                    // Nếu sản phẩm chưa tồn tại, thêm mới sản phẩm vào giỏ hàng
                     array_push($cartItems, $giohang);
                 }  
+                $_SESSION['mycart'] = $cartItems;
+            }
+            if(isset($_POST['tangsoluong']) && $_POST['tangsoluong']) {
+                $id = $_POST['id'];
+                $cartItems = $_SESSION['mycart'];
+                
+                // Tìm kiếm sản phẩm trong giỏ hàng
+                foreach ($cartItems as $key => $item) {
+                    if ($item[0] == $id) {
+                        // Tăng số lượng và giá tiền của sản phẩm
+                        $cartItems[$key][5]++; 
+                        $cartItems[$key][4] += $item[3];
+                        break;
+                    }
+                }
+                
+                // Lưu giỏ hàng vào session
+                $_SESSION['mycart'] = $cartItems;
+            }
+            
+            // Kiểm tra nút "Giảm số lượng" được nhấn
+            if(isset($_POST['giamsoluong']) && $_POST['giamsoluong']) {
+                $id = $_POST['id'];
+                $cartItems = $_SESSION['mycart'];
+                
+                // Tìm kiếm sản phẩm trong giỏ hàng
+                foreach ($cartItems as $key => $item) {
+                    if ($item[0] == $id) {
+                        // Giảm số lượng và giá tiền của sản phẩm
+                        if ($item[5] > 1) {
+                            $cartItems[$key][5]--; 
+                            $cartItems[$key][4] -= $item[3];
+                        }
+                        break;
+                    }
+                }
+                
+                // Lưu giỏ hàng vào session
                 $_SESSION['mycart'] = $cartItems;
             }
             include "view/giohang.php";
@@ -95,6 +131,10 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             include "view/vewebsite.php";
             break;
         case "dathang":
+            if(!isset($_SESSION["user"])){
+                echo "Bạn chưa đăng nhập tài khoản";
+                die;
+            }
             $donhang = null;
             $giohang = null;
                 if(isset($_POST['dongydathang'])&&($_POST['dongydathang'])){
@@ -123,7 +163,10 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             if(!isset($_SESSION["user"])){
                 header("Location: index.php");
             }
-            $donhang = loadOneDonHang($_SESSION['user']['id']);
+            // if(!header("Location: index.php?act=hoadon")){
+            //     $_SESSION['mycart'] = [];
+            // }
+            $donhang = loadOneDonHang();
             $giohang = loadHoaDon($_SESSION['user']['id']);
             include "view/hoadon.php";
             break;

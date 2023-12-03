@@ -79,17 +79,38 @@ if(isset($_SESSION['user'])){
                  ?>
             </table> -->
             <div class="product-bill-item">
-                <li class="product-bill-media">
-                    <div class="product-bill-media-img">
-                        <img src="../Img/1.jpg" alt="" width="60px" height="60px" style="object-fit: cover;">
+                <div class="product-bill-item-list">
+                    <?php
+                    foreach ($_SESSION['mycart'] as $cart) {
+                        $tong += $cart[4];
+                        $image = '../Img/'.$cart[2].'';
+                    }
+                   echo '<div class="product-bill-media">
+                   <div class="product-bill-media-text">
+                       <div class="product-bill-media-text-img"><img src="'.$image.'" alt="">
+                           <p>'.$cart[1].' <span>x'.$cart[5].'</span></p>
+                       </div>
+                       <b>'.$cart[4].'đ</b>
+                   </div>
+               </div>'; 
+                   ?>
+                    <div class="product-bill-media">
+                        <div class="product-bill-media-text">
+                            <div class="product-bill-media-text-img"><img src="../Img/1.jpg" alt="">
+                                <p>Áo Adidas<span>x1</span></p>
+                            </div>
+                            <b>100000đ</b>
+                        </div>
                     </div>
-                    <div class="product-bill-media-text">
-                        <span class="product-bill-media-name">Áo Adidas</span>
-                        <span class="product-bill-media-amount">x1</span>
-                        <span class="product-bill-media-price">100000đ</span>
+                </div>
+                <div class="product-bill-item-total">
+                    <div class="product-bill-item-total-name">
+                        <p>Tổng tiền tất cả </p>
                     </div>
-                </li>
-                <div class="product-bill-item-total"></div>
+                    <div class="product-bill-item-total-name">
+                        <b>100000đ</b>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

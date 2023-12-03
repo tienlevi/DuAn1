@@ -73,7 +73,7 @@
                              <a href="'.$detail.'" class="product-click-view">
                                  Xem chi tiết
                              </a>
-                             <form onsubmit="prevent()" action="index.php?act=giohang" method="post" class="product-click-add">
+                             <form onsubmit="addToCart()" action="index.php?act=giohang" method="post" class="product-click-add">
                              <input type="hidden" name="id" value="'.$id.'"/>    
                              <input type="hidden" name="name" value="'.$name.'"/>
                              <input type="hidden" name="img" value="'.$img.'"/>
