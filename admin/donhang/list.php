@@ -67,6 +67,7 @@
 function confirmUpdate() {
     if (confirm("Bạn có muốn cập nhật trạng thái không ?")) {
         document.location = "index.php?act=donhang";
+        alert("Cập nhật thành công");
     } else {
         return false;
     }
