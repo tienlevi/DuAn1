@@ -20,6 +20,7 @@ ob_start();
             ob_end_flush(); 
             ?>
             </div>
+            <input type="checkbox" name="checkbox" class="checkbox" /> Hiện mật khẩu
             <div class="forget-password">
                 <a href="">Quên mật khẩu ?</a>
             </div>
