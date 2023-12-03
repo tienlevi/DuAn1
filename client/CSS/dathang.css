@@ -7,15 +7,16 @@
 }
 
 .pay-form {
-  display: block;
+  display: flex;
 }
 
 .pay-form form {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 65%;
   border: 1px solid #e1e1e1;
   padding: 16px;
+  margin-right: 20px;
 }
 
 .pay-label {
@@ -94,10 +95,14 @@
 }
 
 .bill {
-  margin: 30px 0px;
+  width: 35%;
+  margin-left: 20px;
+  padding: 12px;
+  border: 1px solid #e1e1e1;
 }
 
 .bill h1 {
+  font-size: 24px;
   margin-bottom: 15px;
 }
 
@@ -107,6 +112,52 @@
 
 .bill-information {
   margin: 20px 0px;
+}
+
+.product-bill-media {
+  display: block;
+  margin: 13px 0px;
+}
+
+.product-bill-item-list {
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.product-bill-media-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.product-bill-media-text-img {
+  display: flex;
+  align-items: center;
+}
+
+.product-bill-media-text-img img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.product-bill-media-text-img p {
+  width: 130px;
+  margin-left: 15px;
+  margin-bottom: 0;
+  word-wrap: break-word;
+}
+
+.product-bill-media-text-img span {
+  margin-left: 8px;
+  color: #777;
+}
+
+.product-bill-item-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 16px;
 }
 
 .wrapper-bill {
@@ -133,14 +184,54 @@
 
 @media screen and (max-width: 1300px) {
   .pay {
-    max-width: 975px;
+    max-width: 1000px;
     margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
 }
 
 @media screen and (max-width: 1000px) {
   .pay {
-    width: 80%;
+    max-width: 750px;
+    margin: auto;
+  }
+
+  .pay-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pay-form form {
+    width: 100%;
+  }
+
+  .bill {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .pay {
+    max-width: 500px;
+    margin: auto;
+  }
+
+  .product-bill-media-text-img p {
+    width: 80px;
+    margin-left: 15px;
+    margin-bottom: 0;
+    word-wrap: break-word;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .pay {
+    max-width: 300px;
     margin: auto;
   }
 }
