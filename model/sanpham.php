@@ -49,7 +49,7 @@ function editSp($id,$name,$giatien,$img,$mota,$iddm,$luotxem,$mucgiamgia){
 }
 
 function addSp($name,$giatien,$img,$mota,$iddm,$luotxem,$ngaytao,$mucgiamgia){
-    $sql = "INSERT INTO sanpham VALUES(null,'$name','$giatien','$img','$mota','$iddm','$luotxem',1,'$ngaytao','$mucgiamgia')";
+    $sql = "INSERT INTO sanpham VALUES(null,'$name','$giatien','$img','$mota','$iddm','$luotxem','$ngaytao','$mucgiamgia')";
     pdo_execute($sql);
     header("location: index.php?act=listsp");   
 }

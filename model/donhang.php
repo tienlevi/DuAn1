@@ -25,8 +25,8 @@ function loadAllDonHang(){
     return $listdonhang;
 }
 
-function loadOneDonHang($id){
-    $sql = "SELECT * FROM donhang WHERE id = $id";
+function loadOneDonHang(){
+    $sql = "SELECT * FROM donhang ORDER BY id desc";
     $donhang = pdo_query_one($sql);
     return $donhang;
 }

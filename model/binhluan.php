@@ -91,10 +91,16 @@ function insert_binhluan($noidung,$iduser,$idpro,$ngaybinhluan)
     }
 }
 
-function anBinhLuan($id){
+function anBinhLuan($idpro,$id){
     $sql = "UPDATE binhluan SET trangthai = 1 WHERE id = $id";
     pdo_execute($sql);
-    header("Location: binhluan.php?idpro");
+    header("Location: binhluan.php?idpro=$idpro");
+}
+
+function hienBinhLuan($idpro,$id){
+    $sql = "UPDATE binhluan SET trangthai = 0 WHERE id = $id";
+    pdo_execute($sql);
+    header("Location: binhluan.php?idpro=$idpro");
 }
 
 function delete_binhluan_theo_nhieu_id($dieukhien)
