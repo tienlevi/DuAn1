@@ -8,6 +8,10 @@ const menuIcon = document.querySelector("header .menu-icon");
 const menuRes = document.querySelector("header .menu-res");
 const closeIcon = document.querySelector("header .menu-res i");
 const overlay = document.querySelector(".overlay");
+const checkbox = document.querySelector(".checkbox");
+var passwordInput = document.querySelector(
+  ".form-input input[type='password']"
+);
 
 menuIcon.addEventListener("click", () => {
   menuRes.classList.add("active-menu-res");
@@ -42,3 +46,13 @@ backtotop.addEventListener("click", returntop);
 function returntop() {
   window.scrollTo(0, 0);
 }
+
+checkbox.addEventListener("click", () => {
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    console.log("Checkbox đã được chọn");
+  } else {
+    passwordInput.type = "password";
+    console.log("Checkbox đã bị bỏ chọn");
+  }
+});
