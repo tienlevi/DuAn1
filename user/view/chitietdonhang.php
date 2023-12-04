@@ -22,7 +22,7 @@
             <p class="fs-5">Ngày giao hàng: 16-11-2023</p>
             <p class="fs-5">Số lượng: <?=$soluong?></p>
             <p class="fs-5">Trạng thái:
-                <?=$trangthai === 0 ? "<span class='text text-warning'>Đang kiểm duyệt</span>" : "<span class='text text-danger'>Hủy bỏ</span>"?>
+                <?=$trangthai === 0 ? "<p style='color: orange;'>Đang kiểm duyệt</p>" : ($trangthai === 2 ? "<p style='color: green;'>Thành công</p>" : "<p style='color: red;'>Hủy bỏ</p>")?>
             </p>
             <p class="fs-5">Ghi chú: <?=$ghichu?></p>
         </div>

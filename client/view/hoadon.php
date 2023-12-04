@@ -1,7 +1,7 @@
 <?php
 if(isset($donhang) && is_array($donhang)){
     extract($donhang);
-}  
+}   
 if(isset($_SESSION['user'])){
     $name = $_SESSION['user']['username'];
     $diachi = $_SESSION['user']['diachi'];

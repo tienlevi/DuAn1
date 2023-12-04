@@ -179,18 +179,21 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
                         insert_giohang($_SESSION['user']['id'],$cart[0],$cart[1],$cart[2],$cart[3],$cart[5],$iddathang);
                     }
                     $_SESSION['mycart'] = [];
-                    header("Location: index.php?act=hoadon");
+                    header("Location: index.php?act=hoadon&iddonhang=$iddathang");
                 }
                 $donhang = loadHoaDonUser($_SESSION['user']['id']);
                 $giohang = loadCart($_SESSION['user']['id']);
+
                 include "view/dathang.php";
             break;
         case "hoadon":
             if(!isset($_SESSION["user"])){
                 header("Location: index.php");
             }
+            if(isset($_GET['iddonhang']) && ($_GET['iddonhang']) > 0){
+                $giohang = loadCart($_GET['iddonhang']);
+            }
             $donhang = loadOneDonHang();
-            $giohang = loadHoaDon($_SESSION['user']['id']);
             include "view/hoadon.php";
             break;
         case "tatcasp":

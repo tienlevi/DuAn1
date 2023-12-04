@@ -30,7 +30,7 @@ if(is_array($donhang)){
             <p>Địa chỉ giao hàng: <?=$diachi?></p>
             <p>Thời gian đặt hàng: <?=$thoigiandathang?></p>
             <p>Ngày giao hàng: 16-11-2023</p>
-            <p>Số lượng: <?=$soluong?></p>
+            <p>Tổng số lượng sản phẩm đặt hàng: <?=$soluong?></p>
             <p>Trạng thái: <span><?=$trangthai === 0 ? "Đang kiểm duyệt" : "Hủy bỏ"?></span></p>
             <p>Ghi chú: <?=$ghichu?></p>
         </div>

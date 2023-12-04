@@ -31,6 +31,16 @@ function loadOneDonHang(){
     return $donhang;
 }
 
+function loadOneDonHangUser($id){
+    $sql = "SELECT donhang.id, donhang.khachhang, donhang.diachi,
+    donhang.sdt, donhang.email, donhang.thoigiandathang, donhang.phuongthucthanhtoan,
+    donhang.soluong,donhang.trangthai,donhang.ghichu,
+    giohang.iddonhang,giohang.iduser,giohang.name,giohang.giatien FROM donhang
+    LEFT JOIN giohang ON giohang.iddonhang = donhang.id WHERE giohang.iduser = $id";
+    $donhang = pdo_query($sql);
+    return $donhang;
+}
+
 function loadDonHangTrangChu($id){
     $sql = "SELECT * FROM donhang WHERE id = $id";
     $donhang = pdo_query_one($sql);

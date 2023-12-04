@@ -19,11 +19,11 @@
                 <td style="padding: 10px; width: 200px;">Chức năng</td>
             </tr>
             <?php 
-                foreach($giohang as $value) {
+                foreach($donhang as $value) {
                     extract($value);
                         echo '<tr>
                         <td style="padding: 10px;">'.$id.'</td>
-                        <td style="padding: 10px;">'.$name.'</td>
+                        <td style="padding: 10px;">'.($name ? $name : "").'</td>
                         <td style="padding: 10px;">'.$diachi.'</td>
                         <td style="padding: 10px;">'.$thoigiandathang.'</td>
                         <td style="padding: 10px;">'.$giatien.'đ</td>

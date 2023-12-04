@@ -10,6 +10,7 @@ if(isset($_SESSION['user'])){
     $email = "";
     $sdt = "";
 }
+
 ?>
 <div class="pay">
     <div class="pay-form">
@@ -47,7 +48,7 @@ if(isset($_SESSION['user'])){
                     </div>
                 </div>
             </div>
-            <input onclick="datHang()" class="confirm-pay" type="submit" name="dongydathang" value="Đặt hàng">
+            <input onclick="return datHang()" class="confirm-pay" type="submit" name="dongydathang" value="Đặt hàng">
         </form>
         <div class="bill">
             <h1>Thông tin giỏ hàng</h1>
@@ -89,7 +90,7 @@ if(isset($_SESSION['user'])){
 <script>
 function datHang() {
     if (confirm("Bạn có muốn đặt hàng không ?")) {
-        document.location = "index.php?act=hoadon";
+        alert("Đặt hàng thành công")
     } else {
         return false;
     }
