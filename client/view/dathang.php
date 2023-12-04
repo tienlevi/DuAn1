@@ -44,7 +44,7 @@ if(isset($_SESSION['user'])){
                     </div>
                     <div class="payment_method">
                         <input value="1" name="phuongthucthanhtoan" type="radio">
-                        <label>Thanh toán khi giao hàng</label>
+                        <label>Thanh toán khi nhận hàng</label>
                     </div>
                 </div>
             </div>
@@ -70,7 +70,7 @@ if(isset($_SESSION['user'])){
                 </div>
                 <div class="product-bill-item-total">
                     <div class="product-bill-item-total-name">
-                        <p>Tổng tiền tất cả </p>
+                        <p>Thành tiền </p>
                     </div>
                     <div class="product-bill-item-total-name">
                         <b><?php 

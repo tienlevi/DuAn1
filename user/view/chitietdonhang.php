@@ -7,25 +7,40 @@
     <div class="login">
         <h1>Chi tiết đơn hàng</h1>
     </div>
-    <div class="d-flex">
-        <div class="content-main-img">
-            <img src="../Img/<?=$img?>" alt="" width="400px" style="object-fit: cover;">
-        </div>
-        <div class="content-main-text" style="margin-left: 20px;">
-            <p class="fs-5">Mã đơn: <?=$id?></p>
-            <p class="fs-5">Mã sản phẩm: <?=$idpro?></p>
-            <p class="fs-5">Tên sản phẩm: <?=$name?></p>
-            <p class="fs-5">Phương thức thanh toán:
-                <?=$phuongthucthanhtoan === 0 ? "Chuyển khoản" : "Thanh toán khi giao hàng"?></p>
-            <p class="fs-5">Địa chỉ giao hàng: <?=$diachi?></p>
-            <p class="fs-5">Thời gian đặt hàng: <?=$thoigiandathang?></p>
-            <p class="fs-5">Ngày giao hàng: 16-11-2023</p>
-            <p class="fs-5">Số lượng: <?=$soluong?></p>
-            <p class="fs-5">Trạng thái:
-                <?=$trangthai === 0 ? "<p style='color: orange;'>Đang kiểm duyệt</p>" : ($trangthai === 2 ? "<p style='color: green;'>Thành công</p>" : "<p style='color: red;'>Hủy bỏ</p>")?>
-            </p>
-            <p class="fs-5">Ghi chú: <?=$ghichu?></p>
-        </div>
+    <div class="table">
+        <table class="table-bordered" border="1">
+            <tr>
+                <td style="padding: 10px; width: 50px;">Mã hàng</td>
+                <td style="padding: 10px; width: 250px;">Tên sản phẩm</td>
+                <td style="padding: 10px; width: 250px;">Ảnh</td>
+                <td style="padding: 10px; width: 250px;">Địa chỉ giao hàng</td>
+                <td style="padding: 10px; width: 100px;">Giá tiền</td>
+                <td style="padding: 10px; width: 100px;">Số lượng</td>
+                <td style="padding: 10px; width: 100px;">Thành tiền</td>
+            </tr>
+            <?php
+                foreach($giohang as $value) {
+                    extract($value);
+                        echo '<tr>
+                        <td style="padding: 10px;">'.$iddonhang.'</td>
+                        <td style="padding: 10px;">'.$name.'</td>
+                        <td style="padding: 10px;"><img src="../Img/'.$img.'" width="200px" height="150px" style="object-fit: cover"/></td>
+                        <td style="padding: 10px;">'.$diachi.'</td>
+                        <td style="padding: 10px;">'.$giatien.'đ</td>
+                        <td style="padding: 10px;">'.$soluong.'</td>
+                        <td style="padding: 10px;">'.($giatien * $soluong).'đ</td>
+                        </tr>';
+                } 
+             ?>
+        </table>
+        <h1 style="margin: 15px 0px; font-size: 24px;">Tổng số tiền: <?php 
+                $tong = 0;
+                foreach ($giohang as $value) { 
+                extract($value);
+                $tong += $giatien * $soluong;
+                }
+                echo $tong;
+                 ?>đ</h1>
     </div>
 </div>
 <div class="btn btn-dark my-3 text-center" style="width: 300px; margin: auto;">

@@ -9,7 +9,7 @@
         <table class="table-bordered" border="1">
             <tr>
                 <td style="padding: 10px; width: 50px;">Mã đơn</td>
-                <td style="padding: 10px; width: 250px;">Tên sản phẩm</td>
+                <td style="padding: 10px; width: 250px;">Sản phẩm khách hàng đặt</td>
                 <td style="padding: 10px; width: 250px;">Địa chỉ giao hàng</td>
                 <td style="padding: 10px; width: 150px;">Thời gian đặt hàng</td>
                 <td style="padding: 10px; width: 100px;">Giá tiền</td>
@@ -19,28 +19,37 @@
                 <td style="padding: 10px; width: 200px;">Chức năng</td>
             </tr>
             <?php 
-                foreach($donhang as $value) {
-                    extract($value);
-                        echo '<tr>
-                        <td style="padding: 10px;">'.$id.'</td>
-                        <td style="padding: 10px;">'.($name ? $name : "").'</td>
-                        <td style="padding: 10px;">'.$diachi.'</td>
-                        <td style="padding: 10px;">'.$thoigiandathang.'</td>
-                        <td style="padding: 10px;">'.$giatien.'đ</td>
-                        <td style="padding: 10px;">'.$soluong.'</td>
-                        <td style="padding: 10px;">'.($giatien * $soluong).'đ</td>
-                        <td style="padding: 10px;">'.($trangthai === 0 ? "<p style='color: orange;'>Đang kiểm duyệt</p>" : ($trangthai === 2 ? "<p style='color: green;'>Thành công</p>" : "<p style='color: red;'>Hủy bỏ</p>")).'</td>
-                        <td style="padding: 10px;">
-                        <a class="btn btn-danger my-1" style="width: 100%; font-size: 14px" href="index.php?act=huydonhang&id='.$id.'" onclick="return huyBo()">Hủy đơn hàng</a>
-                        <a class="btn btn-warning my-1" style="width: 100%; font-size: 14px" href="index.php?act=chitietdonhang&id='.$id.'">Chi tiết đơn hàng</a>
-                        </td>
+            foreach($donhang as $value) { ?>
+            <tr>
+                <td style="padding: 10px;"><?php echo $value['id'] ?></td>
+                <td style="padding: 10px;"><?php foreach ($giohang as $gh) {
+                    if($value['id'] === $gh['iddonhang']){
+                        echo $gh['name'],",";
+                    };
+                } ?></td>
+                <td style="padding: 10px;"><?php echo $value['diachi'] ?></td>
+                <td style="padding: 10px;"><?php echo $value['thoigiandathang'] ?></td>
+                <td style="padding: 10px;"><?php echo $value['giatien'] ?>đ</td>
+                <td style="padding: 10px;"><?php echo $value['soluong'] ?></td>
+                <td style="padding: 10px;"><?php echo $value['giatien'] * $value['soluong'] ?>đ</td>
+                <td style="padding: 10px;">
+                    <?php echo $value['trangthai'] === 0 ? "<p style='color: orange;'>Đang kiểm duyệt</p>" : "" ?>
+                    <?php echo $value['trangthai'] === 1 ? "<p style='color: red;'>Huỷ bỏ</p>" : "" ?>
+                    <?php echo $value['trangthai'] === 2 ? "<p style='color: green;'>Thành công</p>" : "" ?>
+                </td>
+                <td style="padding: 10px;">
+                    <?php echo $value['trangthai'] === 0 ? "<a onclick='return huyBo()' class='btn btn-danger my-1' style='width: 100%; font-size: 14px'
+                        href='index.php?act=huydonhang&id=".($value['id'])."'>Hủy đơn hàng</a>" : "" ?>
+                    <a class="btn btn-warning my-1" style="width: 100%; font-size: 14px"
+                        href="index.php?act=chitietdonhang&id=<?php echo $value['id'] ?>">Chi tiết đơn hàng</a>
+                </td>
 
-                        </tr>';
-                } 
-             ?>
+            </tr>
+            <?php  } ?>
         </table>
 
     </div>
+    <a href="index.php" class="btn btn-dark">Quay lại trang</a>
 </div>
 <script>
 function huyBo() {

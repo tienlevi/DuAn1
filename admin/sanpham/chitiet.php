@@ -31,7 +31,7 @@ if(is_file($image)){
             <p>Lượt xem: <?=$luotxem?></p>
             <p>Số lượng: <?=$soluong?></p>
             <p>Ngày tạo: <?=$ngaytao?></p>
-            <p>Mức giảm giá: <?=$trangthai === 0 ? "Còn hàng" : "hết hàng"?></p>
+            <p>Trạng thái: <?=$trangthai === 0 ? "Còn hàng" : "hết hàng"?></p>
 
         </div>
     </div>

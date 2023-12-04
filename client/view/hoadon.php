@@ -23,7 +23,7 @@ if(isset($_SESSION['user'])){
                 <p>Mã đơn hàng: DAM-<?=$id?></p>
                 <p>Ngày đặt hàng:<?=$thoigiandathang?> </p>
                 <p>Phương thức thanh toán:
-                    <?= $donhang['phuongthucthanhtoan'] === 0 ? "Chuyển khoản" : "Thanh toán khi giao hàng" ?></p>
+                    <?= $donhang['phuongthucthanhtoan'] === 0 ? "Chuyển khoản" : "Thanh toán khi nhận hàng" ?></p>
                 <p>Ghi chú: <?=$donhang['ghichu']?></p>
             </div>
             <h3 class="box_title">Thông tin đặt hàng</h3>

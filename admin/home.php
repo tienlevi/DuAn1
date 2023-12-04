@@ -67,28 +67,29 @@
                     <td style="width: 100px">Giá</td>
                     <td style="width: 200px">Ảnh</td>
                     <td style="width: 400px">Mô tả</td>
-                    <td style="width: 50px">Id Danh mục</td>
                     <td style="width: 150px">Chức năng</td>
                 </tr>
                 <?php foreach ($listsanpham as $sanpham) { 
                     extract($sanpham);
                     $sua = "index.php?act=editsp&id=".$id;
                     $xoa = "index.php?act=deletesp&id=".$id;
+                    $detail = "index.php?act=chitietsp&id=".$id;
                 echo '<tr>
-                <td style="width: 50px;">'.$id.'</td>
-                <td style="width: 200px;">'.$name.'</td>
-                <td style="width: 100px;">'.$giatien.'đ</td>
-                <td style="width: 200px;"><img src="../Img/'.$img.'" alt=""></td>
-                <td style="width: 400px;">'.$mota.'</td>
-                <td style="width: 50px;">'.$iddm.'</td>
-                <td class="edit-delete"><a href="'.$sua.'" class="edit">
+                <td>'.$id.'</td>
+                <td>'.$name.'</td>
+                <td>'.$giatien.'đ</td>
+                <td><img src="../Img/'.$img.'" alt=""></td>
+                <td>'.$mota.'</td>
+                <td class="edit-delete">
+                <a href="'.$detail.'" class="detail">
+                        Chi tiết sản phẩm
+                    </a>
+                    <a href="'.$sua.'" class="edit">
                         Sửa
                     </a>
-                    <a href="'.$xoa.'"
-                        class="delete">
-                        Xoá
+                    <a href="'.$xoa.'" onclick="return confirmDelete()" class="delete">
+                        Xóa
                     </a>
-                </td>
             </tr>';
              } ?>
             </table>

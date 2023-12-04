@@ -11,6 +11,13 @@ function loadCart($iddonhang){
     return $giohang;
 }
 
+function loadCartUser(){
+    $sql = "SELECT * FROM giohang";
+    $giohang = pdo_query($sql);
+    return $giohang;
+}
+
+
 function loadHoaDon($iddonhang){
     $sql = "SELECT * FROM giohang WHERE iduser = $iddonhang";
     $giohang = pdo_query($sql);

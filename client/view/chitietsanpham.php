@@ -26,7 +26,7 @@ if(is_array($sanpham)){
                 <input type="hidden" name="name" value="<?=$name?>" />
                 <input type="hidden" name="img" value="<?=$img?>" />
                 <input type="hidden" name="giatien" value="<?=$giatien?>" />
-                <input type="submit" name="addtocart" value="Thêm vào giỏ hàng" />
+                <input type="submit" name="addtocart" value="Thêm vào giỏ hàng" onclick="ThemGioHang()" />
             </form>
             <div class="product-details-buy">
                 <a href="index.php?act=dathang">Mua hàng</a>
@@ -100,3 +100,8 @@ if(is_array($sanpham)){
         </div>
     </div>
 </div>
+<script>
+function ThemGioHang() {
+    alert("Thêm giỏ hàng thành công")
+}
+</script>

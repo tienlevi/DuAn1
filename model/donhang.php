@@ -36,7 +36,7 @@ function loadOneDonHangUser($id){
     donhang.sdt, donhang.email, donhang.thoigiandathang, donhang.phuongthucthanhtoan,
     donhang.soluong,donhang.trangthai,donhang.ghichu,
     giohang.iddonhang,giohang.iduser,giohang.name,giohang.giatien FROM donhang
-    LEFT JOIN giohang ON giohang.iddonhang = donhang.id WHERE giohang.iduser = $id";
+    LEFT JOIN giohang ON giohang.id = donhang.id WHERE giohang.iduser = $id";
     $donhang = pdo_query($sql);
     return $donhang;
 }

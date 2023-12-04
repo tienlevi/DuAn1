@@ -40,6 +40,7 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
     switch ($act) {
         case "lichsudathang":
             $donhang = loadOneDonHangUser($_SESSION['user']['id']);
+            $giohang = loadCartUser();
             include "view/dathang.php";
             break;
         case "thongtin":
@@ -58,10 +59,15 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             break;
         case "chitietdonhang":
             if(isset($_GET['id']) && $_GET['id']){
-                $giohang = loadHoaDonChiTiet($_GET['id']);
+                $giohang = loadCart($_GET['id']);
             }
             include "view/chitietdonhang.php";
             break;
+        case "chitietsp":
+            if(isset($_GET['id']) && $_GET['id']){
+                $giohang = loadHoaDonChiTiet($_GET['id']);
+            }
+            include "view/chitietsp.php";
         case "huydonhang":
             if(isset($_GET['id']) && ($_GET['id'] > 0)){
                 huyHang($_GET['id']);
