@@ -57,7 +57,7 @@ $regexEmail = "/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]
                 <input type="submit" name="dangky" value="Đăng Ký">
             </div>
             <div class="forget-password">
-                <a href="">Đăng ký tài khoản</a>
+                <a href="index.php?act=dangnhap">Đăng nhập</a>
             </div>
         </form>
     </div>

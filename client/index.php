@@ -131,7 +131,7 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             include "view/vewebsite.php";
             break;
         case "dathang":
-            if(!isset($_SESSION["user"])){
+            if(isset($_SESSION["user"]) === []){
                 echo "Bạn chưa đăng nhập tài khoản";
                 die;
             }
@@ -163,9 +163,6 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             if(!isset($_SESSION["user"])){
                 header("Location: index.php");
             }
-            // if(!header("Location: index.php?act=hoadon")){
-            //     $_SESSION['mycart'] = [];
-            // }
             $donhang = loadOneDonHang();
             $giohang = loadHoaDon($_SESSION['user']['id']);
             include "view/hoadon.php";

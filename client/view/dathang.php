@@ -51,64 +51,34 @@ if(isset($_SESSION['user'])){
         </form>
         <div class="bill">
             <h1>Thông tin giỏ hàng</h1>
-            <!-- <table class="table-bordered" border="1">
-                <tr>
-                    <td class="p-2" style="width: 100px;">STT</td>
-                    <td class="p-2" style="width: 200px;">Ảnh</td>
-                    <td class="p-2" style="width: 200px;">Tên sản phẩm</td>
-                    <td class="p-2" style="width: 100px;">Giá</td>
-                    <td class="p-2" style="width: 100px;">Số lượng</td>
-                </tr>
-                <?php 
-                $i = 0;
-                $tong = 0;
-                 foreach ($_SESSION['mycart'] as $cart) {
-                    $tong += $cart[4];
-                    $image = '../Img/'.$cart[2].'';
-                    echo '<tr class="p-4">
-                    <td class="p-2">'.$i.'</td>
-                    <td class="p-2"><img src='.$image.' height="180px"/></td>
-                    <td class="p-2">'.$cart[1].'</td>
-                    <td class="p-2">'.$cart[4].'đ</td>
-                    <td class="p-2">'.$cart[5].'</td>
-                    </tr>
-                    ';
-                    $i += 1;
-                }
-                echo "<h3>Tổng tiền: $tong</h3>";
-                 ?>
-            </table> -->
             <div class="product-bill-item">
                 <div class="product-bill-item-list">
                     <?php
                     foreach ($_SESSION['mycart'] as $cart) {
-                        $tong += $cart[4];
                         $image = '../Img/'.$cart[2].'';
-                    }
-                   echo '<div class="product-bill-media">
+                        echo '<div class="product-bill-media">
                    <div class="product-bill-media-text">
                        <div class="product-bill-media-text-img"><img src="'.$image.'" alt="">
                            <p>'.$cart[1].' <span>x'.$cart[5].'</span></p>
                        </div>
                        <b>'.$cart[4].'đ</b>
                    </div>
-               </div>'; 
+               </div>';
+                    } 
                    ?>
-                    <div class="product-bill-media">
-                        <div class="product-bill-media-text">
-                            <div class="product-bill-media-text-img"><img src="../Img/1.jpg" alt="">
-                                <p>Áo Adidas<span>x1</span></p>
-                            </div>
-                            <b>100000đ</b>
-                        </div>
-                    </div>
                 </div>
                 <div class="product-bill-item-total">
                     <div class="product-bill-item-total-name">
                         <p>Tổng tiền tất cả </p>
                     </div>
                     <div class="product-bill-item-total-name">
-                        <b>100000đ</b>
+                        <b><?php 
+                        $tong = 0;
+                        foreach ($_SESSION['mycart'] as $cart) { 
+                        $tong += $cart[4];
+                        }
+                        echo $tong;
+                         ?>đ</b>
                     </div>
                 </div>
             </div>

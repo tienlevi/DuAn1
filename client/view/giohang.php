@@ -17,15 +17,15 @@
                   <p>Giá: '.$cart[3].'đ</p>
                   </div>
               </div>
-              <h2>Số lượng:
+              <h1>Số lượng:
               <form action="" method="post" class="quantity-cart">
                   <input type="hidden" name="id" value="'.$cart[0].'">
                   <input type="submit" name="giamsoluong" class="count" value="-">
                   <input type="number" name="soluong" class="count" value="'.$cart[5].'"/>
                   <input type="submit" name="tangsoluong" class="count" value="+">
               </form>
-          </h2>
-          <h2>Thành tiền: '.$cart[4].'đ</h2>
+          </h1>
+          <h1>Thành tiền: '.$cart[4].'đ</h1>
               <a href='.$xoa.'><i class="fa-solid fa-trash"></i></a>
           </div>';
           $i += 1;
