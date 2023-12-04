@@ -2,7 +2,7 @@
     <div class="footer-content">
         <div class="footer-inner">
             <div class="footer-section">
-                <h3>Keep In Touch</h3>
+                <h3>Về thông tin</h3>
                 <p>Claritas est etiam processus dynamicus, qui sequitur mutatio nem consuetudium lectorum. Mirum est
                     notare quam littera gothica, quam putamus</p>
                 <div class="footer-section-icon">
@@ -14,7 +14,7 @@
                 </div>
             </div>
             <div class="footer-ul">
-                <h3>Information</h3>
+                <h3>Thông tin</h3>
                 <li><a href="#">Giao hàng</a></li>
                 <li><a href="#">Thông tin</a></li>
                 <li><a href="#">Chính sách</a></li>
@@ -28,9 +28,9 @@
                 <li><a href="#">Áo</a></li>
             </div>
             <div class="footer-email">
-                <h3>Newsletter Signup</h3>
+                <h3>Liên hệ với chúng tôi</h3>
                 <div class="footer-email-form">
-                    <input type="text" id="email" name="email" placeholder="Your email...">
+                    <input type="text" id="email" name="email" placeholder="Email...">
                     <button type="submit"><i class="fa-solid fa-envelope"></i></button>
                 </div>
             </div>

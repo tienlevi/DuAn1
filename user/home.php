@@ -22,6 +22,8 @@
         </a>
     </div>
     <div class="user-information">
-        <form action="" method="post"><input type="submit" name="dangxuat" value="Đăng xuất"></form>
+        <form class="my-2" action="" method="post" style="text-align: center;"><input class="btn btn-dark" type="submit"
+                name="dangxuat" value="Đăng xuất">
+        </form>
     </div>
 </div>

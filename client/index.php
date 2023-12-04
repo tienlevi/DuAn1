@@ -47,6 +47,32 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             include "dangky.php";
             break;
         case "sanphamct":
+            if(isset($_POST['addtocart']) && $_POST['addtocart']){
+                $id = $_POST['id'];
+                $name = $_POST['name'];
+                $img = $_POST['img'];
+                $giatien = $_POST['giatien'];
+                $soluong = $_POST['soluong'];
+                $tien = $soluong * $giatien;
+                $giohang = [$id,$name,$img,$giatien,$tien,$soluong];
+                if (isset($_SESSION['mycart'])) {
+                    $cartItems = $_SESSION['mycart'];
+                    $existingItemKey = null;
+                    foreach ($cartItems as $key => $item) {
+                        if ($item[0] == $id) {
+                            $existingItemKey = $key;
+                            break;
+                        }
+                    }
+                }  
+                if ($existingItemKey !== null) {
+                    $cartItems[$existingItemKey][4] += $tien; 
+                    $cartItems[$existingItemKey][5] += $soluong; 
+                } else {
+                    array_push($cartItems, $giohang);
+                }  
+                $_SESSION['mycart'] = $cartItems;
+            }
             if(isset($_GET['id'])&&$_GET['id']>0){
                 $sanpham = loadOneSp($_GET['id']);
             }
@@ -223,3 +249,6 @@ include "footer.php";
 ?>
 <div class="back-to-top"><i class="fa-solid fa-arrow-up"></i></div>
 <script src="./JS/script.js"></script>
+<script src="./JS/amount.js">
+
+</script>

@@ -11,10 +11,10 @@ if(is_array($donhang)){
         <div style="margin-left: 0; padding: 0px 10px;" class="list-product-detail">
             <p>Mã đơn: <?=$id?></p>
             <p>Tên khách hàng: <?=$khachhang?></p>
-            <p>Tên sản phẩm: <?php
+            <p>Sản phẩm khách hàng đặt: <?php
                     foreach ($giohang as $value) {
                         extract($value);
-                        echo "$name, ";
+                        echo " $name, ";
                     } 
                     ?></p>
             <p>Tổng tiền:
@@ -31,7 +31,6 @@ if(is_array($donhang)){
             <p>Thời gian đặt hàng: <?=$thoigiandathang?></p>
             <p>Ngày giao hàng: 16-11-2023</p>
             <p>Số lượng: <?=$soluong?></p>
-            <p>Mã xác nhận: 09321</p>
             <p>Trạng thái: <span><?=$trangthai === 0 ? "Đang kiểm duyệt" : "Hủy bỏ"?></span></p>
             <p>Ghi chú: <?=$ghichu?></p>
         </div>

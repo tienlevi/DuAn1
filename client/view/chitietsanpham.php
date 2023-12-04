@@ -14,14 +14,14 @@ if(is_array($sanpham)){
             <h1><?=$name?></h1>
             <h2><?=$giatien?>đ</h2>
             <p>Mô tả: <?=$mota?></p>
-            <h3>Số lượng:
-                <div class="quantity">
-                    <button class="decrease">-</button>
-                    <input type="number" class="count" value="1">
-                    <button class="increase">+</button>
-                </div>
-            </h3>
             <form action="index.php?act=giohang" method="post" class="product-click-add">
+                <h3>Số lượng:
+                    <div class="quantity">
+                        <input type="button" id="decrease" name="giamsoluong" value="-" />
+                        <input type="number" name="soluong" class="product-detail-count" value="1">
+                        <input type="button" id="increase" name="tangsoluong" value="+" />
+                    </div>
+                </h3>
                 <input type="hidden" name="id" value="<?=$id?>" />
                 <input type="hidden" name="name" value="<?=$name?>" />
                 <input type="hidden" name="img" value="<?=$img?>" />
@@ -100,7 +100,3 @@ if(is_array($sanpham)){
         </div>
     </div>
 </div>
-
-<script>
-
-</script>
