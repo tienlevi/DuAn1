@@ -13,7 +13,6 @@ function loadAllSpFilter($kym,$iddm){
     if($iddm > 0){
         $sql.= " and iddm ='".$iddm."'"; 
     }
-    $sql.= " order by id desc";
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }

@@ -2,7 +2,7 @@
     <div class="admin">
         <h1>Danh sách sản phẩm</h1>
     </div>
-    <form class="filter" action="index.php?act=sp" method="post">
+    <form class="filter" action="index.php?act=listsp" method="post">
         <input type="text" name="kym" />
         <select name="iddm" id="">
             <option value="0" selected>Tất cả</option>
@@ -12,7 +12,7 @@
              } ?>
             <option value="'.$id.'"></option>
         </select>
-        <input class="filter-search" type="submit" name="listok" value="Lọc danh mục" />
+        <input class="filter-search" type="submit" name="listok" value="Tìm kiếm" />
     </form>
     <div class="function">
         <a href="index.php">Quay lại trang chủ</a>

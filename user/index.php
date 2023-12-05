@@ -39,7 +39,7 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
     $act = $_GET['act'];
     switch ($act) {
         case "lichsudathang":
-            $donhang = loadOneDonHangUser($_SESSION['user']['id']);
+            $donhang = loadOneDonHangUser($_SESSION["user"]["id"]);
             $giohang = loadCartUser();
             include "view/dathang.php";
             break;

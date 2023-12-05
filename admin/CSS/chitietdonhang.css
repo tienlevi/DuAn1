@@ -8,10 +8,6 @@
   font-size: 1.8rem;
 }
 
-.container {
-  display: flex;
-}
-
 .list-product-img img {
   width: 400px;
   object-fit: cover;
@@ -28,6 +24,10 @@
 .list-product-detail p {
   font-size: 19px;
   margin-bottom: 19px;
+}
+
+.list-product-detail span {
+  color: rgb(14, 206, 14);
 }
 
 .function-back {

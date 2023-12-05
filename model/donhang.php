@@ -34,9 +34,10 @@ function loadOneDonHang(){
 function loadOneDonHangUser($id){
     $sql = "SELECT donhang.id, donhang.khachhang, donhang.diachi,
     donhang.sdt, donhang.email, donhang.thoigiandathang, donhang.phuongthucthanhtoan,
-    donhang.soluong,donhang.trangthai,donhang.ghichu,
+    donhang.soluong,donhang.trangthai,donhang.ghichu,donhang.idkhachhang,
     giohang.iddonhang,giohang.iduser,giohang.name,giohang.giatien FROM donhang
-    LEFT JOIN giohang ON giohang.id = donhang.id WHERE giohang.iduser = $id";
+    LEFT JOIN giohang ON giohang.id = donhang.idkhachhang
+    WHERE donhang.idkhachhang = $id";
     $donhang = pdo_query($sql);
     return $donhang;
 }
@@ -69,8 +70,8 @@ function tongDonHang(){
     return $tong;
 }
 
-function insert_donhang($khachhang,$diachi,$sdt,$email,$thoigiandathang,$phuongthucthanhtoan,$soluong,$ghichu){
-    $sql="INSERT INTO donhang VALUES(null,'$khachhang','$diachi','$sdt','$email','$thoigiandathang','$phuongthucthanhtoan','$soluong',0,'$ghichu')";
+function insert_donhang($khachhang,$diachi,$sdt,$email,$thoigiandathang,$phuongthucthanhtoan,$soluong,$ghichu,$idkhachhang){
+    $sql="INSERT INTO donhang VALUES(null,'$khachhang','$diachi','$sdt','$email','$thoigiandathang','$phuongthucthanhtoan','$soluong',0,'$ghichu','$idkhachhang')";
     return pdo_execute_return_lastInsertId($sql);
 }
 

@@ -86,7 +86,7 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
                 $iddm = 0;
             };
             $listdanhmuc = loadAllDm();
-            $listsanpham = loadAllSp($kym,$iddm);
+            $listsanpham = loadAllSpFilter($kym,$iddm);
             include "sanpham/list.php";
             break;
         case "chitietsp":

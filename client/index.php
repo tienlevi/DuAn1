@@ -172,7 +172,7 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
                     $thoigiandathang = date('h:i:sa d/m/Y');
                     $ghichu = $_POST['ghichu'];
 
-                    $iddathang = insert_donhang($khachhang,$diachi,$sdt,$email,$thoigiandathang,$phuongthucthanhtoan,count($_SESSION['mycart']),$ghichu );
+                    $iddathang = insert_donhang($khachhang,$diachi,$sdt,$email,$thoigiandathang,$phuongthucthanhtoan,count($_SESSION['mycart']),$ghichu,$_SESSION['user']['id'] );
                     $donhang = loadOneDonHang($iddathang);
                     $giohang = loadCart($iddathang);
                     foreach ($_SESSION['mycart']as $cart ) {

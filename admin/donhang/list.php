@@ -14,12 +14,7 @@
             <h1>Đơn hàng</h1>
         </div>
         <form class="filter" action="index.php?act=listsp" method="post">
-            <input type="text" name="kym" />
-            <select name="iddm" id="">
-                <option value="0" selected>Tất cả</option>
-
-                <option value="'.$id.'"></option>
-            </select>
+            <input type="text" name="kym" placeholder="Tìm kiếm đơn hàng" />
             <input class="filter-search" type="submit" name="listok" value="Lọc đơn hàng" />
         </form>
         <div class="table">
@@ -71,16 +66,16 @@
 function xacNhanHuy() {
     if (confirm("Bạn có muốn hủy hàng không ?")) {
         document.location = "index.php?act=donhang";
-        alert("Cập nhật thành công");
+        alert("Hủy bỏ thành công");
     } else {
         return false;
     }
 }
 
 function xacNhan() {
-    if (confirm("Bạn có muốn hủy hàng không ?")) {
+    if (confirm("Bạn có muốn xác nhận hàng không ?")) {
         document.location = "index.php?act=donhang";
-        alert("Cập nhật thành công");
+        alert("Xác nhận thành công");
     } else {
         return false;
     }

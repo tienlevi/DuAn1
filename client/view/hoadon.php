@@ -44,7 +44,6 @@ if(isset($_SESSION['user'])){
                     <td width="150px">Đơn giá</td>
                     <td width="100px">Số lượng</td>
                     <td width="100px">Thành tiền</td>
-                    <td width="150px">Thời gian đặt hàng</td>
                     <td width="150px">Trạng thái</td>
                 </tr>
                 <?php
@@ -56,7 +55,6 @@ if(isset($_SESSION['user'])){
                         <td style="padding: 10px">'.$giatien.'đ</td>
                         <td style="padding: 10px">'.$soluong.' </td>
                         <td style="padding: 10px">'.($giatien * $soluong).'đ</td>
-                        <td style="padding: 10px">'.$thoigiandathang.' </td>
                         <td style="padding: 10px">'.($trangthai === 0 ? '<p style="color: orange">Đang kiểm duyệt</p>' : '<p style="color: red;">Hủy bỏ</p>').'</td>
                         </tr>';
                     } 
@@ -66,9 +64,9 @@ if(isset($_SESSION['user'])){
             $tong = 0;
             foreach ($giohang as $value) {
                 extract($value);
-                $tong += $giatien;
+                $tong += $giatien * $soluong;
             }
-            echo "<h3 style='margin: 15px 0px'>Tổng số tiền: ".$tong."đ</h3>";
+            echo "<h3 style='margin: 15px 0px'>Giá sản phẩm: ".$tong."đ</h3>";
             ?>
         </div>
     </div>
