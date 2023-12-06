@@ -10,7 +10,7 @@
     <div class="table">
         <table class="table-bordered" border="1">
             <tr>
-                <td style="padding: 10px; width: 50px;">Mã hàng</td>
+                <td style="padding: 10px; width: 50px;">STT</td>
                 <td style="padding: 10px; width: 250px;">Tên sản phẩm</td>
                 <td style="padding: 10px; width: 250px;">Ảnh</td>
                 <td style="padding: 10px; width: 250px;">Địa chỉ giao hàng</td>
@@ -19,10 +19,10 @@
                 <td style="padding: 10px; width: 100px;">Thành tiền</td>
             </tr>
             <?php
-                foreach($giohang as $value) {
+                foreach($giohang as $key => $value) {
                     extract($value);
                         echo '<tr>
-                        <td style="padding: 10px;">'.$iddonhang.'</td>
+                        <td style="padding: 10px;">'.($key + 1).'</td>
                         <td style="padding: 10px;">'.$name.'</td>
                         <td style="padding: 10px;"><img src="../Img/'.$img.'" width="200px" height="150px" style="object-fit: cover"/></td>
                         <td style="padding: 10px;">'.$diachi.'</td>
@@ -33,7 +33,7 @@
                 } 
              ?>
         </table>
-        <h1 style="margin: 15px 0px; font-size: 24px;">Tổng số tiền: <?php 
+        <h1 style="margin: 15px 0px; font-size: 24px;">Tổng giá sản phẩm: <?php 
                 $tong = 0;
                 foreach ($giohang as $value) { 
                 extract($value);

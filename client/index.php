@@ -192,8 +192,8 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
             }
             if(isset($_GET['iddonhang']) && ($_GET['iddonhang']) > 0){
                 $giohang = loadCart($_GET['iddonhang']);
+                $donhang = loadOneDonHang($_GET['iddonhang']);
             }
-            $donhang = loadOneDonHang();
             include "view/hoadon.php";
             break;
         case "tatcasp":

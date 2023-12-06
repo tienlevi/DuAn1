@@ -12,10 +12,9 @@
                 <td style="padding: 10px; width: 250px;">Sản phẩm khách hàng đặt</td>
                 <td style="padding: 10px; width: 250px;">Địa chỉ giao hàng</td>
                 <td style="padding: 10px; width: 150px;">Thời gian đặt hàng</td>
-                <td style="padding: 10px; width: 100px;">Giá tiền</td>
-                <td style="padding: 10px; width: 100px;">Số lượng</td>
-                <td style="padding: 10px; width: 100px;">Thành tiền</td>
+                <td style="padding: 10px; width: 150px;">Phương thức thanh toán</td>
                 <td style="padding: 10px; width: 200px;">Trạng thái</td>
+                <td style="padding: 10px; width: 200px;">Ghi chú</td>
                 <td style="padding: 10px; width: 200px;">Chức năng</td>
             </tr>
             <?php 
@@ -29,14 +28,14 @@
                 } ?></td>
                 <td style="padding: 10px;"><?php echo $value['diachi'] ?></td>
                 <td style="padding: 10px;"><?php echo $value['thoigiandathang'] ?></td>
-                <td style="padding: 10px;"><?php echo $value['giatien'] ?>đ</td>
-                <td style="padding: 10px;"><?php echo $value['soluong'] ?></td>
-                <td style="padding: 10px;"><?php echo $value['giatien'] * $value['soluong'] ?>đ</td>
+                <td style="padding: 10px;">
+                    <?php echo $value['phuongthucthanhtoan'] === 0 ? "Chuyển khoản" : "Thanh toán khi giao hàng" ?></td>
                 <td style="padding: 10px;">
                     <?php echo $value['trangthai'] === 0 ? "<p style='color: orange;'>Đang kiểm duyệt</p>" : "" ?>
                     <?php echo $value['trangthai'] === 1 ? "<p style='color: red;'>Huỷ bỏ</p>" : "" ?>
                     <?php echo $value['trangthai'] === 2 ? "<p style='color: green;'>Thành công</p>" : "" ?>
                 </td>
+                <td style="padding: 10px;"><?php echo $value['ghichu'] ?></td>
                 <td style="padding: 10px;">
                     <?php echo $value['trangthai'] === 0 ? "<a onclick='return huyBo()' class='btn btn-danger my-1' style='width: 100%; font-size: 14px'
                         href='index.php?act=huydonhang&id=".($value['id'])."'>Hủy đơn hàng</a>" : "" ?>

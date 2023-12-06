@@ -184,8 +184,8 @@ if(isset($_GET['act']) && $_GET['act'] != ""){
         case "chitietdonhang":
             if(isset($_GET['id'])&&$_GET['id']>0){
                 $giohang = loadCart($_GET['id']);
+                $donhang = loadOneDonHang($_GET['id']);
             }
-            $donhang = loadOneDonHang();
             include "donhang/chitiet.php";
             break;
         default:

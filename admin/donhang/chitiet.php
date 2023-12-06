@@ -13,13 +13,19 @@ if(is_array($donhang)){
         <div style="margin-left: 0; padding: 0px 10px;" class="list-product-detail">
             <p>Mã đơn: <?=$id?></p>
             <p>Tên khách hàng: <?=$khachhang?></p>
+            <p>Email: <?=$email?></p>
+            <p>SĐT: <?=$sdt?></p>
             <p>Phương thức thanh toán: <?=$phuongthucthanhtoan === 0 ? "Chuyển khoản" : "Thanh toán khi giao hàng"?></p>
             <p>Địa chỉ giao hàng: <?=$diachi?></p>
             <p>Thời gian đặt hàng: <?=$thoigiandathang?></p>
             <p>Trạng thái:
-                <?=$trangthai === 0 ? "<span style='color: orange;'>Đang kiểm duyệt</span>" : ""?>
-                <?=$trangthai === 1 ? "<span style='color: red;'>Hủy bỏ</span>" : ""?>
-                <?=$trangthai === 2 ? "<span style='color: green;'>Thành công</span>" : ""?>
+                <?php if($trangthai === 0){
+                    echo "<span style='color: orange;'>Đang kiểm duyệt</span>";
+                } else if($trangthai === 1) {
+                    echo "<span style='color: red;'>Huỷ bỏ</span>";
+                } else {
+                    echo "<span style='color: green;'>Thành công</span>";
+                }?></p>
             </p>
             <p>Ghi chú: <?=$ghichu?></p>
         </div>

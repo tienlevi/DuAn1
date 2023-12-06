@@ -22,9 +22,10 @@
                 <tr>
                     <td style="width: 50px;">Mã đơn</td>
                     <td style="width: 200px;">Khách hàng</td>
+                    <td style="width: 200px;">Email</td>
+                    <td style="width: 100px;">SĐT</td>
                     <td style="width: 200px;">Địa chỉ giao hàng</td>
-                    <td style="width: 200px;">Thời gian mua</td>
-                    <td style="width: 100px;">Số lượng</td>
+                    <td style="width: 100px;">Thời gian đặt hàng</td>
                     <td style="width: 200px;">Trạng thái</td>
                     <td style="width: 200px;">Ghi chú</td>
                     <td style="width: 200px;">Chức năng</td>
@@ -38,9 +39,10 @@
                 echo '<tr>
                 <td>'.$id.'</td>
                 <td>'.$khachhang.'</td>
+                <td>'.$email.'</td>
+                <td>'.$sdt.'</td>
                 <td>'.$diachi.'</td>
                 <td>'.$thoigiandathang.'</td>
-                <td>'.$soluong.'</td>
                 <td>'.($trangthai === 0 ? "<p style='color: orange;'>Đang kiểm duyệt</p>" : ($trangthai === 2 ? "<p style='color: green;'>Thành công</p>" : "<p style='color: red;'>Hủy bỏ</p>")).'</td>
                 <td>'.$ghichu.'</td>
                 <td class="edit-delete">
